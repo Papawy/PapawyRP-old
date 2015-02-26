@@ -4,6 +4,8 @@
 
 #define CORE_INCLUDED
 
+// ----------------------------------------------------------------------------
+
 #if !defined _samp_included
 	#tryinclude <a_samp>
 	#if !defined _samp_included
@@ -13,8 +15,6 @@
 
 #include <YSI\y_hooks>
 
-
-
 #if defined USE_TS3_CONNECTOR
 
 #endif
@@ -23,4 +23,15 @@
 	#include <a_mysql>
 #endif
 
+// ----------------------------------------------------------------------------
+
 #define MAX_PLAYER_PASS			32
+
+// ----------------------------------------------------------------------------
+
+#if defined USE_MYSQL
+	#include "mysql_init.pwn"
+#endif
+
+#include "players_infos.pwn"
+#include "players_vars.pwn"

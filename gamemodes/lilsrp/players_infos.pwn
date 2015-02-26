@@ -1,8 +1,8 @@
-#if defined PLAYERS_VARS_INCLUDED
+#if defined PLAYERS_INFOS_INCLUDED
 	#endinput
 #endif
 
-#define PLAYERS_VARS_INCLUDED
+#define PLAYERS_INFOS_INCLUDED
 
 // ----------------------------------------------------------------------------
 
@@ -10,13 +10,11 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined USE_MYSQL
-
-forward GetPlayerVar_Int(pUID, key[], &var);
-
-public GetPlayerVar_Int(pUID, key[], &var)
-{
+enum P_INFOS {
+	pUniqueID,
+	pName[MAX_PLAYER_NAME+1],
+	pPass[MAX_PLAYER_PASS],
 
 }
 
-#endif
+new pInfos[MAX_PLAYERS][P_INFOS];
