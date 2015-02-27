@@ -37,7 +37,6 @@
 // ----------- UTILS
 
 #include "utils\utils_functions.pwn"
-#include "utils\utils_sfmsg.pwn"
 
 // ----------- SERVER
 

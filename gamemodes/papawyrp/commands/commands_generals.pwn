@@ -43,7 +43,7 @@ YCMD:help(playerid, params[], help)
             SendClientMessage(playerid, -1, HELP_HEADER "Bienvenue dans l'aide !");
             format(str, sizeof (str), HELP_HEADER "Tapez \"/%s [commande]\" pour avoir plus d'aide par rapport à cette commande !", Command_GetDisplayNamed("aide", playerid));
             SendClientMessage(playerid, -1, str);
-            SendClientMessageFormatted(playerid, -1, HELP_HEADER "Tapez \"/%s [commande]\" pour avoir plus d'aide par rapport à cette commande !", Command_GetDisplayNamed("aide", playerid));
+            SendClientMessageEx(playerid, -1, HELP_HEADER "Tapez \"/%s [commande]\" pour avoir plus d'aide par rapport à cette commande !", Command_GetDisplayNamed("aide", playerid));
 			SendClientMessage(playerid, -1, HELP_HEADER "Tapez \"/aide commandes\" pour avoir le nom de toute les commandes !");
 			SendClientMessage(playerid, COLOR_HELP, "|-----------------------------------------------------------------------------------------------|");
         }
