@@ -1,5 +1,5 @@
-# LifeInLosSantosRP
-A gamemode for a SA:MP server called LifeInLosSantos RolePlay
+# PapawyRP
+A gamemode for SA:MP.
 
 Originaly made by Papawy.
 
