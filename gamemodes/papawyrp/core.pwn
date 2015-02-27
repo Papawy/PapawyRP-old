@@ -30,14 +30,22 @@
 
 #define MAX_PLAYER_PASS			32
 
-// ----------------------------------------------------------------------------
+// ----------- UTILS
+
+#include "utils\utils_colors.pwn"
+
+// ----------- MYSQL
 
 #if defined USE_MYSQL
-	#include "mysql_init.pwn"
+	#include "mysql\mysql_init.pwn"
 #endif
 
-#include "players_infos.pwn"
-#include "players_vars.pwn"
+// ----------- PLAYER
 
-#include "commands_generals.pwn"
-#include "commands_tchat.pwn"
+#include "player\players_infos.pwn"
+#include "player\players_vars.pwn"
+
+// ----------- COMMANDS
+
+#include "commands\commands_generals.pwn"
+#include "commands\commands_tchat.pwn"

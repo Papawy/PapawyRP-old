@@ -1,11 +1,11 @@
 /*
-	Life in Los Santos Role Play
+	Papawy Role Play
 
 				script made by Papawy
 
 	Gamemode architecture :
 
-	lilsrp
+	papawyrp
 		+ core < include all necessary files
 		
 		- Utils
@@ -30,12 +30,13 @@
 */
 
 
-#include "lilsrp\core.pwn"
+#include "papawyrp\core.pwn"
 
 main()
 {
-	print("Life in Los Santos Role Play\r\n");
-	print("		Re-edited by Papawy\r\n");
+	print("Papawy RolePlay\r\n");
+	print("-------------------------------------------\r\n");
+	print("	- originally made by Papawy\r\n");
 	print(" - Current Version : "LILSRP_VERSION"\r\n");
 
 }

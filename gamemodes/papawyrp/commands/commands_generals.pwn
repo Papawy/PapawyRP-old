@@ -10,8 +10,6 @@
 
 #include "core.pwn"
 
-#include "colors.pwn"
-
 // ----------------------------------------------------------------------------
 
 hook OnGameModeInit()
