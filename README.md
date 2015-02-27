@@ -7,9 +7,21 @@ Gamemode architecture :
 
 		+ core < include all necessary files
 		
-		+ utils < all usefull functions
+		- Utils
+			//+ utils < all usefull functions
+			+ colors < color standardization
 		
-		+ players_vars < sstandardize players information backups
-		+ players_infos < enumeration of infos for each player
+		- MySQL : only included if mysql was used
+			+ mysql_infos
+			+ mysql_init < initialise mysql connection
 
-		+ commands_tchat < all tchat commands (tchat IC, OOC, /me, /do, etc.)
+		- Server infos
+			+ server_infos < server configuration
+
+		- Player Infos
+			+ players_vars < sstandardize players information backups
+			+ players_infos < enumeration of infos for each player
+
+		- Commands
+			+ commands_generals < help, etc.
+			+ commands_tchat < all tchat commands (tchat IC, OOC, /me, /do, etc.)
