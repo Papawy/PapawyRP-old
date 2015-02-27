@@ -222,3 +222,138 @@ Console input: gmx
   *********************
 
 [01:04:55]   Filterscript 'fsdebug.amx' unloaded.
+Console input: gmx
+[01:10:38]  
+[01:10:38]  
+[01:10:38]  
+[01:10:38]  ======================================= 
+[01:10:38]  |                                     | 
+[01:10:38]  |        YSI version 3.09.0684        | 
+[01:10:38]  |        By Alex "Y_Less" Cole        | 
+[01:10:38]  |                                     | 
+[01:10:38]  ======================================= 
+[01:10:38]  
+[01:10:38]  
+[01:10:38]  
+[01:10:38] Life in Los Santos Role Play
+
+[01:10:38] 		Re-edited by Papawy
+
+[01:10:38]  - Current Version : INDEV
+
+[01:10:38] Number of vehicle models: 0
+Console input: gmx
+Console input: loadfs fsdebug
+[01:14:07] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[01:14:07]   * By Simon Campbell *
+  *********************
+[01:14:07]   * Version: 0.5d      *
+  *********************
+[01:14:07]   * -- LOADED         *
+  *********************
+
+[01:14:07]   Filterscript 'fsdebug.amx' loaded.
+[01:14:13]  
+[01:14:13]  
+[01:14:13]  
+[01:14:13]  ======================================= 
+[01:14:13]  |                                     | 
+[01:14:13]  |        YSI version 3.09.0684        | 
+[01:14:13]  |        By Alex "Y_Less" Cole        | 
+[01:14:13]  |                                     | 
+[01:14:13]  ======================================= 
+[01:14:13]  
+[01:14:13]  
+[01:14:13]  
+[01:14:13] Life in Los Santos Role Play
+
+[01:14:13] 		Re-edited by Papawy
+
+[01:14:13]  - Current Version : INDEV
+
+[01:14:13] Number of vehicle models: 0
+Console input: gmx 
+[01:16:05]  
+[01:16:05]  
+[01:16:05]  
+[01:16:05]  ======================================= 
+[01:16:05]  |                                     | 
+[01:16:05]  |        YSI version 3.09.0684        | 
+[01:16:05]  |        By Alex "Y_Less" Cole        | 
+[01:16:05]  |                                     | 
+[01:16:05]  ======================================= 
+[01:16:05]  
+[01:16:05]  
+[01:16:05]  
+[01:16:05] Life in Los Santos Role Play
+
+[01:16:05] 		Re-edited by Papawy
+
+[01:16:05]  - Current Version : INDEV
+
+[01:16:05] Number of vehicle models: 0
+Console input: gmx
+[01:19:15]  
+[01:19:15]  
+[01:19:15]  
+[01:19:15]  ======================================= 
+[01:19:15]  |                                     | 
+[01:19:15]  |        YSI version 3.09.0684        | 
+[01:19:15]  |        By Alex "Y_Less" Cole        | 
+[01:19:15]  |                                     | 
+[01:19:15]  ======================================= 
+[01:19:15]  
+[01:19:15]  
+[01:19:15]  
+[01:19:15] Life in Los Santos Role Play
+
+[01:19:15] 		Re-edited by Papawy
+
+[01:19:15]  - Current Version : INDEV
+
+[01:19:15] Number of vehicle models: 0
+Console input: gmx
+[01:21:54]  
+[01:21:54]  
+[01:21:54]  
+[01:21:54]  ======================================= 
+[01:21:54]  |                                     | 
+[01:21:54]  |        YSI version 3.09.0684        | 
+[01:21:54]  |        By Alex "Y_Less" Cole        | 
+[01:21:54]  |                                     | 
+[01:21:54]  ======================================= 
+[01:21:54]  
+[01:21:54]  
+[01:21:54]  
+[01:21:54] Life in Los Santos Role Play
+
+[01:21:54] 		Re-edited by Papawy
+
+[01:21:54]  - Current Version : INDEV
+
+[01:21:54] Number of vehicle models: 0
+[01:22:25] 0
+[01:22:25] 1
+Console input: gmx
+[01:24:07]  
+[01:24:07]  
+[01:24:07]  
+[01:24:07]  ======================================= 
+[01:24:07]  |                                     | 
+[01:24:07]  |        YSI version 3.09.0684        | 
+[01:24:07]  |        By Alex "Y_Less" Cole        | 
+[01:24:07]  |                                     | 
+[01:24:07]  ======================================= 
+[01:24:07]  
+[01:24:07]  
+[01:24:07]  
+[01:24:07] Life in Los Santos Role Play
+
+[01:24:07] 		Re-edited by Papawy
+
+[01:24:07]  - Current Version : INDEV
+
+[01:24:07] Number of vehicle models: 0
+[01:25:29] [part] Papawy has left the server (0:1)
