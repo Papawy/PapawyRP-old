@@ -357,3 +357,58 @@ Console input: gmx
 
 [01:24:07] Number of vehicle models: 0
 [01:25:29] [part] Papawy has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[19:49:00] 
+[19:49:00] Server Plugins
+[19:49:00] --------------
+[19:49:00]  Loaded 0 plugins.
+
+[19:49:00] 
+[19:49:00] Filterscripts
+[19:49:00] ---------------
+[19:49:00]   Loading filterscript 'vspawner.amx'...
+[19:49:00] 
+--Admin Vehicle Spawner Loaded
+
+[19:49:00]   Loading filterscript 'fsdebug.amx'...
+[19:49:00] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[19:49:00]   * By Simon Campbell *
+  *********************
+[19:49:00]   * Version: 0.5d      *
+  *********************
+[19:49:00]   * -- LOADED         *
+  *********************
+
+[19:49:00]   Loaded 2 filterscripts.
+
+[19:49:00]  
+[19:49:00]  
+[19:49:00]  
+[19:49:00]  ======================================= 
+[19:49:00]  |                                     | 
+[19:49:00]  |        YSI version 4.00.0001        | 
+[19:49:00]  |        By Alex "Y_Less" Cole        | 
+[19:49:00]  |                                     | 
+[19:49:00]  ======================================= 
+[19:49:00]  
+[19:49:00] Papawy RolePlay
+
+[19:49:00] -------------------------------------------
+
+[19:49:00] 	- originally made by Papawy
+
+[19:49:00]  - Current Version : INDEV
+
+[19:49:00] Number of vehicle models: 0
+[19:50:02] Incoming connection: 127.0.0.1:53664
+[19:50:02] [join] Papawy has joined the server (0:127.0.0.1)

@@ -36,7 +36,7 @@ main()
 {
 	print("Papawy RolePlay\r\n");
 	print("-------------------------------------------\r\n");
-	print("	- originally made by Papawy\r\n");
+	print(" - originally made by Papawy\r\n");
 	print(" - Current Version : "LILSRP_VERSION"\r\n");
 
 }

@@ -13,8 +13,12 @@
 	#endif
 #endif
 
-#include <YSI\y_commands>
-#include <YSI\y_master>
+#include <YSI4\YSI_Visual\y_commands>
+#include <YSI4\YSI_Core\y_master>
+
+#include <YSI4\YSI_Data\y_iterate>
+
+#include <YSI4\YSI_Server\y_colours>
 
 #if defined USE_TS3_CONNECTOR
 
@@ -26,13 +30,18 @@
 
 // ----------------------------------------------------------------------------
 
-#define LILSRP_VERSION			"INDEV"
+#define LILSRP_VERSION					"INDEV"
 
-#define MAX_PLAYER_PASS			32
+#define MAX_PLAYER_PASS					32
 
 // ----------- UTILS
 
-#include "utils\utils_colors.pwn"
+#include "utils\utils_functions.pwn"
+#include "utils\utils_sfmsg.pwn"
+
+// ----------- SERVER
+
+#include "server\server_infos.pwn"
 
 // ----------- MYSQL
 
@@ -47,5 +56,6 @@
 
 // ----------- COMMANDS
 
+#include "commands\commands_config.pwn"
 #include "commands\commands_generals.pwn"
 #include "commands\commands_tchat.pwn"
