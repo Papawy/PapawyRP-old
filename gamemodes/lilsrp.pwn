@@ -10,6 +10,7 @@
 		
 		- Utils
 			//+ utils < all usefull functions
+			+ colors < color standardization
 		
 		- MySQL : only included if mysql was used
 			+ mysql_infos
@@ -23,11 +24,18 @@
 			+ players_infos < enumeration of infos for each player
 
 		- Commands
+			+ commands_generals < help, etc.
 			+ commands_tchat < all tchat commands (tchat IC, OOC, /me, /do, etc.)
 
 */
 
-#define USE_MYSQL
-
 
 #include "lilsrp\core.pwn"
+
+main()
+{
+	print("Life in Los Santos Role Play\r\n");
+	print("		Re-edited by Papawy\r\n");
+	print(" - Current Version : "LILSRP_VERSION"\r\n");
+
+}

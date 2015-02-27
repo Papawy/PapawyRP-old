@@ -11,12 +11,16 @@
 // ----------------------------------------------------------------------------
 
 #if defined USE_MYSQL
+/*
+forward BeginLoading(pUID)
 
 forward GetPlayerVar_Int(pUID, key[], &var);
+
+
 
 public GetPlayerVar_Int(pUID, key[], &var)
 {
 
-}
+}*/
 
 #endif

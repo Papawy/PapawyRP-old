@@ -13,7 +13,8 @@
 	#endif
 #endif
 
-#include <YSI\y_hooks>
+#include <YSI\y_commands>
+#include <YSI\y_master>
 
 #if defined USE_TS3_CONNECTOR
 
@@ -25,6 +26,8 @@
 
 // ----------------------------------------------------------------------------
 
+#define LILSRP_VERSION			"INDEV"
+
 #define MAX_PLAYER_PASS			32
 
 // ----------------------------------------------------------------------------
@@ -35,3 +38,6 @@
 
 #include "players_infos.pwn"
 #include "players_vars.pwn"
+
+#include "commands_generals.pwn"
+#include "commands_tchat.pwn"

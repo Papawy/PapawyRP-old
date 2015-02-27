@@ -1,0 +1,224 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[00:55:27] 
+[00:55:27] Server Plugins
+[00:55:27] --------------
+[00:55:27]  Loaded 0 plugins.
+
+[00:55:27] 
+[00:55:27] Filterscripts
+[00:55:27] ---------------
+[00:55:27]   Loading filterscript 'vspawner.amx'...
+[00:55:27] 
+--Admin Vehicle Spawner Loaded
+
+[00:55:27]   Loading filterscript 'fsdebug.amx'...
+[00:55:27] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:55:27]   * By Simon Campbell *
+  *********************
+[00:55:27]   * Version: 0.5d      *
+  *********************
+[00:55:27]   * -- LOADED         *
+  *********************
+
+[00:55:27]   Loaded 2 filterscripts.
+
+[00:55:27] Script[gamemodes/lilsrp.amx]: Run time error 19: "File or function is not found"
+[00:55:27] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[00:55:47] 
+[00:55:47] Server Plugins
+[00:55:47] --------------
+[00:55:47]  Loaded 0 plugins.
+
+[00:55:47] 
+[00:55:47] Filterscripts
+[00:55:47] ---------------
+[00:55:47]   Loading filterscript 'vspawner.amx'...
+[00:55:47] 
+--Admin Vehicle Spawner Loaded
+
+[00:55:47]   Loading filterscript 'fsdebug.amx'...
+[00:55:47] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:55:47]   * By Simon Campbell *
+  *********************
+[00:55:47]   * Version: 0.5d      *
+  *********************
+[00:55:47]   * -- LOADED         *
+  *********************
+
+[00:55:47]   Loaded 2 filterscripts.
+
+[00:55:47]  
+[00:55:47]  
+[00:55:47]  
+[00:55:47]  ======================================= 
+[00:55:47]  |                                     | 
+[00:55:47]  |        YSI version 3.09.0684        | 
+[00:55:47]  |        By Alex "Y_Less" Cole        | 
+[00:55:47]  |                                     | 
+[00:55:47]  ======================================= 
+[00:55:47]  
+[00:55:47]  
+[00:55:47]  
+[00:55:47] Script[gamemodes/lilsrp.amx]: Run time error 20: "Invalid index parameter (bad entry point)"
+[00:55:47] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[00:58:11] 
+[00:58:11] Server Plugins
+[00:58:11] --------------
+[00:58:11]  Loaded 0 plugins.
+
+[00:58:11] 
+[00:58:11] Filterscripts
+[00:58:11] ---------------
+[00:58:11]   Loading filterscript 'vspawner.amx'...
+[00:58:11] 
+--Admin Vehicle Spawner Loaded
+
+[00:58:11]   Loading filterscript 'fsdebug.amx'...
+[00:58:11] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:58:11]   * By Simon Campbell *
+  *********************
+[00:58:11]   * Version: 0.5d      *
+  *********************
+[00:58:11]   * -- LOADED         *
+  *********************
+
+[00:58:11]   Loaded 2 filterscripts.
+
+[00:58:11]  
+[00:58:11]  
+[00:58:11]  
+[00:58:11]  ======================================= 
+[00:58:11]  |                                     | 
+[00:58:11]  |        YSI version 3.09.0684        | 
+[00:58:11]  |        By Alex "Y_Less" Cole        | 
+[00:58:11]  |                                     | 
+[00:58:11]  ======================================= 
+[00:58:11]  
+[00:58:11]  
+[00:58:11]  
+[00:58:11] Life in Los Santos Role Play
+
+[00:58:11] 			Re-edited by Papawy
+
+[00:58:11]  - Current Version : INDEV
+
+[00:58:11] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[00:58:28] 
+[00:58:28] Server Plugins
+[00:58:28] --------------
+[00:58:28]  Loaded 0 plugins.
+
+[00:58:28] 
+[00:58:28] Filterscripts
+[00:58:28] ---------------
+[00:58:28]   Loading filterscript 'vspawner.amx'...
+[00:58:28] 
+--Admin Vehicle Spawner Loaded
+
+[00:58:28]   Loading filterscript 'fsdebug.amx'...
+[00:58:28] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:58:28]   * By Simon Campbell *
+  *********************
+[00:58:28]   * Version: 0.5d      *
+  *********************
+[00:58:28]   * -- LOADED         *
+  *********************
+
+[00:58:28]   Loaded 2 filterscripts.
+
+[00:58:28]  
+[00:58:28]  
+[00:58:28]  
+[00:58:28]  ======================================= 
+[00:58:28]  |                                     | 
+[00:58:28]  |        YSI version 3.09.0684        | 
+[00:58:28]  |        By Alex "Y_Less" Cole        | 
+[00:58:28]  |                                     | 
+[00:58:28]  ======================================= 
+[00:58:28]  
+[00:58:28]  
+[00:58:28]  
+[00:58:28] Life in Los Santos Role Play
+
+[00:58:28] 		Re-edited by Papawy
+
+[00:58:28]  - Current Version : INDEV
+
+[00:58:28] Number of vehicle models: 0
+[00:59:12] Incoming connection: 127.0.0.1:55120
+[00:59:12] [join] Papawy has joined the server (0:127.0.0.1)
+[00:59:19] [part] Papawy has left the server (0:1)
+[00:59:49] Incoming connection: 127.0.0.1:54826
+[00:59:50] [join] Papawy has joined the server (0:127.0.0.1)
+Console input: gmx
+[01:01:09]  
+[01:01:09]  
+[01:01:09]  
+[01:01:09]  ======================================= 
+[01:01:09]  |                                     | 
+[01:01:09]  |        YSI version 3.09.0684        | 
+[01:01:09]  |        By Alex "Y_Less" Cole        | 
+[01:01:09]  |                                     | 
+[01:01:09]  ======================================= 
+[01:01:09]  
+[01:01:09]  
+[01:01:09]  
+[01:01:09] Life in Los Santos Role Play
+
+[01:01:09] 		Re-edited by Papawy
+
+[01:01:09]  - Current Version : INDEV
+
+[01:01:09] Number of vehicle models: 0
+[01:04:48] RCON (In-Game): Player #0 (Papawy) has logged in.
+[01:04:55] RCON (In-Game): Player [Papawy] sent command: unloadfs fsdebug
+[01:04:55] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[01:04:55]   * -- SHUTDOWN       *
+  *********************
+
+[01:04:55]   Filterscript 'fsdebug.amx' unloaded.

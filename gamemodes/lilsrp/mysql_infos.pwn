@@ -18,5 +18,3 @@
 #if defined USE_MYSQL
 
 new MySQL_handle;
-
-#endif
