@@ -18,7 +18,7 @@ stock GetPlayerNameEx(playerid)
 stock SendClientMessageEx(playerid, colour, format[], va_args<>)
 {
     new
-        out[128]
+        out[145]
     ;
     va_format(out, sizeof(out), format, va_start<3>);
     SendClientMessage(playerid, colour, out);
@@ -27,7 +27,7 @@ stock SendClientMessageEx(playerid, colour, format[], va_args<>)
 stock SendClientMessageToAllEx(colour, format[], va_args<>)
 {
     new
-        out[128]
+        out[145]
     ;
     va_format(out, sizeof(out), format, va_start<2>);
     SendClientMessageToAll(colour, out);
