@@ -20,9 +20,12 @@
 
 #include <YSI4\YSI_Server\y_colours>
 
-#if defined USE_TS3_CONNECTOR
+#include <easyDialog>
 
+/*
+#if defined USE_TS3_CONNECTOR
 #endif
+*/
 
 #if defined USE_MYSQL
 	#include <a_mysql>
@@ -30,7 +33,7 @@
 
 // ----------------------------------------------------------------------------
 
-#define LILSRP_VERSION					"INDEV"
+#define PAPAWYRP_VERSION				"INDEV"
 
 #define MAX_PLAYER_PASS					32
 

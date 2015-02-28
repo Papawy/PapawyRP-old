@@ -32,11 +32,17 @@
 
 #include "papawyrp\core.pwn"
 
+new str1[32] = "Bla bla bla bla";
+new int = 145;
+new Float:float1 = 45.0;
+
 main()
 {
+	printf("%d %d %d", tagof(str1), tagof(int), tagof(float1));
+	printf("%d %d %d", sizeof(str1), sizeof(int), sizeof(float1));
 	print("Papawy RolePlay\r\n");
 	print("-------------------------------------------\r\n");
 	print(" - originally made by Papawy\r\n");
-	print(" - Current Version : "LILSRP_VERSION"\r\n");
+	print(" - Current Version : "PAPAWYRP_VERSION"\r\n");
 
 }
