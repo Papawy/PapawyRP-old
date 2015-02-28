@@ -20,47 +20,42 @@
 			}
 		},
 		{
-			"contents": "#if !defined COMMANDS_TCHAT_INCLUDED\n	#define COMMANDS_TCHAT_INCLUDED\n#endif\n\n// ----------------------------------------------------------------------------\n\n#include \"core.pwn\"\n\n// ----------------------------------------------------------------------------\n\nYCMD:me(playerid, params[], help)\n{\n	if(help)\n	{\n		new str[128];\n		format(str, sizeof (str), HELP_HEADER \"/%s [action]\\\" : permet de décrire une action dans le tchat.\", Command_GetDisplayNamed(\"me\", playerid));\n        SendClientMessage(playerid, -1, str);\n	}\n	else\n	{\n		if(isnull(params))\n		{\n			Command_ReProcess(playerid, \"me\", true);\n		}\n		else\n		{\n\n		}\n	}\n	return 1;\n}",
-			"file": "gamemodes/papawyrp/commands/commands_tchat.pwn",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 634,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "gamemodes/papawyrp/utils/utils_colors.pwn",
-			"settings":
-			{
-				"buffer_size": 511,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "#if !defined COMMANDS_GENERALS_INCLUDED\n	#define COMMANDS_GENERALS_INCLUDED\n#endif\n\n// ----------------------------------------------------------------------------\n\n#include <YSI\\y_hooks>\n\n// ----------------------------------------------------------------------------\n\n#include \"core.pwn\"\n\n// ----------------------------------------------------------------------------\n\nhook OnGameModeInit()\n{\n	Command_AddAltNamed(\"help\", \"aide\");\n}\n\nhook OnPlayerConnect(playerid)\n{\n	Command_SetPlayerNamed(\"help\", playerid, false);\n	Command_SetPlayerNamed(\"aide\", playerid, true);\n\n	return 1;\n}\n\n// ----------------------------------------------------------------------------\n\nYCMD:help(playerid, params[], help)\n{\n	if(help)\n	{\n		SendClientMessage(playerid, -1, HELP_HEADER \" Affiche l'aide relative à une commande.\");\n	}\n	else\n	{\n		if (isnull(params))\n        {\n            new\n                str[128];\n            SendClientMessage(playerid, COLOR_HELP, \"|-----------------------------------------------------------------------------------------------|\");\n            SendClientMessage(playerid, -1, HELP_HEADER \"Bienvenue dans l'aide !\");\n            format(str, sizeof (str), HELP_HEADER \"Tapez \\\"/%s [commande]\\\" pour avoir plus d'aide par rapport à cette commande !\", Command_GetDisplayNamed(\"aide\", playerid));\n            SendClientMessage(playerid, -1, str);\n			SendClientMessage(playerid, -1, HELP_HEADER \"Tapez \\\"/aide commandes\\\" pour avoir le nom de toute les commandes !\");\n			SendClientMessage(playerid, COLOR_HELP, \"|-----------------------------------------------------------------------------------------------|\");\n        }\n        else if(strcmp(params, \"commandes\", true) == 0)\n        {\n            new count = Command_GetPlayerCommandCount(playerid);\n            SendClientMessage(playerid, COLOR_HELP, \"|-----------------------------------------------------------------------------------------------|\");\n            SendClientMessage(playerid, -1, HELP_HEADER \"Liste de toutes les commandes du serveur :\");\n            new o = 0;\n            new tmpMsg[128];\n	        for (new i = 0; i != count; ++i)\n	        {\n		            if(o == 0)\n					{\n		            	strcat(tmpMsg, HELP_HEADER );\n					}\n		            strcat(tmpMsg, \" - /\"); strcat(tmpMsg, Command_GetNext(i, playerid));\n		            o ++;\n		            if(o == 7)\n		            {\n		            	SendClientMessage(playerid, COLOR_HELP, tmpMsg);\n		            	strdel(tmpMsg, 0, sizeof(tmpMsg));\n						o = 0;\n					}\n	        }\n	        if(o != 7 && o != 0)\n	        {\n	        	SendClientMessage(playerid, COLOR_HELP, tmpMsg);\n	        }\n\n	        SendClientMessage(playerid, COLOR_HELP, \"|-----------------------------------------------------------------------------------------------|\");\n		}\n        else\n        {\n            Command_ReProcess(playerid, params, true);\n        }\n	}\n	return 1;\n}",
-			"file": "gamemodes/papawyrp/commands/commands_generals.pwn",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 2869,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "gamemodes/papawyrp/core.pwn",
 			"settings":
 			{
-				"buffer_size": 948,
+				"buffer_size": 1150,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gamemodes/papawyrp/commands/commands_generals.pwn",
+			"settings":
+			{
+				"buffer_size": 3063,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gamemodes/papawyrp/commands/commands_tchat.pwn",
+			"settings":
+			{
+				"buffer_size": 3187,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gamemodes/papawyrp/commands/commands_config.pwn",
+			"settings":
+			{
+				"buffer_size": 1224,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gamemodes/papawyrp/utils/utils_functions.pwn",
+			"settings":
+			{
+				"buffer_size": 796,
 				"line_ending": "Windows"
 			}
 		},
@@ -123,10 +118,15 @@
 	[
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp"
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils"
 	],
 	"file_history":
 	[
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils/utils_sfmsg.pwn",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/server/server_infos.pwn",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/pawno/include/YSI/y_colours.inc",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils/utils_no_loop.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/commands_tchat.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/old_versions/Samp 0.3z/Samp 0.3z RC2/gamemodes/TestGM.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/LifeInLosSantosRP/gamemodes/lilsrp/players_infos.pwn",
@@ -186,7 +186,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -202,14 +202,70 @@
 						"selection":
 						[
 							[
-								516,
-								516
+								639,
+								639
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "gamemodes/papawyrp/core.pwn",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								764,
+								764
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "gamemodes/papawyrp/commands/commands_generals.pwn",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1398,
+								1398
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -219,20 +275,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 3,
 					"file": "gamemodes/papawyrp/commands/commands_tchat.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 634,
+						"buffer_size": 3187,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								613,
-								613
+								2227,
+								2227
 							]
 						],
 						"settings":
@@ -248,48 +304,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
+					"file": "gamemodes/papawyrp/commands/commands_config.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1224,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"default_dir": "D:\\Program Files (x86)\\informatique\\SERVEUR SAMP\\PapawyRP\\gamemodes\\papawyrp\\utils",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "gamemodes/papawyrp/utils/utils_colors.pwn",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 511,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								802,
+								802
 							]
 						],
 						"settings":
@@ -300,24 +328,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "gamemodes/papawyrp/commands/commands_generals.pwn",
+					"buffer": 5,
+					"file": "gamemodes/papawyrp/utils/utils_functions.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2869,
+						"buffer_size": 796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								289,
-								289
+								412,
+								431
 							]
 						],
 						"settings":
@@ -329,34 +357,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "gamemodes/papawyrp/core.pwn",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 948,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								656,
-								656
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -372,8 +372,8 @@
 						"selection":
 						[
 							[
-								130,
-								130
+								174,
+								174
 							]
 						],
 						"settings":
@@ -423,7 +423,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 161.0
 	},
 	"output.find_results":
 	{
