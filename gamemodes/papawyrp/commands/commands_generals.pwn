@@ -38,7 +38,7 @@ YCMD:help(playerid, params[], help)
 		if (isnull(params))
         {
             new
-                str[128];
+                str[NORMAL_STR];
             SendClientMessage(playerid, COLOR_HELP, "|-----------------------------------------------------------------------------------------------|");
             SendClientMessage(playerid, -1, HELP_HEADER "Bienvenue dans l'aide !");
             format(str, sizeof (str), HELP_HEADER "Tapez \"/%s [commande]\" pour avoir plus d'aide par rapport à cette commande !", Command_GetDisplayNamed("aide", playerid));
@@ -53,7 +53,7 @@ YCMD:help(playerid, params[], help)
             SendClientMessage(playerid, COLOR_HELP, "|-----------------------------------------------------------------------------------------------|");
             SendClientMessage(playerid, -1, HELP_HEADER "Liste de toutes les commandes du serveur :");
             new o = 0;
-            new tmpMsg[128];
+            new tmpMsg[NORMAL_STR];
 	        for (new i = 0; i != count; ++i)
 	        {
 		            if(o == 0)

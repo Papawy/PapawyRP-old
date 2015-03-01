@@ -7,54 +7,48 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[00:23:43] 
-[00:23:43] Server Plugins
-[00:23:43] --------------
-[00:23:43]  Loaded 0 plugins.
+[03:01:03] 
+[03:01:03] Server Plugins
+[03:01:03] --------------
+[03:01:03]  Loaded 0 plugins.
 
-[00:23:43] 
-[00:23:43] Filterscripts
-[00:23:43] ---------------
-[00:23:43]   Loading filterscript 'vspawner.amx'...
-[00:23:43] 
+[03:01:03] 
+[03:01:03] Filterscripts
+[03:01:03] ---------------
+[03:01:03]   Loading filterscript 'vspawner.amx'...
+[03:01:03] 
 --Admin Vehicle Spawner Loaded
 
-[00:23:43]   Loading filterscript 'fsdebug.amx'...
-[00:23:43] 
+[03:01:03]   Loading filterscript 'fsdebug.amx'...
+[03:01:03] 
   *********************
   * SA:MP DEBUG 0.2   *
-[00:23:43]   * By Simon Campbell *
+[03:01:03]   * By Simon Campbell *
   *********************
-[00:23:43]   * Version: 0.5d      *
+[03:01:03]   * Version: 0.5d      *
   *********************
-[00:23:43]   * -- LOADED         *
+[03:01:03]   * -- LOADED         *
   *********************
 
-[00:23:43]   Loaded 2 filterscripts.
+[03:01:03]   Loaded 2 filterscripts.
 
-[00:23:43]  
-[00:23:43]  
-[00:23:43]  
-[00:23:43]  ======================================= 
-[00:23:43]  |                                     | 
-[00:23:43]  |        YSI version 4.00.0001        | 
-[00:23:43]  |        By Alex "Y_Less" Cole        | 
-[00:23:43]  |                                     | 
-[00:23:43]  ======================================= 
-[00:23:43]  
-[00:23:43] Papawy RolePlay
-
-[00:23:43] -------------------------------------------
-
-[00:23:43]  - originally made by Papawy
-
-[00:23:43]  - Current Version : INDEV
-
-[00:23:43] Number of vehicle models: 0
-[00:23:54] Incoming connection: 127.0.0.1:64472
-[00:23:54] [join] Papawy has joined the server (0:127.0.0.1)
-[00:24:02] test 1
-[00:24:02] test 2
+[03:01:03]  
+[03:01:03]  
+[03:01:03]  
+[03:01:03]  ======================================= 
+[03:01:03]  |                                     | 
+[03:01:03]  |        YSI version 4.00.0001        | 
+[03:01:03]  |        By Alex "Y_Less" Cole        | 
+[03:01:03]  |                                     | 
+[03:01:03]  ======================================= 
+[03:01:03]  
+[03:01:03] Server name : 
+[03:01:03] hostname 
+[03:01:03] hostname = "Papawy Role Play"  (string)
+[03:01:03] mapname 
+[03:01:03] mapname = "San Andreas"  (string)
+[03:01:03] weburl 
+[03:01:03] weburl = "www.sa-mp.com"  (string)
 
 ----------
 Loaded log file: "server_log.txt".
@@ -64,59 +58,48 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[00:50:17] 
-[00:50:17] Server Plugins
-[00:50:17] --------------
-[00:50:17]  Loaded 0 plugins.
+[03:04:48] 
+[03:04:48] Server Plugins
+[03:04:48] --------------
+[03:04:48]  Loaded 0 plugins.
 
-[00:50:17] 
-[00:50:17] Filterscripts
-[00:50:17] ---------------
-[00:50:17]   Loading filterscript 'vspawner.amx'...
-[00:50:17] 
+[03:04:48] 
+[03:04:48] Filterscripts
+[03:04:48] ---------------
+[03:04:48]   Loading filterscript 'vspawner.amx'...
+[03:04:48] 
 --Admin Vehicle Spawner Loaded
 
-[00:50:17]   Loading filterscript 'fsdebug.amx'...
-[00:50:17] 
+[03:04:48]   Loading filterscript 'fsdebug.amx'...
+[03:04:48] 
   *********************
   * SA:MP DEBUG 0.2   *
-[00:50:17]   * By Simon Campbell *
+[03:04:48]   * By Simon Campbell *
   *********************
-[00:50:17]   * Version: 0.5d      *
+[03:04:48]   * Version: 0.5d      *
   *********************
-[00:50:17]   * -- LOADED         *
+[03:04:48]   * -- LOADED         *
   *********************
 
-[00:50:17]   Loaded 2 filterscripts.
+[03:04:48]   Loaded 2 filterscripts.
 
-[00:50:17]  
-[00:50:17]  
-[00:50:17]  
-[00:50:17]  ======================================= 
-[00:50:17]  |                                     | 
-[00:50:17]  |        YSI version 4.00.0001        | 
-[00:50:17]  |        By Alex "Y_Less" Cole        | 
-[00:50:17]  |                                     | 
-[00:50:17]  ======================================= 
-[00:50:17]  
-[00:50:17] Papawy RolePlay
-
-[00:50:17] -------------------------------------------
-
-[00:50:17]  - originally made by Papawy
-
-[00:50:17]  - Current Version : INDEV
-
-[00:50:17] Number of vehicle models: 0
-[00:50:24] Incoming connection: 127.0.0.1:50001
-[00:50:24] [join] Papawy has joined the server (0:127.0.0.1)
-[00:50:27] test 1
-[00:50:27] test 2
-[00:50:27] test 3
-[00:50:30] test 1
-[00:50:30] test 2
-[00:50:30] test 3
-[00:50:38] [part] Papawy has left the server (0:1)
+[03:04:48]  
+[03:04:48]  
+[03:04:48]  
+[03:04:48]  ======================================= 
+[03:04:48]  |                                     | 
+[03:04:48]  |        YSI version 4.00.0001        | 
+[03:04:48]  |        By Alex "Y_Less" Cole        | 
+[03:04:48]  |                                     | 
+[03:04:48]  ======================================= 
+[03:04:48]  
+[03:04:48] Server name : 
+[03:04:48] hostname 
+[03:04:48] hostname = "Papawy Role Play"  (string)
+[03:04:48] mapname 
+[03:04:48] mapname = "San Andreas"  (string)
+[03:04:48] weburl 
+[03:04:48] weburl = "www.sa-mp.com"  (string)
 
 ----------
 Loaded log file: "server_log.txt".
@@ -126,56 +109,54 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[00:51:37] 
-[00:51:37] Server Plugins
-[00:51:37] --------------
-[00:51:37]  Loaded 0 plugins.
+[03:05:31] 
+[03:05:31] Server Plugins
+[03:05:31] --------------
+[03:05:31]  Loaded 0 plugins.
 
-[00:51:37] 
-[00:51:37] Filterscripts
-[00:51:37] ---------------
-[00:51:37]   Loading filterscript 'vspawner.amx'...
-[00:51:37] 
+[03:05:31] 
+[03:05:31] Filterscripts
+[03:05:31] ---------------
+[03:05:31]   Loading filterscript 'vspawner.amx'...
+[03:05:31] 
 --Admin Vehicle Spawner Loaded
 
-[00:51:37]   Loading filterscript 'fsdebug.amx'...
-[00:51:37] 
+[03:05:31]   Loading filterscript 'fsdebug.amx'...
+[03:05:31] 
   *********************
   * SA:MP DEBUG 0.2   *
-[00:51:37]   * By Simon Campbell *
+[03:05:31]   * By Simon Campbell *
   *********************
-[00:51:37]   * Version: 0.5d      *
+[03:05:31]   * Version: 0.5d      *
   *********************
-[00:51:37]   * -- LOADED         *
+[03:05:31]   * -- LOADED         *
   *********************
 
-[00:51:37]   Loaded 2 filterscripts.
+[03:05:31]   Loaded 2 filterscripts.
 
-[00:51:37]  
-[00:51:37]  
-[00:51:37]  
-[00:51:37]  ======================================= 
-[00:51:37]  |                                     | 
-[00:51:37]  |        YSI version 4.00.0001        | 
-[00:51:37]  |        By Alex "Y_Less" Cole        | 
-[00:51:37]  |                                     | 
-[00:51:37]  ======================================= 
-[00:51:37]  
-[00:51:37] Papawy RolePlay
+[03:05:31]  
+[03:05:31]  
+[03:05:31]  
+[03:05:31]  ======================================= 
+[03:05:31]  |                                     | 
+[03:05:31]  |        YSI version 4.00.0001        | 
+[03:05:31]  |        By Alex "Y_Less" Cole        | 
+[03:05:31]  |                                     | 
+[03:05:31]  ======================================= 
+[03:05:31]  
+[03:05:31] Server name : PapawyRP
+[03:05:31] hostname PapawyRP
+[03:05:31] mapname Mapping-pong
+[03:05:31] weburl http://www.404.com
+[03:05:31] Papawy RolePlay
 
-[00:51:37] -------------------------------------------
+[03:05:31] -------------------------------------------
 
-[00:51:37]  - originally made by Papawy
+[03:05:31]  - originally made by Papawy
 
-[00:51:37]  - Current Version : INDEV
+[03:05:31]  - Current Version : INDEV
 
-[00:51:37] Number of vehicle models: 0
-[00:52:48] Incoming connection: 127.0.0.1:50790
-[00:52:48] [join] Papawy has joined the server (0:127.0.0.1)
-[00:52:49] test 1
-[00:52:49] test 2
-[00:52:49] test 3
-[00:52:52] [part] Papawy has left the server (0:1)
+[03:05:31] Number of vehicle models: 0
 
 ----------
 Loaded log file: "server_log.txt".
@@ -185,51 +166,58 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[12:55:50] 
-[12:55:50] Server Plugins
-[12:55:50] --------------
-[12:55:50]  Loaded 0 plugins.
+[03:06:52] 
+[03:06:52] Server Plugins
+[03:06:52] --------------
+[03:06:52]  Loaded 0 plugins.
 
-[12:55:50] 
-[12:55:50] Filterscripts
-[12:55:50] ---------------
-[12:55:50]   Loading filterscript 'vspawner.amx'...
-[12:55:50] 
+[03:06:52] 
+[03:06:52] Filterscripts
+[03:06:52] ---------------
+[03:06:52]   Loading filterscript 'vspawner.amx'...
+[03:06:52] 
 --Admin Vehicle Spawner Loaded
 
-[12:55:50]   Loading filterscript 'fsdebug.amx'...
-[12:55:50] 
+[03:06:52]   Loading filterscript 'fsdebug.amx'...
+[03:06:52] 
   *********************
   * SA:MP DEBUG 0.2   *
-[12:55:50]   * By Simon Campbell *
+[03:06:52]   * By Simon Campbell *
   *********************
-[12:55:50]   * Version: 0.5d      *
+[03:06:52]   * Version: 0.5d      *
   *********************
-[12:55:50]   * -- LOADED         *
+[03:06:52]   * -- LOADED         *
   *********************
 
-[12:55:50]   Loaded 2 filterscripts.
+[03:06:52]   Loaded 2 filterscripts.
 
-[12:55:50]  
-[12:55:50]  
-[12:55:50]  
-[12:55:50]  ======================================= 
-[12:55:50]  |                                     | 
-[12:55:50]  |        YSI version 4.00.0001        | 
-[12:55:50]  |        By Alex "Y_Less" Cole        | 
-[12:55:50]  |                                     | 
-[12:55:50]  ======================================= 
-[12:55:50]  
-[12:55:50] sizeof : 500
-[12:55:50] Papawy RolePlay
+[03:06:52]  
+[03:06:52]  
+[03:06:52]  
+[03:06:52]  ======================================= 
+[03:06:52]  |                                     | 
+[03:06:52]  |        YSI version 4.00.0001        | 
+[03:06:52]  |        By Alex "Y_Less" Cole        | 
+[03:06:52]  |                                     | 
+[03:06:52]  ======================================= 
+[03:06:52]  
+[03:06:52] Server name : PapawyRP
+[03:06:52] hostname PapawyRP
+[03:06:52] mapname Mapping-pong
+[03:06:52] weburl http://www.404.com
+[03:06:52] '------------------------------------------
+
 
-[12:55:50] -------------------------------------------
+[03:06:52] Papawy RolePlay
+
 
-[12:55:50]  - originally made by Papawy
+[03:06:52] -------------------------------------------
 
-[12:55:50]  - Current Version : INDEV
+[03:06:52]  - originally made by Papawy
 
-[12:55:50] Number of vehicle models: 0
+[03:06:52]  - Current Version : INDEV
+
+[03:06:52] Number of vehicle models: 0
 
 ----------
 Loaded log file: "server_log.txt".
@@ -239,51 +227,58 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[12:56:14] 
-[12:56:14] Server Plugins
-[12:56:14] --------------
-[12:56:14]  Loaded 0 plugins.
+[03:07:24] 
+[03:07:24] Server Plugins
+[03:07:24] --------------
+[03:07:24]  Loaded 0 plugins.
 
-[12:56:14] 
-[12:56:14] Filterscripts
-[12:56:14] ---------------
-[12:56:14]   Loading filterscript 'vspawner.amx'...
-[12:56:14] 
+[03:07:24] 
+[03:07:24] Filterscripts
+[03:07:24] ---------------
+[03:07:24]   Loading filterscript 'vspawner.amx'...
+[03:07:24] 
 --Admin Vehicle Spawner Loaded
 
-[12:56:14]   Loading filterscript 'fsdebug.amx'...
-[12:56:14] 
+[03:07:24]   Loading filterscript 'fsdebug.amx'...
+[03:07:24] 
   *********************
   * SA:MP DEBUG 0.2   *
-[12:56:14]   * By Simon Campbell *
+[03:07:24]   * By Simon Campbell *
   *********************
-[12:56:14]   * Version: 0.5d      *
+[03:07:24]   * Version: 0.5d      *
   *********************
-[12:56:14]   * -- LOADED         *
+[03:07:24]   * -- LOADED         *
   *********************
 
-[12:56:14]   Loaded 2 filterscripts.
+[03:07:24]   Loaded 2 filterscripts.
 
-[12:56:14]  
-[12:56:14]  
-[12:56:14]  
-[12:56:14]  ======================================= 
-[12:56:14]  |                                     | 
-[12:56:14]  |        YSI version 4.00.0001        | 
-[12:56:14]  |        By Alex "Y_Less" Cole        | 
-[12:56:14]  |                                     | 
-[12:56:14]  ======================================= 
-[12:56:14]  
-[12:56:14] sizeof : 66
-[12:56:14] Papawy RolePlay
+[03:07:24]  
+[03:07:24]  
+[03:07:24]  
+[03:07:24]  ======================================= 
+[03:07:24]  |                                     | 
+[03:07:24]  |        YSI version 4.00.0001        | 
+[03:07:24]  |        By Alex "Y_Less" Cole        | 
+[03:07:24]  |                                     | 
+[03:07:24]  ======================================= 
+[03:07:24]  
+[03:07:24] Server name : PapawyRP
+[03:07:24] hostname PapawyRP
+[03:07:24] mapname Mapping-pong
+[03:07:24] weburl http://www.404.com
+[03:07:24] -------------------------------------------
+
 
-[12:56:14] -------------------------------------------
+[03:07:24] Papawy RolePlay
+
 
-[12:56:14]  - originally made by Papawy
+[03:07:24] -------------------------------------------
 
-[12:56:14]  - Current Version : INDEV
+[03:07:24]  - originally made by Papawy
 
-[12:56:14] Number of vehicle models: 0
+[03:07:24]  - Current Version : INDEV
+
+[03:07:24] Number of vehicle models: 0
 
 ----------
 Loaded log file: "server_log.txt".
@@ -293,51 +288,59 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[13:34:21] 
-[13:34:21] Server Plugins
-[13:34:21] --------------
-[13:34:21]  Loaded 0 plugins.
+[03:09:57] 
+[03:09:57] Server Plugins
+[03:09:57] --------------
+[03:09:57]  Loaded 0 plugins.
 
-[13:34:21] 
-[13:34:21] Filterscripts
-[13:34:21] ---------------
-[13:34:21]   Loading filterscript 'vspawner.amx'...
-[13:34:21] 
+[03:09:57] 
+[03:09:57] Filterscripts
+[03:09:57] ---------------
+[03:09:57]   Loading filterscript 'vspawner.amx'...
+[03:09:57] 
 --Admin Vehicle Spawner Loaded
 
-[13:34:21]   Loading filterscript 'fsdebug.amx'...
-[13:34:21] 
+[03:09:57]   Loading filterscript 'fsdebug.amx'...
+[03:09:57] 
   *********************
   * SA:MP DEBUG 0.2   *
-[13:34:21]   * By Simon Campbell *
+[03:09:57]   * By Simon Campbell *
   *********************
-[13:34:21]   * Version: 0.5d      *
+[03:09:57]   * Version: 0.5d      *
   *********************
-[13:34:21]   * -- LOADED         *
+[03:09:57]   * -- LOADED         *
   *********************
 
-[13:34:21]   Loaded 2 filterscripts.
+[03:09:57]   Loaded 2 filterscripts.
 
-[13:34:21]  
-[13:34:21]  
-[13:34:21]  
-[13:34:21]  ======================================= 
-[13:34:21]  |                                     | 
-[13:34:21]  |        YSI version 4.00.0001        | 
-[13:34:21]  |        By Alex "Y_Less" Cole        | 
-[13:34:21]  |                                     | 
-[13:34:21]  ======================================= 
-[13:34:21]  
-[13:34:21] -- -- -1073741820
-[13:34:21] Papawy RolePlay
+[03:09:57]  
+[03:09:57]  
+[03:09:57]  
+[03:09:57]  ======================================= 
+[03:09:57]  |                                     | 
+[03:09:57]  |        YSI version 4.00.0001        | 
+[03:09:57]  |        By Alex "Y_Less" Cole        | 
+[03:09:57]  |                                     | 
+[03:09:57]  ======================================= 
+[03:09:57]  
+[03:09:57] Server name : PapawyRP
+[03:09:57] hostname PapawyRP
+[03:09:57] mapname Mapping-pong
+[03:09:57] weburl http://www.404.com
+[03:09:57] 
+-------------------------------------------
 
-[13:34:21] -------------------------------------------
+[03:09:57] 
+Papawy RolePlay
 
-[13:34:21]  - originally made by Papawy
+[03:09:57] 
+-------------------------------------------
 
-[13:34:21]  - Current Version : INDEV
+[03:09:57]  - originally made by Papawy
 
-[13:34:21] Number of vehicle models: 0
+[03:09:57]  - Current Version : INDEV
+
+[03:09:57] Number of vehicle models: 0
 
 ----------
 Loaded log file: "server_log.txt".
@@ -347,49 +350,116 @@ SA-MP Dedicated Server
 ----------------------
 v0.3z-R4, (C)2005-2014 SA-MP Team
 
-[13:39:50] 
-[13:39:50] Server Plugins
-[13:39:50] --------------
-[13:39:50]  Loaded 0 plugins.
+[03:11:40] 
+[03:11:40] Server Plugins
+[03:11:40] --------------
+[03:11:40]  Loaded 0 plugins.
 
-[13:39:50] 
-[13:39:50] Filterscripts
-[13:39:50] ---------------
-[13:39:50]   Loading filterscript 'vspawner.amx'...
-[13:39:50] 
+[03:11:40] 
+[03:11:40] Filterscripts
+[03:11:40] ---------------
+[03:11:40]   Loading filterscript 'vspawner.amx'...
+[03:11:40] 
 --Admin Vehicle Spawner Loaded
 
-[13:39:50]   Loading filterscript 'fsdebug.amx'...
-[13:39:50] 
+[03:11:40]   Loading filterscript 'fsdebug.amx'...
+[03:11:40] 
   *********************
   * SA:MP DEBUG 0.2   *
-[13:39:50]   * By Simon Campbell *
+[03:11:40]   * By Simon Campbell *
   *********************
-[13:39:50]   * Version: 0.5d      *
+[03:11:40]   * Version: 0.5d      *
   *********************
-[13:39:50]   * -- LOADED         *
+[03:11:40]   * -- LOADED         *
   *********************
 
-[13:39:50]   Loaded 2 filterscripts.
+[03:11:40]   Loaded 2 filterscripts.
 
-[13:39:50]  
-[13:39:50]  
-[13:39:50]  
-[13:39:50]  ======================================= 
-[13:39:50]  |                                     | 
-[13:39:50]  |        YSI version 4.00.0001        | 
-[13:39:50]  |        By Alex "Y_Less" Cole        | 
-[13:39:50]  |                                     | 
-[13:39:50]  ======================================= 
-[13:39:50]  
-[13:39:50] -- -- -1073741820
-[13:39:50] 32 1 1
-[13:39:50] Papawy RolePlay
+[03:11:40]  
+[03:11:40]  
+[03:11:40]  
+[03:11:40]  ======================================= 
+[03:11:40]  |                                     | 
+[03:11:40]  |        YSI version 4.00.0001        | 
+[03:11:40]  |        By Alex "Y_Less" Cole        | 
+[03:11:40]  |                                     | 
+[03:11:40]  ======================================= 
+[03:11:40]  
+[03:11:40] + Server configuration file loaded.
+[03:11:40] + Server data file loaded.
+[03:11:40] mapname Mapping-pong
+[03:11:40] weburl http://www.404.com
+[03:11:40] 
+-------------------------------------------
 
-[13:39:50] -------------------------------------------
+[03:11:40] 
+Papawy RolePlay
 
-[13:39:50]  - originally made by Papawy
+[03:11:40] 
+-------------------------------------------
 
-[13:39:50]  - Current Version : INDEV
+[03:11:40]  - originally made by Papawy
 
-[13:39:50] Number of vehicle models: 0
+[03:11:40]  - Current Version : INDEV
+
+[03:11:40] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[03:12:08] 
+[03:12:08] Server Plugins
+[03:12:08] --------------
+[03:12:08]  Loaded 0 plugins.
+
+[03:12:08] 
+[03:12:08] Filterscripts
+[03:12:08] ---------------
+[03:12:08]   Loading filterscript 'vspawner.amx'...
+[03:12:08] 
+--Admin Vehicle Spawner Loaded
+
+[03:12:08]   Loading filterscript 'fsdebug.amx'...
+[03:12:08] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[03:12:08]   * By Simon Campbell *
+  *********************
+[03:12:08]   * Version: 0.5d      *
+  *********************
+[03:12:08]   * -- LOADED         *
+  *********************
+
+[03:12:08]   Loaded 2 filterscripts.
+
+[03:12:08]  
+[03:12:08]  
+[03:12:08]  
+[03:12:08]  ======================================= 
+[03:12:08]  |                                     | 
+[03:12:08]  |        YSI version 4.00.0001        | 
+[03:12:08]  |        By Alex "Y_Less" Cole        | 
+[03:12:08]  |                                     | 
+[03:12:08]  ======================================= 
+[03:12:08]  
+[03:12:09] + Server configuration file loaded.
+[03:12:09] + Server data file loaded.
+[03:12:09] 
+-------------------------------------------
+
+[03:12:09] 
+Papawy RolePlay
+
+[03:12:09] 
+-------------------------------------------
+
+[03:12:09]  - originally made by Papawy
+
+[03:12:09]  - Current Version : INDEV
+
+[03:12:09] Number of vehicle models: 0
