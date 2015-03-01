@@ -15,7 +15,7 @@
 
 #include <YSI4\YSI_Visual\y_commands>
 #include <YSI4\YSI_Core\y_master>
-
+#include <YSI4\YSI_Storage\y_ini>
 #include <YSI4\YSI_Data\y_iterate>
 
 #include <YSI4\YSI_Server\y_colours>
@@ -35,7 +35,14 @@
 
 #define PAPAWYRP_VERSION				"INDEV"
 
-#define MAX_PLAYER_PASS					32
+#define VERY_VERY_SHORT_STR				16
+#define VERY_SHORT_STR					32
+#define SHORT_STR 						64
+#define NORMAL_STR						128
+#define LONG_STR						256
+#define VERY_LONG_STR					512
+
+#define TCHAT_MAX_STR					145
 
 // ----------- UTILS
 
@@ -56,8 +63,11 @@
 #include "player\players_infos.pwn"
 #include "player\players_vars.pwn"
 
+#include "player\players_registration.pwn"
+
 // ----------- COMMANDS
 
 #include "commands\commands_config.pwn"
+#include "commands\commands_functions.pwn"
 #include "commands\commands_generals.pwn"
 #include "commands\commands_tchat.pwn"
