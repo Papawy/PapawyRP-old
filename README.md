@@ -5,7 +5,7 @@ Originaly made by Papawy.
 
 ## Gamemode architecture :
 
-				+ core < include all necessary files
+		+ core < include all necessary files
 		
 		- Utils
 			+ utils_functions < usefull functions (SendClientMessageEx, GetPlayerNameEx, etc.)
@@ -36,3 +36,4 @@ To compile this gamemode you need this includes :
 + For MySQL use : BlueG plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
 
    And put define "USE_MYSQL" on the top of the main file (papawyrp.pwn)
++ Thanks to DracoBlue for his "hash" functions (included in utils_functions).
