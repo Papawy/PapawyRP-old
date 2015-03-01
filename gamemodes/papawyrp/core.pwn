@@ -64,6 +64,7 @@
 #include "player\players_vars.pwn"
 
 #include "player\players_registration.pwn"
+#include "player\players_connection.pwn"
 
 // ----------- COMMANDS
 

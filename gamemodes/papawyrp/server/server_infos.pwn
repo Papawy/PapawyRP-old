@@ -72,7 +72,7 @@ hook OnGameModeInit()
 		strins(sInfos[sName] 			, "PapawyRP", 0);
 		strins(sInfos[sWebsite]			, "http://www.404.com", 0);
 		strins(sInfos[sMap]				, "Mapping-pong", 0);
-		strins(sInfos[sMode]			, "Papawy RP V."PAPAWYRP_VERSION, 0);
+		strins(sInfos[sMode]			, "Papawy RP V"PAPAWYRP_VERSION, 0);
 
 		SaveServerData();
 
@@ -219,12 +219,14 @@ stock GetMaxPlayersRegistered()
 
 stock GetPlayerUniqueID(playerid)
 {
-	return db_hash(GetPlayerNameEx(playerid));
+	new pName[MAX_PLAYER_NAME+1];
+	GetPlayerName(playerid, pName, sizeof(pName));
+	return db_num_hash(pName);
 }
 
 stock GetPlayerDataPath(playerid)
 {
 	new str[VERY_SHORT_STR];
-	format(str, sizeof(str), "%s%i", sInfos[pDataPath], GetPlayerUniqueID(playerid));
+	format(str, sizeof(str), "%s%i.ini", sInfos[pDataPath], GetPlayerUniqueID(playerid));
 	return str;
 }

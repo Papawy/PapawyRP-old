@@ -39,7 +39,7 @@ stock IsPlayerRegistered(playerid)
 	#if defined USE_MYSQL
 
 	#else
-	if(!fexist(GetPlayerDataPath(playerid))
+	if(!fexist(GetPlayerDataPath(playerid)))
 	{
 		return false;
 	}

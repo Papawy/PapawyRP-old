@@ -42,5 +42,6 @@ main()
 	print("\r\n-------------------------------------------\r\n");
 	print(" - originally made by Papawy\r\n");
 	print(" - Current Version : "PAPAWYRP_VERSION"\r\n");
+	return 1;
 
 }

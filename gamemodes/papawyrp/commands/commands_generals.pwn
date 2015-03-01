@@ -15,6 +15,7 @@
 hook OnGameModeInit()
 {
 	Command_AddAltNamed("help", "aide");
+	return 1;
 }
 
 hook OnPlayerConnect(playerid)
