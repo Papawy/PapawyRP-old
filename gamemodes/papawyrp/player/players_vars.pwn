@@ -56,37 +56,40 @@ public LoadPlayerData(playerid)
 forward SavePlayerData(playerid);
 public SavePlayerData(playerid)
 {
-	#if defined USE_MYSQL
-
-	#else
-
-	new INI:pIni = INI_Open(GetPlayerDataPath(playerid));
-
-	INI_Close(pIni);
-
-	#endif
-	/*
-	for(new i; P_INFOS:i < P_INFOS; i++)
+	if(IsPlayerRegistered(playerid))
 	{
-		// Now we should do loading
-		if(tagof(pInfos[playerid][P_INFOS:i]) == tagof(Float:))
+		#if defined USE_MYSQL
+
+		#else
+
+		new INI:pIni = INI_Open(GetPlayerDataPath(playerid));
+
+		INI_Close(pIni);
+
+		#endif
+		/*
+		for(new i; P_INFOS:i < P_INFOS; i++)
 		{
-			// Float
-		}
-		else if(tagof(pInfos[playerid][P_INFOS:i]) == tagof(bool:))
-		{
-			// Bool
-		}
-		else
-		{
-			if(sizeof(pInfos[playerid][P_INFOS:i]) > 1)
+			// Now we should do loading
+			if(tagof(pInfos[playerid][P_INFOS:i]) == tagof(Float:))
 			{
-				// String
+				// Float
+			}
+			else if(tagof(pInfos[playerid][P_INFOS:i]) == tagof(bool:))
+			{
+				// Bool
 			}
 			else
 			{
-				// Int ?
+				if(sizeof(pInfos[playerid][P_INFOS:i]) > 1)
+				{
+					// String
+				}
+				else
+				{
+					// Int ?
+				}
 			}
-		}
-	}*/
+		}*/
+	}
 }

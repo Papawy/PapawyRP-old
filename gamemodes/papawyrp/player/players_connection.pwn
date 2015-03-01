@@ -14,7 +14,7 @@
 
 hook OnPlayerConnect(playerid)
 {
-	if(!IsPlayerRegistered(playerid))
+	if(!IsPlayerRegistered_hardCheck(playerid))
 	{
 		RegisterPlayer(playerid);
 		return 1;

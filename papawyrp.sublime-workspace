@@ -4,16 +4,16 @@
 		"selected_items":
 		[
 			[
+				"REGISTRATION_",
+				"REGISTRATION_PASSWORD"
+			],
+			[
 				"inscrit",
 				"inscription_msg"
 			],
 			[
 				"OnPlayerC",
 				"OnPlayerConnect"
-			],
-			[
-				"REGISTRATION_",
-				"REGISTRATION_BEGINING"
 			],
 			[
 				"SaveServer",
@@ -59,7 +59,7 @@
 			"file": "gamemodes/papawyrp/player/players_vars.pwn",
 			"settings":
 			{
-				"buffer_size": 1374,
+				"buffer_size": 1380,
 				"line_ending": "Windows"
 			}
 		},
@@ -67,7 +67,7 @@
 			"file": "gamemodes/papawyrp/player/players_infos.pwn",
 			"settings":
 			{
-				"buffer_size": 835,
+				"buffer_size": 1144,
 				"line_ending": "Windows"
 			}
 		},
@@ -75,7 +75,7 @@
 			"file": "gamemodes/papawyrp/player/players_connection.pwn",
 			"settings":
 			{
-				"buffer_size": 512,
+				"buffer_size": 522,
 				"line_ending": "Windows"
 			}
 		},
@@ -83,7 +83,7 @@
 			"file": "gamemodes/papawyrp/player/players_registration.pwn",
 			"settings":
 			{
-				"buffer_size": 2214,
+				"buffer_size": 4947,
 				"line_ending": "Windows"
 			}
 		},
@@ -202,7 +202,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -216,6 +216,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"INDIANRED1",
+			"	\n",
 			"OnPlayerConnect",
 			"Command_SetPlayerNamed",
 			"return 0;"
@@ -237,7 +239,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -253,8 +255,8 @@
 						"selection":
 						[
 							[
-								855,
-								855
+								583,
+								583
 							]
 						],
 						"settings":
@@ -266,7 +268,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -291,10 +293,10 @@
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 143.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -319,8 +321,8 @@
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 540.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -332,15 +334,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1374,
+						"buffer_size": 1380,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								939,
-								939
+								906,
+								906
 							]
 						],
 						"settings":
@@ -348,7 +350,7 @@
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -360,43 +362,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 835,
+						"buffer_size": 1144,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								612,
-								612
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "gamemodes/papawyrp/player/players_connection.pwn",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 512,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								512,
-								512
+								812,
+								840
 							]
 						],
 						"settings":
@@ -411,20 +385,48 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "gamemodes/papawyrp/player/players_registration.pwn",
+					"buffer": 5,
+					"file": "gamemodes/papawyrp/player/players_connection.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2214,
+						"buffer_size": 522,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1257,
-								1257
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "gamemodes/papawyrp/player/players_registration.pwn",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2339,
+								2339
 							]
 						],
 						"settings":
@@ -434,10 +436,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -513,7 +515,7 @@
 	"project": "papawyrp.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
