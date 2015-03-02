@@ -181,3 +181,450 @@ Papawy RolePlay
 [20:05:05] Incoming connection: 127.0.0.1:64916
 [20:05:05] [join] Papawy has joined the server (0:127.0.0.1)
 [20:05:42] [part] Papawy has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:32:44] 
+[22:32:44] Server Plugins
+[22:32:44] --------------
+[22:32:44]  Loading plugin: crashdetect
+[22:32:44]   CrashDetect v4.15.1 is OK.
+[22:32:44]   Loaded.
+[22:32:44]  Loading plugin: mysql
+[22:32:44]  >> plugin.mysql: R39-3 successfully loaded.
+[22:32:44]   Loaded.
+[22:32:44]  Loaded 2 plugins.
+
+[22:32:44] 
+[22:32:44] Filterscripts
+[22:32:44] ---------------
+[22:32:44]   Loading filterscript 'vspawner.amx'...
+[22:32:45] 
+--Admin Vehicle Spawner Loaded
+
+[22:32:45]   Loaded 1 filterscripts.
+
+[22:32:45]  
+[22:32:45]  
+[22:32:45]  
+[22:32:45]  ======================================= 
+[22:32:45]  |                                     | 
+[22:32:45]  |        YSI version 4.00.0001        | 
+[22:32:45]  |        By Alex "Y_Less" Cole        | 
+[22:32:45]  |                                     | 
+[22:32:45]  ======================================= 
+[22:32:45]  
+[22:32:45] + No server configuration file present. Creating one...
+[22:32:45] + Server configuration file created.
+[22:32:45] /!\ MySQL Infos unallocated ! Run MySQL_assistant GameMode !
+[22:32:45] /!\ Server Data SQL Table NOT DEFINED !!!
+[22:32:45] 
+-------------------------------------------
+
+[22:32:45] 
+Papawy RolePlay
+
+[22:32:45] 
+-------------------------------------------
+
+[22:32:45]  - originally made by Papawy
+
+[22:32:45]  - Current Version : INDEV
+
+[22:32:45] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:35:04] 
+[22:35:04] Server Plugins
+[22:35:04] --------------
+[22:35:04]  Loading plugin: crashdetect
+[22:35:04]   CrashDetect v4.15.1 is OK.
+[22:35:04]   Loaded.
+[22:35:04]  Loading plugin: mysql
+[22:35:04]  >> plugin.mysql: R39-3 successfully loaded.
+[22:35:04]   Loaded.
+[22:35:04]  Loaded 2 plugins.
+
+[22:35:04] 
+[22:35:04] Filterscripts
+[22:35:04] ---------------
+[22:35:04]   Loading filterscript 'vspawner.amx'...
+[22:35:04] 
+--Admin Vehicle Spawner Loaded
+
+[22:35:04]   Loaded 1 filterscripts.
+
+[22:35:04]  
+[22:35:04]  
+[22:35:04]  
+[22:35:04]  ======================================= 
+[22:35:04]  |                                     | 
+[22:35:04]  |        YSI version 4.00.0001        | 
+[22:35:04]  |        By Alex "Y_Less" Cole        | 
+[22:35:04]  |                                     | 
+[22:35:04]  ======================================= 
+[22:35:04]  
+[22:35:04] *** YSI Info: Invalid line in INI file "papawyrp_cfg.ini": TBL_PLAYER = 
+
+[22:35:04] + Server configuration file loaded.
+[22:35:05] 
+-------------------------------------------
+
+[22:35:05] 
+Papawy RolePlay
+
+[22:35:05] 
+-------------------------------------------
+
+[22:35:05]  - originally made by Papawy
+
+[22:35:05]  - Current Version : INDEV
+
+[22:35:05] Number of vehicle models: 0
+[22:35:05] + Server data not loaded : there is no data to load
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:35:32] 
+[22:35:32] Server Plugins
+[22:35:32] --------------
+[22:35:32]  Loading plugin: crashdetect
+[22:35:32]   CrashDetect v4.15.1 is OK.
+[22:35:32]   Loaded.
+[22:35:32]  Loading plugin: mysql
+[22:35:32]  >> plugin.mysql: R39-3 successfully loaded.
+[22:35:32]   Loaded.
+[22:35:32]  Loaded 2 plugins.
+
+[22:35:32] 
+[22:35:32] Filterscripts
+[22:35:32] ---------------
+[22:35:32]   Loading filterscript 'vspawner.amx'...
+[22:35:32] 
+--Admin Vehicle Spawner Loaded
+
+[22:35:32]   Loaded 1 filterscripts.
+
+[22:35:32]  
+[22:35:32]  
+[22:35:32]  
+[22:35:32]  ======================================= 
+[22:35:32]  |                                     | 
+[22:35:32]  |        YSI version 4.00.0001        | 
+[22:35:32]  |        By Alex "Y_Less" Cole        | 
+[22:35:32]  |                                     | 
+[22:35:32]  ======================================= 
+[22:35:32]  
+[22:35:32] + Server configuration file loaded.
+[22:35:32] 
+-------------------------------------------
+
+[22:35:32] 
+Papawy RolePlay
+
+[22:35:32] 
+-------------------------------------------
+
+[22:35:32]  - originally made by Papawy
+
+[22:35:32]  - Current Version : INDEV
+
+[22:35:32] Number of vehicle models: 0
+[22:35:32] + Server data not loaded : there is no data to load
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:38:28] 
+[22:38:28] Server Plugins
+[22:38:28] --------------
+[22:38:28]  Loading plugin: crashdetect
+[22:38:28]   CrashDetect v4.15.1 is OK.
+[22:38:28]   Loaded.
+[22:38:28]  Loading plugin: mysql
+[22:38:28]  >> plugin.mysql: R39-3 successfully loaded.
+[22:38:28]   Loaded.
+[22:38:28]  Loaded 2 plugins.
+
+[22:38:28] 
+[22:38:28] Filterscripts
+[22:38:28] ---------------
+[22:38:28]   Loading filterscript 'vspawner.amx'...
+[22:38:28] 
+--Admin Vehicle Spawner Loaded
+
+[22:38:28]   Loaded 1 filterscripts.
+
+[22:38:28]  
+[22:38:28]  
+[22:38:28]  
+[22:38:28]  ======================================= 
+[22:38:28]  |                                     | 
+[22:38:28]  |        YSI version 4.00.0001        | 
+[22:38:28]  |        By Alex "Y_Less" Cole        | 
+[22:38:28]  |                                     | 
+[22:38:28]  ======================================= 
+[22:38:28]  
+[22:38:28] + Server configuration file loaded.
+[22:38:28] 
+-------------------------------------------
+
+[22:38:28] 
+Papawy RolePlay
+
+[22:38:28] 
+-------------------------------------------
+
+[22:38:28]  - originally made by Papawy
+
+[22:38:28]  - Current Version : INDEV
+
+[22:38:28] Number of vehicle models: 0
+[22:38:28] + Server data loaded.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:39:25] 
+[22:39:25] Server Plugins
+[22:39:25] --------------
+[22:39:25]  Loading plugin: crashdetect
+[22:39:25]   CrashDetect v4.15.1 is OK.
+[22:39:25]   Loaded.
+[22:39:25]  Loading plugin: mysql
+[22:39:25]  >> plugin.mysql: R39-3 successfully loaded.
+[22:39:25]   Loaded.
+[22:39:25]  Loaded 2 plugins.
+
+[22:39:25] 
+[22:39:25] Filterscripts
+[22:39:25] ---------------
+[22:39:25]   Loading filterscript 'vspawner.amx'...
+[22:39:25] 
+--Admin Vehicle Spawner Loaded
+
+[22:39:25]   Loaded 1 filterscripts.
+
+[22:39:25]  
+[22:39:25]  
+[22:39:25]  
+[22:39:25]  ======================================= 
+[22:39:25]  |                                     | 
+[22:39:25]  |        YSI version 4.00.0001        | 
+[22:39:25]  |        By Alex "Y_Less" Cole        | 
+[22:39:25]  |                                     | 
+[22:39:25]  ======================================= 
+[22:39:25]  
+[22:39:25] + Server configuration file loaded.
+[22:39:25] hostname = "Papawy Role Play"  (string)
+[22:39:25] mapname = "San Andreas"  (string)
+[22:39:25] weburl = "www.sa-mp.com"  (string)
+[22:39:25] 
+-------------------------------------------
+
+[22:39:25] 
+Papawy RolePlay
+
+[22:39:25] 
+-------------------------------------------
+
+[22:39:25]  - originally made by Papawy
+
+[22:39:25]  - Current Version : INDEV
+
+[22:39:25] Number of vehicle models: 0
+[22:39:25] + Server data loaded.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:40:05] 
+[22:40:05] Server Plugins
+[22:40:05] --------------
+[22:40:05]  Loading plugin: crashdetect
+[22:40:05]   CrashDetect v4.15.1 is OK.
+[22:40:05]   Loaded.
+[22:40:05]  Loading plugin: mysql
+[22:40:05]  >> plugin.mysql: R39-3 successfully loaded.
+[22:40:05]   Loaded.
+[22:40:05]  Loaded 2 plugins.
+
+[22:40:05] 
+[22:40:05] Filterscripts
+[22:40:05] ---------------
+[22:40:05]   Loading filterscript 'vspawner.amx'...
+[22:40:05] 
+--Admin Vehicle Spawner Loaded
+
+[22:40:05]   Loaded 1 filterscripts.
+
+[22:40:05]  
+[22:40:05]  
+[22:40:05]  
+[22:40:05]  ======================================= 
+[22:40:05]  |                                     | 
+[22:40:05]  |        YSI version 4.00.0001        | 
+[22:40:05]  |        By Alex "Y_Less" Cole        | 
+[22:40:05]  |                                     | 
+[22:40:05]  ======================================= 
+[22:40:05]  
+[22:40:05] + Server configuration file loaded.
+[22:40:05] 
+-------------------------------------------
+
+[22:40:05] 
+Papawy RolePlay
+
+[22:40:05] 
+-------------------------------------------
+
+[22:40:05]  - originally made by Papawy
+
+[22:40:05]  - Current Version : INDEV
+
+[22:40:05] Number of vehicle models: 0
+[22:40:05] + Server data loaded.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:40:52] 
+[22:40:52] Server Plugins
+[22:40:52] --------------
+[22:40:52]  Loading plugin: crashdetect
+[22:40:52]   CrashDetect v4.15.1 is OK.
+[22:40:52]   Loaded.
+[22:40:52]  Loading plugin: mysql
+[22:40:52]  >> plugin.mysql: R39-3 successfully loaded.
+[22:40:52]   Loaded.
+[22:40:52]  Loaded 2 plugins.
+
+[22:40:52] 
+[22:40:52] Filterscripts
+[22:40:52] ---------------
+[22:40:52]   Loading filterscript 'vspawner.amx'...
+[22:40:52] 
+--Admin Vehicle Spawner Loaded
+
+[22:40:52]   Loaded 1 filterscripts.
+
+[22:40:52]  
+[22:40:52]  
+[22:40:52]  
+[22:40:52]  ======================================= 
+[22:40:52]  |                                     | 
+[22:40:52]  |        YSI version 4.00.0001        | 
+[22:40:52]  |        By Alex "Y_Less" Cole        | 
+[22:40:52]  |                                     | 
+[22:40:52]  ======================================= 
+[22:40:52]  
+[22:40:52] + Server configuration file loaded.
+[22:40:53] 
+-------------------------------------------
+
+[22:40:53] 
+Papawy RolePlay
+
+[22:40:53] 
+-------------------------------------------
+
+[22:40:53]  - originally made by Papawy
+
+[22:40:53]  - Current Version : INDEV
+
+[22:40:53] Number of vehicle models: 0
+[22:40:53] + Server data loaded.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[22:41:20] 
+[22:41:20] Server Plugins
+[22:41:20] --------------
+[22:41:20]  Loading plugin: crashdetect
+[22:41:20]   CrashDetect v4.15.1 is OK.
+[22:41:20]   Loaded.
+[22:41:20]  Loading plugin: mysql
+[22:41:20]  >> plugin.mysql: R39-3 successfully loaded.
+[22:41:20]   Loaded.
+[22:41:20]  Loaded 2 plugins.
+
+[22:41:20] 
+[22:41:20] Filterscripts
+[22:41:20] ---------------
+[22:41:20]   Loading filterscript 'vspawner.amx'...
+[22:41:20] 
+--Admin Vehicle Spawner Loaded
+
+[22:41:20]   Loaded 1 filterscripts.
+
+[22:41:20]  
+[22:41:20]  
+[22:41:20]  
+[22:41:20]  ======================================= 
+[22:41:20]  |                                     | 
+[22:41:20]  |        YSI version 4.00.0001        | 
+[22:41:20]  |        By Alex "Y_Less" Cole        | 
+[22:41:20]  |                                     | 
+[22:41:20]  ======================================= 
+[22:41:20]  
+[22:41:20] + Server configuration file loaded.
+[22:41:21] 
+-------------------------------------------
+
+[22:41:21] 
+Papawy RolePlay
+
+[22:41:21] 
+-------------------------------------------
+
+[22:41:21]  - originally made by Papawy
+
+[22:41:21]  - Current Version : INDEV
+
+[22:41:21] Number of vehicle models: 0
+[22:41:21] + Server data loaded.

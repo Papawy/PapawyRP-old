@@ -6,16 +6,25 @@
 
 #include "core.pwn"
 
-#if defined USE_MYSQL
-
 #include "mysql_infos.pwn"
 
 // ----------------------------------------------------------------------------
 
-forward Connect();
-public Connect()
+forward MySQL_Init(db_address[], db_user[], db_pass[], db_name[]);
+public  MySQL_Init(db_address[], db_user[], db_pass[], db_name[])
 {
-	MySQL_handle = mysql_connect(SQL_HOST, SQL_USER, SQL_DB, SQL_PASS, 3306, true, 2);
+	MySQL_handle = mysql_connect(db_address, db_user, db_name, db_pass, .autoreconnect = true);
+	if(mysql_errno() != 0)
+	{
+		print("[MySQL] Can't connect to MySQL database !");
+		return false;
+	}
+	return true;
 }
 
-#endif
+forward MySQL_Close();
+public MySQL_Close()
+{
+	mysql_close(MySQL_handle);
+	printf("[MySQL] MySQL connection closed !");
+}

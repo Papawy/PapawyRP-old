@@ -11,7 +11,7 @@
 		- Utils
 			+ utils_functions < usefull functions (SendClientMessageEx, GetPlayerNameEx, etc.)
 		
-		- MySQL : only included if mysql was used
+		- MySQL
 			+ mysql_infos
 			+ mysql_init < initialise mysql connection
 

@@ -27,9 +27,7 @@
 #endif
 */
 
-#if defined USE_MYSQL
-	#include <a_mysql>
-#endif
+#include <a_mysql>
 
 // ----------------------------------------------------------------------------
 
@@ -54,9 +52,7 @@
 
 // ----------- MYSQL
 
-#if defined USE_MYSQL
-	#include "mysql\mysql_init.pwn"
-#endif
+#include "mysql\mysql_init.pwn"
 
 // ----------- PLAYER
 

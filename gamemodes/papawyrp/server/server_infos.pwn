@@ -9,20 +9,24 @@
 // ----------------------------------------------------------------------------
 
 #define SERVER_CONFIG_FILE				"papawyrp_cfg.ini"
-#define SERVER_DATA_FILE				sInfos[sDataFile]
-
-#define PLAYER_DATA_PATH				sInfos[pDataPath]
 
 #define SERVER_NAME						sInfos[sName]
 #define SERVER_WEBSITE					sInfos[sWebsite]
 #define SERVER_MAP						sInfos[sMap]
 #define SERVER_MODE						sInfos[sMode]
 
+#define ORM_SERVER_ID					sInfos[ormServerID]
+
+#define SQL_SERVER_TABLE				sInfos[tblServerData]
+#define SQL_PLAYER_TABLE				sInfos[tblPlayerData]
+
 #define MAX_PATH_LEN					VERY_SHORT_STR
 
 // ----------------------------------------------------------------------------
 
 enum SERVER_INFOS {
+	// GM id
+	gmID,
 	// Infos
 	sName[VERY_SHORT_STR],
 	sWebsite[VERY_SHORT_STR],
@@ -30,7 +34,16 @@ enum SERVER_INFOS {
 	sMode[VERY_SHORT_STR],
 	// Paths
 	sDataFile[MAX_PATH_LEN],
-	pDataPath[MAX_PATH_LEN],
+	// MySQL DB Infos
+	dbAddress[VERY_VERY_SHORT_STR],
+	dbUser[VERY_VERY_SHORT_STR],
+	dbPass[SHORT_STR],
+	dbName[SHORT_STR],
+	// MySQL Tables
+	tblServerData[VERY_VERY_SHORT_STR],
+	tblPlayerData[VERY_VERY_SHORT_STR],
+	// ORM ID
+	ORM:ormServerID,
 	// Stats
 	sMaxPlayersConnected,
 	sMaxPlayersRegistered,
@@ -49,9 +62,6 @@ hook OnGameModeInit()
 	{
 		print("+ No server configuration file present. Creating one...");
 
-		strins(sInfos[sDataFile],	"papawyrp_data.ini", 0);
-		strins(sInfos[pDataPath],	"users/" ,0);
-
 		SaveServerConfiguration();
 
 		print("+ Server configuration file created.");
@@ -62,6 +72,47 @@ hook OnGameModeInit()
 		print("+ Server configuration file loaded.");
 	}
 
+	if(strlen(sInfos[dbAddress]) == 0)
+		print("/!\\ MySQL Infos unallocated ! Run MySQL_assistant GameMode !");
+	else if(strlen(sInfos[dbUser]) == 0)
+		print("/!\\ MySQL Infos unallocated ! Run MySQL_assistant GameMode !");
+	else if(strlen(sInfos[dbName]) == 0)
+		print("/!\\ MySQL Infos unallocated ! Run MySQL_assistant GameMode !");
+	else
+	{
+		MySQL_Init(sInfos[dbAddress], sInfos[dbUser], sInfos[dbPass], sInfos[dbName]);
+	}
+
+	if(strlen(sInfos[tblServerData]) == 0)
+	{
+		print("/!\\ Server Data SQL Table NOT DEFINED !!!");
+		strins(sInfos[sName] 			, "PapawyRP", 0);
+		strins(sInfos[sWebsite]			, "http://www.404.com", 0);
+		strins(sInfos[sMap]				, "Mapping-pong", 0);
+		strins(sInfos[sMode]			, "Papawy RP V", 0);
+		SetServerInfosInSAMPBrowser();
+	}
+	else
+	{
+		sInfos[gmID] = 1;
+
+		sInfos[ormServerID] = orm_create(SQL_SERVER_TABLE);
+
+		orm_addvar_int(ORM_SERVER_ID, sInfos[gmID], "GM_Id");
+		orm_addvar_string(ORM_SERVER_ID, sInfos[sName]		, VERY_SHORT_STR, "GM_Name");
+		orm_addvar_string(ORM_SERVER_ID, sInfos[sWebsite]	, VERY_SHORT_STR, "GM_Website");
+		orm_addvar_string(ORM_SERVER_ID, sInfos[sMap]		, VERY_SHORT_STR, "GM_Map");
+		orm_addvar_string(ORM_SERVER_ID, sInfos[sMode]		, VERY_SHORT_STR, "GM_Mode");
+
+		orm_addvar_int(ORM_SERVER_ID, sInfos[sMaxPlayersConnected], "MaxPlayersConnected");
+		orm_addvar_int(ORM_SERVER_ID, sInfos[sMaxPlayersRegistered], "MaxPlayersRegistered");
+
+		orm_setkey(ORM_SERVER_ID, "GM_Id");
+		orm_select(ORM_SERVER_ID, "OnServerDataLoad");
+	}
+
+
+/*
 	if(!fexist(SERVER_DATA_FILE))
 	{
 		print("+ No server data file present. Creating one...");
@@ -85,7 +136,7 @@ hook OnGameModeInit()
 		print("+ Server data file loaded.");
 		SetServerInfosInSAMPBrowser();
 	}
-
+*/
 	return 1;
 }
 
@@ -98,7 +149,9 @@ hook OnGameModeExit()
 	SaveServerData();
 	print("+ Server data saved.");
 
+	orm_destroy(ORM_SERVER_ID);
 
+	SetTimer("MySQL_Close", 1000, false);
 
 	return 1;
 }
@@ -127,13 +180,41 @@ hook OnPlayerDisconnect(playerid, reason)
 
 // ----------------------------------------------------------------------------
 
+forward OnServerDataLoad();
+public OnServerDataLoad()
+{
+	switch(orm_errno(ORM_SERVER_ID))
+	{
+		case ERROR_OK:
+			printf("+ Server data loaded.");
+		case ERROR_NO_DATA:
+		{
+			printf("+ Server data not loaded : there is no data to load");
+
+			strins(sInfos[sName] 			, "PapawyRP", 0);
+			strins(sInfos[sWebsite]			, "http://www.404.com", 0);
+			strins(sInfos[sMap]				, "Mapping-pong", 0);
+			strins(sInfos[sMode]			, "Papawy RP V", 0);
+		}
+	}
+	SetServerInfosInSAMPBrowser();
+	return 1;
+}
+
+// ----------------------------------------------------------------------------
+
 forward SaveServerConfiguration();
 public SaveServerConfiguration()
 {
 	new INI:cfg = INI_Open(SERVER_CONFIG_FILE);
 
-	INI_WriteString(cfg, 	"SERVER_DATA_FILE"		, sInfos[sDataFile]);
-	INI_WriteString(cfg, 	"PLAYER_DATA_PATH"		, sInfos[pDataPath]);
+	INI_WriteString(cfg, 	"DB_ADDRESS"		, sInfos[dbAddress]);
+	INI_WriteString(cfg, 	"DB_USER"			, sInfos[dbUser]);
+	INI_WriteString(cfg, 	"DB_PASS"			, sInfos[dbPass]);
+	INI_WriteString(cfg, 	"DB_NAME"			, sInfos[dbName]);
+
+	INI_WriteString(cfg, 	"TBL_SERVER"		, sInfos[tblServerData]);
+	INI_WriteString(cfg, 	"TBL_PLAYER"		, sInfos[tblPlayerData]);
 
 	INI_Close(cfg);
 }
@@ -141,17 +222,8 @@ public SaveServerConfiguration()
 forward SaveServerData();
 public SaveServerData()
 {
-	new INI:data = INI_Open(SERVER_DATA_FILE);
-
-	INI_WriteInt(data, 		"MAX_PLAYERS_REGISTERED", sInfos[sMaxPlayersRegistered]);
-	INI_WriteInt(data, 		"MAX_PLAYERS_CONNECTED"	, sInfos[sMaxPlayersConnected]);
-
-	INI_WriteString(data,	"SERVER_NAME"			, sInfos[sName]);
-	INI_WriteString(data,	"SERVER_WEBSITE"		, sInfos[sWebsite]);
-	INI_WriteString(data,	"SERVER_MAP"			, sInfos[sMap]);
-	INI_WriteString(data,	"SERVER_MODE"			, sInfos[sMode]);
-
-	INI_Close(data);
+	orm_update(ORM_SERVER_ID);
+	return 1;
 }
 
 forward SetServerInfosInSAMPBrowser();
@@ -171,7 +243,10 @@ public SetServerInfosInSAMPBrowser()
 	strcat(tmpstr, SERVER_WEBSITE);
 	SendRconCommand(tmpstr); strdel(tmpstr, 0, strlen(tmpstr));
 
-	SetGameModeText(sInfos[sMode]);
+	strins(tmpstr, "gamemodetext ", 0);
+	strcat(tmpstr, SERVER_MODE);
+	strcat(tmpstr, PAPAWYRP_VERSION);
+	SendRconCommand(tmpstr);
 }
 
 // ----------------------------------------------------------------------------
@@ -179,24 +254,14 @@ public SetServerInfosInSAMPBrowser()
 forward ServerConfigLoading(name[], value[]);
 public ServerConfigLoading(name[], value[])
 {
-	INI_String(		"SERVER_DATA_FILE"		, sInfos[sDataFile], MAX_PATH_LEN);
-	INI_String(		"PLAYER_DATA_PATH"		, sInfos[pDataPath], MAX_PATH_LEN);
+	INI_String("DB_ADDRESS"			, sInfos[dbAddress], VERY_VERY_SHORT_STR);
+	INI_String("DB_USER"			, sInfos[dbUser], VERY_VERY_SHORT_STR);
+	INI_String("DB_PASS"			, sInfos[dbPass], VERY_SHORT_STR);
+	INI_String("DB_NAME"			, sInfos[dbName], VERY_SHORT_STR);
 
-	return 0;
-}
+	INI_String("TBL_SERVER"			, sInfos[tblServerData], VERY_VERY_SHORT_STR);
+	INI_String("TBL_PLAYER"			, sInfos[tblPlayerData], VERY_VERY_SHORT_STR);
 
-forward ServerDataLoading(name[], value[]);
-public ServerDataLoading(name[], value[])
-{
-	INI_Int(		"MAX_PLAYERS_REGISTERED", sInfos[sMaxPlayersRegistered]);
-	INI_Int(		"MAX_PLAYERS_CONNECTED"	, sInfos[sMaxPlayersConnected]);
-
-	INI_String(		"SERVER_NAME"			, sInfos[sName]		, VERY_SHORT_STR);
-	INI_String(		"SERVER_WEBSITE"		, sInfos[sWebsite]	, VERY_SHORT_STR);
-	INI_String(		"SERVER_MAP"			, sInfos[sMap]		, VERY_SHORT_STR);
-	INI_String(		"SERVER_MODE"			, sInfos[sMode]		, VERY_SHORT_STR);
-
-	print("+ Server data file loaded.");
 	return 0;
 }
 
@@ -227,6 +292,6 @@ stock GetPlayerUniqueID(playerid)
 stock GetPlayerDataPath(playerid)
 {
 	new str[VERY_SHORT_STR];
-	format(str, sizeof(str), "%s%i.ini", sInfos[pDataPath], GetPlayerUniqueID(playerid));
+	format(str, sizeof(str), "%s%i.ini", "Nein !", GetPlayerUniqueID(playerid));
 	return str;
 }

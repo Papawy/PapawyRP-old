@@ -17,6 +17,7 @@
 
 enum P_INFOS {
 	pUniqueID,
+	ORM:pOrmID, // var not stored, ORM use only
 	pRegistered, // var not stored, it's usefull to not do a SQL query when you want to know if he's registered
 	pName[MAX_PLAYER_NAME+1],
 	pPass[MAX_PLAYER_PASS],
