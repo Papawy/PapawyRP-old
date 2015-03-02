@@ -10,7 +10,7 @@ Originaly made by Papawy.
 		- Utils
 			+ utils_functions < usefull functions (SendClientMessageEx, GetPlayerNameEx, etc.)
 		
-		- MySQL : only included if mysql was used
+		- MySQL :
 			+ mysql_infos
 			+ mysql_init < initialise mysql connection
 
@@ -28,6 +28,9 @@ Originaly made by Papawy.
 			+ commands_functions < functions used in commands
 			+ commands_generals < help, etc.
 			+ commands_tchat < all tchat commands (tchat IC, OOC, /me, /do, etc.)
+			
+		- Gui
+			+ gui_fields < gui element to request a name from the user or an email, etc.
 
 ## Compiling
 
@@ -35,6 +38,4 @@ To compile this gamemode you need this includes :
 + YSI4 (beta) by Y_Less : [Link](https://github.com/Y-Less/YSI-Includes/tree/YSI.tl)
 + easyDialog by Emmet- 	: [Link](http://forum.sa-mp.com/showthread.php?t=475838)
 + For MySQL use : BlueG plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
-
-   And put define "USE_MYSQL" on the top of the main file (papawyrp.pwn)
-+ Thanks to DracoBlue for his "hash" functions (included in utils_functions).
++ Thanks to DracoBlue for his "hash" functions (included in utils_functions). // not used at this time, must remove it !
