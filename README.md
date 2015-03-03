@@ -19,7 +19,7 @@ Originaly made by Papawy.
 
 		- Player Infos
 			+ players_vars < standardize players information backups
-			+ players_infos < enumeration of infos for each player
+			+ players_infos < per player enum' and basic checks functions (registered ? connected ?)
 			+ players_connection < obvious
 			+ players_registration < obvious
 
