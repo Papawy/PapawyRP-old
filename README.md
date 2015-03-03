@@ -37,5 +37,6 @@ Originaly made by Papawy.
 To compile this gamemode you need this includes :
 + YSI4 (beta) by Y_Less : [Link](https://github.com/Y-Less/YSI-Includes/tree/YSI.tl)
 + easyDialog by Emmet- 	: [Link](http://forum.sa-mp.com/showthread.php?t=475838)
-+ For MySQL use : BlueG plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
++ BlueG MySQL plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
++ Whirlpool by Y_Less : [Link](http://forum.sa-mp.com/showthread.php?t=65290)
 + Thanks to DracoBlue for his "hash" functions (included in utils_functions). // not used at this time, must remove it !
