@@ -13,47 +13,24 @@
 #define MAX_PLAYER_PASS					VERY_SHORT_STR
 #define MIN_PLAYER_PASS					4
 
+#define HASHED_PASS_LENGHT				NORMAL_STR+1
+
 // ----------------------------------------------------------------------------
 
+// Why pPass don't have the MAX_PLAYER_PASS lenght ? Beacause it's hashed and it take 129 characters.
+
 enum P_INFOS {
-	pUniqueID,
+	pSqlID,
 	ORM:pOrmID, // var not stored, ORM use only
 	pRegistered, // var not stored, it's usefull to not do a SQL query when you want to know if he's registered
 	pName[MAX_PLAYER_NAME+1],
-	pPass[MAX_PLAYER_PASS],
+	pPass[HASHED_PASS_LENGHT],
+	pEamil[NORMAL_STR],
 	pRegisterDate, // timestamp
 	pAdminRank
 };
 
-
-/*
-new P_INFOS_STR[] = {
-	"UniqueID", 
-	"Name",
-	"Pass",						// Maybe later
-	"RegisterDate",
-	"AdminRank"
-};*/
-
 new pInfos[MAX_PLAYERS][P_INFOS];
-
-stock IsPlayerRegistered_hardCheck(playerid)
-{
-	#if defined USE_MYSQL
-
-	#else
-	if(!fexist(GetPlayerDataPath(playerid)))
-	{
-		pInfos[playerid][pRegistered] = false;
-		return false;
-	}
-	else
-	{
-		pInfos[playerid][pRegistered] = true;
-		return true;
-	}
-	#endif
-}
 
 stock IsPlayerRegistered(playerid)
 {

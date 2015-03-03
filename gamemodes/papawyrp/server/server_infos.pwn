@@ -281,17 +281,3 @@ stock GetMaxPlayersRegistered()
 {
 	return sInfos[sMaxPlayersRegistered];
 }
-
-stock GetPlayerUniqueID(playerid)
-{
-	new pName[MAX_PLAYER_NAME+1];
-	GetPlayerName(playerid, pName, sizeof(pName));
-	return db_num_hash(pName);
-}
-
-stock GetPlayerDataPath(playerid)
-{
-	new str[VERY_SHORT_STR];
-	format(str, sizeof(str), "%s%i.ini", "Nein !", GetPlayerUniqueID(playerid));
-	return str;
-}

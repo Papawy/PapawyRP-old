@@ -1,0 +1,137 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[21:38:49] 
+[21:38:49] Server Plugins
+[21:38:49] --------------
+[21:38:49]  Loading plugin: crashdetect
+[21:38:49]   CrashDetect v4.15.1 is OK.
+[21:38:49]   Loaded.
+[21:38:49]  Loading plugin: mysql
+[21:38:49]  >> plugin.mysql: R39-3 successfully loaded.
+[21:38:49]   Loaded.
+[21:38:49]  Loaded 2 plugins.
+
+[21:38:49] 
+[21:38:49] Filterscripts
+[21:38:49] ---------------
+[21:38:49]   Loading filterscript 'vspawner.amx'...
+[21:38:49] 
+--Admin Vehicle Spawner Loaded
+
+[21:38:49]   Loaded 1 filterscripts.
+
+[21:38:49]  
+[21:38:49]  
+[21:38:49]  
+[21:38:49]  ======================================= 
+[21:38:49]  |                                     | 
+[21:38:49]  |        YSI version 4.00.0001        | 
+[21:38:49]  |        By Alex "Y_Less" Cole        | 
+[21:38:49]  |                                     | 
+[21:38:49]  ======================================= 
+[21:38:49]  
+[21:38:49] Number of vehicle models: 0
+[21:40:34] Incoming connection: 127.0.0.1:54062
+[21:40:34] [join] Papawy has joined the server (0:127.0.0.1)
+[21:41:00] [part] Papawy has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[21:52:48] 
+[21:52:48] Server Plugins
+[21:52:48] --------------
+[21:52:48]  Loading plugin: crashdetect
+[21:52:48]   CrashDetect v4.15.1 is OK.
+[21:52:48]   Loaded.
+[21:52:48]  Loading plugin: mysql
+[21:52:48]  >> plugin.mysql: R39-3 successfully loaded.
+[21:52:48]   Loaded.
+[21:52:48]  Loaded 2 plugins.
+
+[21:52:48] 
+[21:52:48] Filterscripts
+[21:52:48] ---------------
+[21:52:48]   Loading filterscript 'vspawner.amx'...
+[21:52:49] 
+--Admin Vehicle Spawner Loaded
+
+[21:52:49]   Loaded 1 filterscripts.
+
+[21:52:49]  
+[21:52:49]  
+[21:52:49]  
+[21:52:49]  ======================================= 
+[21:52:49]  |                                     | 
+[21:52:49]  |        YSI version 4.00.0001        | 
+[21:52:49]  |        By Alex "Y_Less" Cole        | 
+[21:52:49]  |                                     | 
+[21:52:49]  ======================================= 
+[21:52:49]  
+[21:52:49] ============================================
+
+
+[21:52:49] 	PapawyRP Installer by Papawy |V.1.0
+
+
+[21:52:49] ============================================
+[21:52:49] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[21:53:21] 
+[21:53:21] Server Plugins
+[21:53:21] --------------
+[21:53:21]  Loading plugin: crashdetect
+[21:53:21]   CrashDetect v4.15.1 is OK.
+[21:53:21]   Loaded.
+[21:53:21]  Loading plugin: mysql
+[21:53:21]  >> plugin.mysql: R39-3 successfully loaded.
+[21:53:21]   Loaded.
+[21:53:21]  Loaded 2 plugins.
+
+[21:53:21] 
+[21:53:21] Filterscripts
+[21:53:21] ---------------
+[21:53:21]   Loading filterscript 'vspawner.amx'...
+[21:53:21] 
+--Admin Vehicle Spawner Loaded
+
+[21:53:21]   Loaded 1 filterscripts.
+
+[21:53:21]  
+[21:53:21]  
+[21:53:21]  
+[21:53:21]  ======================================= 
+[21:53:21]  |                                     | 
+[21:53:21]  |        YSI version 4.00.0001        | 
+[21:53:21]  |        By Alex "Y_Less" Cole        | 
+[21:53:21]  |                                     | 
+[21:53:21]  ======================================= 
+[21:53:21]  
+[21:53:21] ============================================
+
+
+[21:53:21] 	PapawyRP Installer by Papawy | V.1.0
+
+
+[21:53:21] ============================================
+[21:53:21] Number of vehicle models: 0

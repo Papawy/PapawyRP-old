@@ -4,6 +4,10 @@
 
 // ----------------------------------------------------------------------------
 
+/*
+	It really need to be remake with TextDraws...
+
+*/
 
 // ----------------------------------------------------------------------------
 
@@ -68,8 +72,7 @@ Dialog:Registration_Password(playerid, response, listitem, inputtext[])
 			Dialog_Show(playerid, Registration_Password, DIALOG_STYLE_PASSWORD, COLOR_IMPORTANT"Mot de passe", REGISTRATION_PASSWORD_FAILED(1), "Confirmer", "Retour");
 		else
 		{
-			strdel(pInfos[playerid][pPass], 0, MAX_PLAYER_PASS);
-			strins(pInfos[playerid][pPass], inputtext, 0, MAX_PLAYER_PASS);
+			WP_Hash(pInfos[playerid][pPass], HASHED_PASS_LENGHT, inputtext);
 			Dialog_Show(playerid, Registration_Pwd_Confirm, DIALOG_STYLE_PASSWORD, COLOR_IMPORTANT"Confirmation", REGISTRATION_PSWRD_CONFIRM, "Confirmer", "Retour");
 		}
 	}
@@ -84,7 +87,9 @@ Dialog:Registration_Pwd_Confirm(playerid, response, listitem, inputtext[])
 {
 	if(response)
 	{
-		if(strcmp(inputtext, pInfos[playerid][pPass], false) != 0)
+		new tmpPass[HASHED_PASS_LENGHT];
+		WP_Hash(tmpPass, HASHED_PASS_LENGHT, inputtext);
+		if(strcmp(tmpPass, pInfos[playerid][pPass], false) != 0)
 		{
 			Dialog_Show(playerid, Registration_Pwd_Confirm, DIALOG_STYLE_PASSWORD, COLOR_IMPORTANT"Confirmation", REGISTRATION_PWD_CONF_FAILED(0), "Confirmer", "Retour");
 		}

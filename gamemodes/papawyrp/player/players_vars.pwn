@@ -14,43 +14,52 @@
 
 // ----------------------------------------------------------------------------
 
-forward LoadPlayerData(playerid);
-public LoadPlayerData(playerid)
+/*
+	key 
+	- 0 : SQL ID
+	- 1 : player name 
+*/
+
+forward LoadPlayerData(playerid, key=0);
+public LoadPlayerData(playerid, key=0)
 {
-	#if defined USE_MYSQL
+	new ORM:pOrm = pInfos[playerid][pOrmID] = orm_create("playersData");
+	orm_addvar_int(pOrm, 	pInfos[playerid][pSqlID], 						"ID");
+	orm_addvar_string(pOrm, GetPlayerNameEx(playerid), MAX_PLAYER_NAME+1, 	"Name");
+	orm_addvar_string(pOrm, pInfos[playerid][pPass], MAX_PLAYER_PASS,		"Pass");
+	orm_addvar_string(pOrm, pInfos[playerid][pEmail], NORMAL_STR,			"Email");
+	orm_addvar_int(pOrm, 	pInfos[playerid][pRegisterDate], 				"RegisterData");
+	orm_addvar_int(pOrm, 	pInfos[playerid][pAdminRank],					"AdminRank");
 
-	#else
-
-
-	
-	#endif
-
-	/*
-	new tag;
-	for(new i = 0; P_INFOS:i < P_INFOS; i++)
+	switch(key)
 	{
-		tag = tagof(pInfos[playerid][i]);
-		// Now we should do loading
-		if(tag== tagof(Float:))
-		{
-			// Float
+		case 0:
+			orm_setkey(pOrm, "ID");
+
+		case 1:
+			orm_setkey(pOrm, "Name");
+
+		default:
+			orm_setkey(pOrm, "ID");
+	}
+	orm_select(pOrm, "OnPlayerDataLoad", "d", playerid);
+
+	return true;
+}
+
+forward OnPlayerDataLoad(playerid);
+public OnPlayerDataLoad(playerid)
+{
+	switch(orm_errno(pInfos[playerid][pOrmID]))
+	{
+		case ERROR_OK: {
+			pInfos[playerid][pRegistered] = true;
 		}
-		else if(tag == tagof(bool:))
-		{
-			// Bool
+		case ERROR_NO_DATA: {
+			pInfos[playerid][pRegistered] = false;
 		}
-		else
-		{
-			if(sizeof(pInfos[playerid][i]) > 1)
-			{
-				// String
-			}
-			else
-			{
-				// Int ?
-			}
-		}
-	}*/
+	}
+	return 1;
 }
 
 forward SavePlayerData(playerid);
@@ -58,38 +67,6 @@ public SavePlayerData(playerid)
 {
 	if(IsPlayerRegistered(playerid))
 	{
-		#if defined USE_MYSQL
-
-		#else
-
-		new INI:pIni = INI_Open(GetPlayerDataPath(playerid));
-
-		INI_Close(pIni);
-
-		#endif
-		/*
-		for(new i; P_INFOS:i < P_INFOS; i++)
-		{
-			// Now we should do loading
-			if(tagof(pInfos[playerid][P_INFOS:i]) == tagof(Float:))
-			{
-				// Float
-			}
-			else if(tagof(pInfos[playerid][P_INFOS:i]) == tagof(bool:))
-			{
-				// Bool
-			}
-			else
-			{
-				if(sizeof(pInfos[playerid][P_INFOS:i]) > 1)
-				{
-					// String
-				}
-				else
-				{
-					// Int ?
-				}
-			}
-		}*/
+		orm_update(pInfos[playerid][pOrmID]);
 	}
 }
