@@ -50,6 +50,7 @@ public Kick_delay(playerid)
 
 
 // Thanks to pen_theGun
+// Modified by OpakoDev
 stock date(timestamp, _form=0)
 {
 	/*
@@ -103,36 +104,4 @@ stock date(timestamp, _form=0)
 	}
 	
 	return returnstring;
-}
-
-// FROM DUTILS.inc By DracoBlue (Thx !) 
-
-// Used to generate Unique Player ID (for INI files)
-
-/**
- *  Returns a hashed value in adler32 as int
- *  @param   buf
- */
-stock db_num_hash(buf[])
- {
-	new length=strlen(buf);
-    new s1 = 1;
-    new s2 = 0;
-    new n;
-    for (n=0; n<length; n++) {
-       s1 = (s1 + buf[n]) % 65521;
-       s2 = (s2 + s1)     % 65521;
-    }
-    return (s2 << 16) + s1;
- }
-
-/**
- *  Returns a hashed value in adler32 as string
- *  @param   buf
- */
-stock db_hash(str2[]) {
-   new tmpdasdsa[64];
-   tmpdasdsa[0]=0;
-   valstr(tmpdasdsa,db_num_hash(str2));
-   return tmpdasdsa;
 }

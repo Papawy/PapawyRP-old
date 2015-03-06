@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"MAX_PLA",
+				"MAX_PLAYERS"
+			],
+			[
 				"OnPlayerTex",
 				"OnPlayerClickPlayerTextDraw"
 			],
@@ -75,7 +79,7 @@
 			"file": "gamemodes/papawyrp.pwn",
 			"settings":
 			{
-				"buffer_size": 1175,
+				"buffer_size": 1293,
 				"line_ending": "Windows"
 			}
 		},
@@ -83,7 +87,7 @@
 			"file": "gamemodes/papawyrp/core.pwn",
 			"settings":
 			{
-				"buffer_size": 1455,
+				"buffer_size": 1506,
 				"line_ending": "Windows"
 			}
 		},
@@ -99,7 +103,7 @@
 			"file": "gamemodes/papawyrp/player/players_vars.pwn",
 			"settings":
 			{
-				"buffer_size": 1654,
+				"buffer_size": 1650,
 				"line_ending": "Windows"
 			}
 		},
@@ -112,18 +116,21 @@
 			}
 		},
 		{
-			"file": "gamemodes/papawyrp/player/players_connection.pwn",
+			"file": "gamemodes/papawyrp/player/players_registration.pwn",
 			"settings":
 			{
-				"buffer_size": 542,
+				"buffer_size": 7410,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "gamemodes/papawyrp/txtdraw/txtdraw_character.pwn",
+			"contents": "#if !defined PLAYERS_CONNECTION_INCLUDED\n	#define PLAYERS_CONNECTION_INCLUDED\n#endif\n\n// ----------------------------------------------------------------------------\n\n#include <YSI4\\YSI_Coding\\y_hooks>\n\n// ----------------------------------------------------------------------------\n\n#include \"core.pwn\"\n\n// ----------------------------------------------------------------------------\n\nnew Name;\nnew Email;\nnew Pass;\nnew PassConfirm;\n\n// ----------------------------------------------------------------------------\n\nhook OnPlayerConnect(playerid)\n{\n	Name = CreatePlayerField(playerid, 300, 200, \"Pseudo\", \"Jacquouille\");\n	ShowPlayerField(Name);\n\n	Email = CreatePlayerField(playerid, 300, 250, \"EMail\", \"Jacquouille.lafripouille@gmail.com\");\n	ShowPlayerField(Email);\n\n	Pass = CreatePlayerField(playerid, 300, 300, \"Mot de passe\", \"...\");\n	SetFieldDefaultBehavior(Pass, false);\n	ShowPlayerField(Pass);\n\n	PassConfirm = CreatePlayerField(playerid, 300, 350, \"Confirmation mot de passe\", \"...\");\n	SetFieldDefaultBehavior(PassConfirm, false);\n	ShowPlayerField(PassConfirm);\n\n	SelectTextDraw(playerid, 0x00FF00FF);\n\n	LoadPlayerData(playerid, 1);\n	if(!IsPlayerRegistered(playerid))\n	{\n		//RegisterPlayer(playerid);\n		return 1;\n	}\n	return 1;\n}\n\nhook OnPlayerPlayerFieldResp(playerid, fieldid, inputtext[])\n{\n\n	if(fieldid == Pass)\n	{\n		new tmpstr[NORMAL_STR];\n		for(new i=0; i<strlen(inputtext); ++i)\n			tmpstr[i] = 'X';\n\n		UpdateFieldName(fieldid, tmpstr);\n	}\n	if(fieldid == PassConfirm)\n	{\n		new tmpstr[NORMAL_STR];\n		for(new i=0; i<strlen(inputtext); ++i)\n			tmpstr[i] = 'X';\n\n		UpdateFieldName(fieldid, tmpstr);\n	}\n	return 1;\n}",
+			"file": "gamemodes/papawyrp/player/players_connection.pwn",
+			"file_size": 1689,
+			"file_write_time": 130701516217223598,
 			"settings":
 			{
-				"buffer_size": 4725,
+				"buffer_size": 1621,
 				"line_ending": "Windows"
 			}
 		},
@@ -131,7 +138,7 @@
 			"file": "gamemodes/papawyrp/gui/gui_fields.pwn",
 			"settings":
 			{
-				"buffer_size": 4254,
+				"buffer_size": 6083,
 				"line_ending": "Windows"
 			}
 		},
@@ -139,7 +146,7 @@
 			"file": "server.cfg",
 			"settings":
 			{
-				"buffer_size": 375,
+				"buffer_size": 362,
 				"line_ending": "Windows"
 			}
 		}
@@ -204,21 +211,20 @@
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/mysql",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/player",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/server",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/txtdraw",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils"
 	],
 	"file_history":
 	[
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/README.md",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/old_versions/Samp 0.3z/Samp 0.3z RC2/scriptfiles/TD_persng.pwn",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/txtdraw/txtdraw_character.pwn",
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp_installation.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils/utils_functions.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/player/players_registration.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/mysql/mysql_init.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/mysql/mysql_infos.pwn",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp_installation.pwn",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/txtdraw/txtdraw_character.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/gui/gui_fields.pwn",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/old_versions/Samp 0.3z/Samp 0.3z RC2/scriptfiles/TD_persng.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/old_versions/Samp 0.3z/Samp 0.3z RC2/server.cfg",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/README.md",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp.amx",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/commands/commands_functions.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/commands/commands_config.pwn",
@@ -261,7 +267,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -275,6 +281,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"playerActuelField",
 			"playerid",
 			"Textdraw4[playerid]",
 			" Textdraw3[playerid]",
@@ -302,7 +309,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -311,15 +318,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1175,
+						"buffer_size": 1293,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								888,
-								888
+								126,
+								126
 							]
 						],
 						"settings":
@@ -331,7 +338,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -340,26 +347,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1455,
+						"buffer_size": 1506,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								805,
-								815
+								1081,
+								1081
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -375,8 +382,8 @@
 						"selection":
 						[
 							[
-								5997,
-								5997
+								1184,
+								1184
 							]
 						],
 						"settings":
@@ -385,10 +392,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3420.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -397,15 +404,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1654,
+						"buffer_size": 1650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								301,
-								267
+								467,
+								467
 							]
 						],
 						"settings":
@@ -413,11 +420,11 @@
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 90.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -433,42 +440,14 @@
 						"selection":
 						[
 							[
-								801,
-								801
+								34,
+								34
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "gamemodes/papawyrp/player/players_connection.pwn",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 542,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								529,
-								529
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -478,20 +457,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "gamemodes/papawyrp/txtdraw/txtdraw_character.pwn",
+					"buffer": 5,
+					"file": "gamemodes/papawyrp/player/players_registration.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4725,
+						"buffer_size": 7410,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4020,
-								4020
+								1813,
+								1814
 							]
 						],
 						"settings":
@@ -499,28 +478,28 @@
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.x": -0.0,
+						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "gamemodes/papawyrp/gui/gui_fields.pwn",
+					"buffer": 6,
+					"file": "gamemodes/papawyrp/player/players_connection.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4254,
+						"buffer_size": 1621,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1139,
-								1139
+								1234,
+								1234
 							]
 						],
 						"settings":
@@ -535,20 +514,48 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "server.cfg",
+					"buffer": 7,
+					"file": "gamemodes/papawyrp/gui/gui_fields.pwn",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 375,
+						"buffer_size": 6083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								204,
-								204
+								5577,
+								5577
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2115.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "server.cfg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 362,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								130,
+								130
 							]
 						],
 						"settings":
