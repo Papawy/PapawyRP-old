@@ -20,8 +20,8 @@
 	- 1 : player name 
 */
 
-forward LoadPlayerData(playerid, key=0);
-public LoadPlayerData(playerid, key=0)
+forward LoadPlayerData(playerid, key);
+public LoadPlayerData(playerid, key)
 {
 	new ORM:pOrm = pInfos[playerid][pOrmID] = orm_create("playersData");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pSqlID], 						"ID");

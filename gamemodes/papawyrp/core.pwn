@@ -50,6 +50,10 @@
 
 #include "server\server_infos.pwn"
 
+// ----------- GUI
+
+#include "gui\gui_fields.pwn"
+
 // ----------- MYSQL
 
 #include "mysql\mysql_init.pwn"

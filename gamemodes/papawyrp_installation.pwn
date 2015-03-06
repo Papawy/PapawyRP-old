@@ -90,7 +90,7 @@ Dialog:Inst_DB_Name(playerid, response, listitem, inputtext[])
 			fcreate("papawyrp_cfg.ini");
 		}
 		new INI:cfg = INI_Open("papawyrp_cfg.ini");
-		INI_WriteString(cfg, "DB_ADDESS", sqlInfos[address]);
+		INI_WriteString(cfg, "DB_ADDRESS", sqlInfos[address]);
 		INI_WriteString(cfg, "DB_USER", sqlInfos[user]);
 		INI_WriteString(cfg, "DB_PASS", sqlInfos[pass]);
 		INI_WriteString(cfg, "DB_NAME", sqlInfos[name]);

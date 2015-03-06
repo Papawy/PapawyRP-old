@@ -5,7 +5,9 @@
 // ----------------------------------------------------------------------------
 
 /*
-	It really need to be remake with TextDraws...
+	DEPRECATED !!!
+
+	WHEN GUI WILL BE FINISHED, THIS WILL BE REMADED !
 
 */
 

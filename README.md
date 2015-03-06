@@ -10,8 +10,11 @@ Originaly made by Papawy.
 		- Utils
 			+ utils_functions < usefull functions (SendClientMessageEx, GetPlayerNameEx, etc.)
 		
+		- GUI
+			+ gui_fields < user can type text in, and you get the text back like a Dialog
+
 		- MySQL :
-			+ mysql_infos
+			+ mysql_infos < mysql informations & vars
 			+ mysql_init < initialise mysql connection
 
 		- Server infos
