@@ -32,9 +32,7 @@ Originaly made by Papawy.
 			+ commands_generals < help, etc.
 			+ commands_tchat < all tchat commands (tchat IC, OOC, /me, /do, etc.)
 			
-		- Gui
-			+ gui_fields < gui element to request a name from the user or an email, etc.
-
+		
 ## Compiling
 
 To compile this gamemode you need this includes :
