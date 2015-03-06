@@ -40,4 +40,3 @@ To compile this gamemode you need this includes :
 + easyDialog by Emmet- 	: [Link](http://forum.sa-mp.com/showthread.php?t=475838)
 + BlueG MySQL plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
 + Whirlpool by Y_Less : [Link](http://forum.sa-mp.com/showthread.php?t=65290)
-+ Thanks to DracoBlue for his "hash" functions (included in utils_functions). // not used at this time, must remove it !
