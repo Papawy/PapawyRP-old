@@ -62,7 +62,7 @@ hook OnPlayerClickPlayerTD(playerid, PlayerText:playertextid)
 	return 0;
 }
 
-hook OnPlayerClkPlayerField(playerid, fieldID)
+hook OnPlayerClickField(playerid, fieldID)
 {
 	playerActualField[playerid] = fieldID;
 	Dialog_Show(playerid, FieldResponse, DIALOG_STYLE_INPUT, playerFields[playerid][fieldID][fieldNameStr], " ", "Entrer", "");

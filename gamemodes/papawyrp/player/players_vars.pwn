@@ -28,7 +28,7 @@ public LoadPlayerData(playerid, key)
 	orm_addvar_string(pOrm, GetPlayerNameEx(playerid), MAX_PLAYER_NAME+1, 	"Name");
 	orm_addvar_string(pOrm, pInfos[playerid][pPass], MAX_PLAYER_PASS,		"Pass");
 	orm_addvar_string(pOrm, pInfos[playerid][pEmail], NORMAL_STR,			"Email");
-	orm_addvar_int(pOrm, 	pInfos[playerid][pRegisterDate], 				"RegisterData");
+	orm_addvar_int(pOrm, 	pInfos[playerid][pRegisterDate], 				"RegisterDate");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pAdminRank],					"AdminRank");
 
 	switch(key)

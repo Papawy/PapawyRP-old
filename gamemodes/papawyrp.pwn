@@ -13,6 +13,7 @@
 		
 		- GUI
 			+ gui_fields < user can type text in, and you get the text back like a Dialog
+			+ gui_buttons < simple textdraw buttons !
 
 		- MySQL
 			+ mysql_infos < mysql informations & vars
@@ -47,5 +48,4 @@ main()
 	print(" - originally made by Papawy\r\n");
 	print(" - Current Version : "PAPAWYRP_VERSION"\r\n");
 	return 1;
-
 }

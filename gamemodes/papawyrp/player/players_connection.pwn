@@ -79,4 +79,5 @@ hook OnPlayerClickButton(playerid, buttonID)
 	{
 		SendClientMessage(playerid, -1, "Tu as clique !");
 	}
+	return 1;
 }

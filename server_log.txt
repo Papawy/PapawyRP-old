@@ -91,3 +91,132 @@ Papawy RolePlay
 
 [23:41:33] Number of vehicle models: 0
 [23:41:33] + Server data loaded.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[23:53:29] 
+[23:53:29] Server Plugins
+[23:53:29] --------------
+[23:53:29]  Loading plugin: crashdetect
+[23:53:29]   CrashDetect v4.15.1 is OK.
+[23:53:29]   Loaded.
+[23:53:29]  Loading plugin: mysql
+[23:53:29]  >> plugin.mysql: R39-3 successfully loaded.
+[23:53:29]   Loaded.
+[23:53:29]  Loading plugin: Whirlpool
+[23:53:29]  
+[23:53:29]  ==================
+[23:53:29]  
+[23:53:29]   Whirlpool loaded
+[23:53:29]  
+[23:53:29]  ==================
+[23:53:29]  
+[23:53:29]   Loaded.
+[23:53:29]  Loaded 3 plugins.
+
+[23:53:29] 
+[23:53:29] Filterscripts
+[23:53:29] ---------------
+[23:53:29]   Loading filterscript 'vspawner.amx'...
+[23:53:29] 
+--Admin Vehicle Spawner Loaded
+
+[23:53:29]   Loaded 1 filterscripts.
+
+[23:53:29]  
+[23:53:29]  
+[23:53:29]  
+[23:53:29]  ======================================= 
+[23:53:29]  |                                     | 
+[23:53:29]  |        YSI version 4.00.0001        | 
+[23:53:29]  |        By Alex "Y_Less" Cole        | 
+[23:53:29]  |                                     | 
+[23:53:29]  ======================================= 
+[23:53:29]  
+[23:53:29] + Server configuration file loaded.
+[23:53:29] 
+-------------------------------------------
+
+[23:53:29] 
+Papawy RolePlay
+
+[23:53:29] 
+-------------------------------------------
+
+[23:53:29]  - originally made by Papawy
+
+[23:53:29]  - Current Version : INDEV
+
+[23:53:29] Number of vehicle models: 0
+[23:53:29] + Server data loaded.
+[23:53:58] Incoming connection: 127.0.0.1:53112
+[23:53:58] [join] Papawy has joined the server (0:127.0.0.1)
+[00:08:31] RCON (In-Game): Player #0 (Papawy) has logged in.
+[00:08:33] RCON (In-Game): Player [Papawy] sent command: gmx
+[00:08:33] + Server configuration saved.
+[00:08:33] + Server data saved.
+[00:08:33] + MySQL connection closed !
+[00:08:45]  
+[00:08:45]  
+[00:08:45]  
+[00:08:45]  ======================================= 
+[00:08:45]  |                                     | 
+[00:08:45]  |        YSI version 4.00.0001        | 
+[00:08:45]  |        By Alex "Y_Less" Cole        | 
+[00:08:45]  |                                     | 
+[00:08:45]  ======================================= 
+[00:08:45]  
+[00:08:45] + Server configuration file loaded.
+[00:08:45] 
+-------------------------------------------
+
+[00:08:45] 
+Papawy RolePlay
+
+[00:08:45] 
+-------------------------------------------
+
+[00:08:45]  - originally made by Papawy
+
+[00:08:45]  - Current Version : INDEV
+
+[00:08:45] Number of vehicle models: 0
+[00:08:45] + Server data loaded.
+[00:08:46] Field found !
+[00:09:29] RCON (In-Game): Player [Papawy] sent command: gmx
+[00:09:29] + Server configuration saved.
+[00:09:29] + Server data saved.
+[00:09:29] + MySQL connection closed !
+[00:09:41]  
+[00:09:41]  
+[00:09:41]  
+[00:09:41]  ======================================= 
+[00:09:41]  |                                     | 
+[00:09:41]  |        YSI version 4.00.0001        | 
+[00:09:41]  |        By Alex "Y_Less" Cole        | 
+[00:09:41]  |                                     | 
+[00:09:41]  ======================================= 
+[00:09:41]  
+[00:09:41] + Server configuration file loaded.
+[00:09:42] 
+-------------------------------------------
+
+[00:09:42] 
+Papawy RolePlay
+
+[00:09:42] 
+-------------------------------------------
+
+[00:09:42]  - originally made by Papawy
+
+[00:09:42]  - Current Version : INDEV
+
+[00:09:42] Number of vehicle models: 0
+[00:09:42] + Server data loaded.
+[00:11:57] [part] Papawy has left the server (0:1)

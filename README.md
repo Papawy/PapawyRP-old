@@ -12,6 +12,7 @@ Originaly made by Papawy.
 		
 		- GUI
 			+ gui_fields < user can type text in, and you get the text back like a Dialog
+			+ gui_buttons < simple textdraw buttons !
 
 		- MySQL :
 			+ mysql_infos < mysql informations & vars
