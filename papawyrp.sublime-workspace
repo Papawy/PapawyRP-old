@@ -124,10 +124,7 @@
 			}
 		},
 		{
-			"contents": "#if !defined PLAYERS_CONNECTION_INCLUDED\n	#define PLAYERS_CONNECTION_INCLUDED\n#endif\n\n// ----------------------------------------------------------------------------\n\n#include <YSI4\\YSI_Coding\\y_hooks>\n\n// ----------------------------------------------------------------------------\n\n#include \"core.pwn\"\n\n// ----------------------------------------------------------------------------\n\nnew Name;\nnew Email;\nnew Pass;\nnew PassConfirm;\n\n// ----------------------------------------------------------------------------\n\nhook OnPlayerConnect(playerid)\n{\n	Name = CreatePlayerField(playerid, 300, 200, \"Pseudo\", \"Jacquouille\");\n	ShowPlayerField(Name);\n\n	Email = CreatePlayerField(playerid, 300, 250, \"EMail\", \"Jacquouille.lafripouille@gmail.com\");\n	ShowPlayerField(Email);\n\n	Pass = CreatePlayerField(playerid, 300, 300, \"Mot de passe\", \"...\");\n	SetFieldDefaultBehavior(Pass, false);\n	ShowPlayerField(Pass);\n\n	PassConfirm = CreatePlayerField(playerid, 300, 350, \"Confirmation mot de passe\", \"...\");\n	SetFieldDefaultBehavior(PassConfirm, false);\n	ShowPlayerField(PassConfirm);\n\n	SelectTextDraw(playerid, 0x00FF00FF);\n\n	LoadPlayerData(playerid, 1);\n	if(!IsPlayerRegistered(playerid))\n	{\n		//RegisterPlayer(playerid);\n		return 1;\n	}\n	return 1;\n}\n\nhook OnPlayerPlayerFieldResp(playerid, fieldid, inputtext[])\n{\n\n	if(fieldid == Pass)\n	{\n		new tmpstr[NORMAL_STR];\n		for(new i=0; i<strlen(inputtext); ++i)\n			tmpstr[i] = 'X';\n\n		UpdateFieldName(fieldid, tmpstr);\n	}\n	if(fieldid == PassConfirm)\n	{\n		new tmpstr[NORMAL_STR];\n		for(new i=0; i<strlen(inputtext); ++i)\n			tmpstr[i] = 'X';\n\n		UpdateFieldName(fieldid, tmpstr);\n	}\n	return 1;\n}",
 			"file": "gamemodes/papawyrp/player/players_connection.pwn",
-			"file_size": 1689,
-			"file_write_time": 130701516217223598,
 			"settings":
 			{
 				"buffer_size": 1621,
@@ -215,11 +212,11 @@
 	],
 	"file_history":
 	[
+		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils/utils_functions.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/README.md",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/old_versions/Samp 0.3z/Samp 0.3z RC2/scriptfiles/TD_persng.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/txtdraw/txtdraw_character.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp_installation.pwn",
-		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/utils/utils_functions.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/player/players_registration.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/mysql/mysql_init.pwn",
 		"/D/Program Files (x86)/informatique/SERVEUR SAMP/PapawyRP/gamemodes/papawyrp/mysql/mysql_infos.pwn",
@@ -506,8 +503,8 @@
 						{
 							"syntax": "Packages/Pawn syntax/Pawn.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

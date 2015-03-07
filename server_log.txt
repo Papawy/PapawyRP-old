@@ -1,0 +1,93 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3z-R4, (C)2005-2014 SA-MP Team
+
+[23:41:05] 
+[23:41:05] Server Plugins
+[23:41:05] --------------
+[23:41:05]  Loading plugin: crashdetect
+[23:41:05]   CrashDetect v4.15.1 is OK.
+[23:41:05]   Loaded.
+[23:41:05]  Loading plugin: mysql
+[23:41:05]  >> plugin.mysql: R39-3 successfully loaded.
+[23:41:05]   Loaded.
+[23:41:05]  Loading plugin: Whirlpool
+[23:41:05]  
+[23:41:05]  ==================
+[23:41:05]  
+[23:41:05]   Whirlpool loaded
+[23:41:05]  
+[23:41:05]  ==================
+[23:41:05]  
+[23:41:05]   Loaded.
+[23:41:05]  Loaded 3 plugins.
+
+[23:41:05] 
+[23:41:05] Filterscripts
+[23:41:05] ---------------
+[23:41:05]   Loading filterscript 'vspawner.amx'...
+[23:41:05] 
+--Admin Vehicle Spawner Loaded
+
+[23:41:05]   Loaded 1 filterscripts.
+
+[23:41:05]  
+[23:41:05]  
+[23:41:05]  
+[23:41:05]  ======================================= 
+[23:41:05]  |                                     | 
+[23:41:05]  |        YSI version 4.00.0001        | 
+[23:41:05]  |        By Alex "Y_Less" Cole        | 
+[23:41:05]  |                                     | 
+[23:41:05]  ======================================= 
+[23:41:05]  
+[23:41:05] + Server configuration file loaded.
+[23:41:05] 
+-------------------------------------------
+
+[23:41:05] 
+Papawy RolePlay
+
+[23:41:05] 
+-------------------------------------------
+
+[23:41:05]  - originally made by Papawy
+
+[23:41:05]  - Current Version : INDEV
+
+[23:41:05] Number of vehicle models: 0
+[23:41:05] + Server data loaded.
+Console input: gmx
+[23:41:21] + Server configuration saved.
+[23:41:21] + Server data saved.
+[23:41:33]  
+[23:41:33]  
+[23:41:33]  
+[23:41:33]  ======================================= 
+[23:41:33]  |                                     | 
+[23:41:33]  |        YSI version 4.00.0001        | 
+[23:41:33]  |        By Alex "Y_Less" Cole        | 
+[23:41:33]  |                                     | 
+[23:41:33]  ======================================= 
+[23:41:33]  
+[23:41:33] + Server configuration file loaded.
+[23:41:33] 
+-------------------------------------------
+
+[23:41:33] 
+Papawy RolePlay
+
+[23:41:33] 
+-------------------------------------------
+
+[23:41:33]  - originally made by Papawy
+
+[23:41:33]  - Current Version : INDEV
+
+[23:41:33] Number of vehicle models: 0
+[23:41:33] + Server data loaded.

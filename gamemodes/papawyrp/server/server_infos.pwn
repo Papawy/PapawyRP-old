@@ -153,6 +153,8 @@ hook OnGameModeExit()
 
 	SetTimer("MySQL_Close", 1000, false);
 
+	MySQL_Close();
+
 	return 1;
 }
 

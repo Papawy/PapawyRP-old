@@ -12,7 +12,7 @@
 
 // ----------------------------------------------------------------------------
 
-#define MAX_FIELDS 					100
+#define MAX_FIELDS 					50
 
 // ----------------------------------------------------------------------------
 
@@ -21,11 +21,10 @@ enum FIELD_INFOS {
 	PlayerText:fieldName,
 	fieldNameStr[VERY_SHORT_STR],
 	PlayerText:field,
-	pid,
-	bool:useDefaultBehavior
+	bool:useDefaultBehavior,
 }
 
-new playerFields[MAX_FIELDS][FIELD_INFOS];
+new playerFields[MAX_PLAYERS][MAX_FIELDS][FIELD_INFOS];
 
 new playerActualField[MAX_PLAYERS];
 
@@ -33,11 +32,14 @@ new playerActualField[MAX_PLAYERS];
 
 hook OnGameModeInit()
 {
-	for(new i=0; i<MAX_FIELDS; ++i)
+	for(new p=0; p<MAX_PLAYERS; p++)
 	{
-		playerFields[i][field] = PlayerText:INVALID_TEXT_DRAW;
-		playerFields[i][fieldName] = PlayerText:INVALID_TEXT_DRAW;
-		playerFields[i][useDefaultBehavior] = true;
+		for(new i=0; i<MAX_FIELDS; ++i)
+		{
+			playerFields[p][i][field] = PlayerText:INVALID_TEXT_DRAW;
+			playerFields[p][i][fieldName] = PlayerText:INVALID_TEXT_DRAW;
+			playerFields[p][i][useDefaultBehavior] = true;
+		}
 	}
 	return 1;
 }
@@ -50,20 +52,20 @@ hook OnPlayerClickPlayerTD(playerid, PlayerText:playertextid)
 	{
 		for(new i=0; i<MAX_FIELDS; ++i)
 		{
-			if(playerFields[i][field] == playertextid)
+			if(playerFields[playerid][i][field] == playertextid)
 			{
-				CallRemoteFunction("OnPlayerClkPlayerField", "dd", playerid, i);
-				break;
+				CallRemoteFunction("OnPlayerClickField", "dd", playerid, i);
+				return 1;
 			}
 		}
 	}
-	return 1;
+	return 0;
 }
 
 hook OnPlayerClkPlayerField(playerid, fieldID)
 {
 	playerActualField[playerid] = fieldID;
-	Dialog_Show(playerid, FieldResponse, DIALOG_STYLE_INPUT, playerFields[fieldID][fieldNameStr], " ", "Entrer", "");
+	Dialog_Show(playerid, FieldResponse, DIALOG_STYLE_INPUT, playerFields[playerid][fieldID][fieldNameStr], " ", "Entrer", "");
 	return 1;
 }
 
@@ -71,119 +73,117 @@ Dialog:FieldResponse(playerid, response, listitem, inputtext[])
 {
 	if(strlen(inputtext) == 0)
 	{
-		Dialog_Show(playerid, FieldResponse, DIALOG_STYLE_INPUT, playerFields[playerActualField[playerid]][fieldNameStr], "", "Entrer", "");
+		Dialog_Show(playerid, FieldResponse, DIALOG_STYLE_INPUT, playerFields[playerid][playerActualField[playerid]][fieldNameStr], "", "Entrer", "");
 		return 1;
 	}
 	else {
-		if(playerFields[playerActualField[playerid]][useDefaultBehavior])
+		if(playerFields[playerid][playerActualField[playerid]][useDefaultBehavior])
 		{
-			UpdateFieldName(playerActualField[playerid], inputtext);
+			UpdateFieldName(playerid, playerActualField[playerid], inputtext);
 		}
-		CallRemoteFunction("OnPlayerPlayerFieldResp", "dds", playerid, playerActualField[playerid], inputtext);
+		CallRemoteFunction("OnPlayerFieldResponse", "dds", playerid, playerActualField[playerid], inputtext);
 	}
 	return 1;
 }
 
 // ----------------------------------------------------------------------------
 
-stock ShowPlayerField(fieldID)
+stock ShowPlayerField(playerid, fieldID)
 {
-	PlayerTextDrawShow(playerFields[fieldID][pid], playerFields[fieldID][fieldName]);
-	PlayerTextDrawShow(playerFields[fieldID][pid], playerFields[fieldID][field]);
+	PlayerTextDrawShow(playerid, playerFields[playerid][fieldID][fieldName]);
+	PlayerTextDrawShow(playerid, playerFields[playerid][fieldID][field]);
 	return 1;
 }
 
-stock HidePlayerField(fieldID)
+stock HidePlayerField(playerid, fieldID)
 {
-	PlayerTextDrawHide(playerFields[fieldID][pid], playerFields[fieldID][fieldName]);
-	PlayerTextDrawHide(playerFields[fieldID][pid], playerFields[fieldID][field]);
+	PlayerTextDrawHide(playerid, playerFields[playerid][fieldID][fieldName]);
+	PlayerTextDrawHide(playerid, playerFields[playerid][fieldID][field]);
 	return 1;
 }
 
-stock UpdateFieldName(fieldID, name[])
+stock UpdateFieldName(playerid, fieldID, name[])
 {
-	PlayerTextDrawHide(playerFields[fieldID][pid], playerFields[fieldID][field]);
-	PlayerTextDrawSetString(playerFields[fieldID][pid], playerFields[fieldID][field], name);
-	PlayerTextDrawShow(playerFields[fieldID][pid], playerFields[fieldID][field]);
+	PlayerTextDrawHide(playerid, playerFields[playerid][fieldID][field]);
+	PlayerTextDrawSetString(playerid, playerFields[playerid][fieldID][field], name);
+	PlayerTextDrawShow(playerid, playerFields[playerid][fieldID][field]);
 	return 1;
 }
 
 stock CreatePlayerField(playerid, Float:x, Float:y, name[], fieldDefaultValue[]=" ", color=0xFFFFFFFF, fieldColor=0x88888860)
 {
-	new id = GetAvailablePlayerFieldID();
+	new id = GetAvailablePlayerFieldID(playerid);
 	if(id == -1)
 	{
 		return INVALID_TEXT_DRAW;
 	}
-	playerFields[id][pid] = playerid;
-	strins(playerFields[id][fieldNameStr], name, 0, VERY_SHORT_STR);
-	playerFields[id][fieldName] = CreatePlayerTextDraw(playerFields[id][pid], x+7, y, name);
-	PlayerTextDrawLetterSize(playerFields[id][pid], playerFields[id][fieldName], 0.412999, 1.512888);
-	PlayerTextDrawAlignment(playerFields[id][pid], playerFields[id][fieldName], 1);
-	PlayerTextDrawColor(playerFields[id][pid], playerFields[id][fieldName], color);
-	PlayerTextDrawSetShadow(playerFields[id][pid], playerFields[id][fieldName], 0);
-	PlayerTextDrawSetOutline(playerFields[id][pid], playerFields[id][fieldName], 1);
-	PlayerTextDrawBackgroundColor(playerFields[id][pid], playerFields[id][fieldName], 51);
-	PlayerTextDrawFont(playerFields[id][pid], playerFields[id][fieldName], 1);
-	PlayerTextDrawSetProportional(playerFields[id][pid], playerFields[id][fieldName], 1);
+	strins(playerFields[playerid][id][fieldNameStr], name, 0, VERY_SHORT_STR);
+	playerFields[playerid][id][fieldName] = CreatePlayerTextDraw(playerid, x+7, y, name);
+	PlayerTextDrawLetterSize(playerid, playerFields[playerid][id][fieldName], 0.412999, 1.512888);
+	PlayerTextDrawAlignment(playerid, playerFields[playerid][id][fieldName], 1);
+	PlayerTextDrawColor(playerid, playerFields[playerid][id][fieldName], color);
+	PlayerTextDrawSetShadow(playerid, playerFields[playerid][id][fieldName], 0);
+	PlayerTextDrawSetOutline(playerid, playerFields[playerid][id][fieldName], 1);
+	PlayerTextDrawBackgroundColor(playerid, playerFields[playerid][id][fieldName], 51);
+	PlayerTextDrawFont(playerid, playerFields[playerid][id][fieldName], 1);
+	PlayerTextDrawSetProportional(playerid, playerFields[playerid][id][fieldName], 1);
 
-	playerFields[id][field] = CreatePlayerTextDraw(playerFields[id][pid], x, y+16, fieldDefaultValue);
-	PlayerTextDrawLetterSize(playerFields[id][pid], playerFields[id][field], 0.29, 1.6);
-	PlayerTextDrawTextSize(playerFields[id][pid], playerFields[id][field], x+135, 17);
-	PlayerTextDrawColor(playerFields[id][pid], playerFields[id][field], -1);
-	PlayerTextDrawUseBox(playerFields[id][pid], playerFields[id][field], true);
-	PlayerTextDrawBoxColor(playerFields[id][pid], playerFields[id][field], fieldColor);
-	PlayerTextDrawSetShadow(playerFields[id][pid], playerFields[id][field], 0);
-	PlayerTextDrawSetOutline(playerFields[id][pid], playerFields[id][field], 1);
-	PlayerTextDrawBackgroundColor(playerFields[id][pid], playerFields[id][field], 255);
-	PlayerTextDrawFont(playerFields[id][pid], playerFields[id][field], 1);
-	PlayerTextDrawSetProportional(playerFields[id][pid], playerFields[id][field], 1);
-	PlayerTextDrawSetSelectable(playerFields[id][pid], playerFields[id][field], true);
+	playerFields[playerid][id][field] = CreatePlayerTextDraw(playerid, x, y+16, fieldDefaultValue);
+	PlayerTextDrawLetterSize(playerid, playerFields[playerid][id][field], 0.29, 1.6);
+	PlayerTextDrawTextSize(playerid, playerFields[playerid][id][field], x+135, 17);
+	PlayerTextDrawColor(playerid, playerFields[playerid][id][field], -1);
+	PlayerTextDrawUseBox(playerid, playerFields[playerid][id][field], true);
+	PlayerTextDrawBoxColor(playerid, playerFields[playerid][id][field], fieldColor);
+	PlayerTextDrawSetShadow(playerid, playerFields[playerid][id][field], 0);
+	PlayerTextDrawSetOutline(playerid, playerFields[playerid][id][field], 1);
+	PlayerTextDrawBackgroundColor(playerid, playerFields[playerid][id][field], 255);
+	PlayerTextDrawFont(playerid, playerFields[playerid][id][field], 1);
+	PlayerTextDrawSetProportional(playerid, playerFields[playerid][id][field], 1);
+	PlayerTextDrawSetSelectable(playerid, playerFields[playerid][id][field], true);
 
 	return id;
 }
 
-stock DestroyPlayerField(fieldID)
+stock DestroyPlayerField(playerid, fieldID)
 {
 	if(IsPlayerFieldCreated(fieldID))
 	{
-		PlayerTextDrawDestroy(playerFields[id][pid], playerFields[fieldID][fieldName]);
-		playerFields[fieldID][fieldName] = INVALID_TEXT_DRAW;
-		PlayerTextDrawDestroy(playerFields[id][pid], playerFields[fieldID][field]);
-		playerFields[fieldID][field] = INVALID_TEXT_DRAW;
-		strdel(playerFields[id][fieldNameStr], 0, VERY_SHORT_STR);
-		playerFields[fieldID][pid] = INVALID_PLAYER_ID;
-		playerFields[fieldID][useDefaultBehavior] = true;
+		PlayerTextDrawDestroy(playerid, playerFields[fieldID][fieldName]);
+		playerFields[playerid][fieldID][fieldName] = INVALID_TEXT_DRAW;
+		PlayerTextDrawDestroy(playerid, playerFields[playerid][fieldID][field]);
+		playerFields[playerid][fieldID][field] = INVALID_TEXT_DRAW;
+		strdel(playerFields[playerid][fieldID][fieldNameStr], 0, VERY_SHORT_STR);
+		playerFields[playerid][fieldID][useDefaultBehavior] = true;
 		return true;
 	}
 	return false;
 }
 
-stock GetAvailablePlayerFieldID()
+stock GetAvailablePlayerFieldID(playerid)
 {
 	for(new i=0; i<MAX_FIELDS; ++i)
 	{
-		if(!IsPlayerFieldCreated(i))
+		if(!IsPlayerFieldCreated(playerid, i))
 			return i;
 	}
 	return -1;
 }
 
-stock IsPlayerFieldCreated(fieldID)
+stock IsPlayerFieldCreated(playerid, fieldID)
 {
-	if(playerFields[fieldID][field] == PlayerText:INVALID_TEXT_DRAW)
+	if(playerFields[playerid][fieldID][field] == PlayerText:INVALID_TEXT_DRAW)
 		return false;
 	else
 		return true;
 }
 
-stock SetFieldDefaultBehavior(fieldID, bool:set)
+stock SetFieldDefaultBehavior(playerid, fieldID, bool:set)
 {
-	playerFields[fieldID][useDefaultBehavior] = set;
+	playerFields[playerid][fieldID][useDefaultBehavior] = set;
 	return 1;
 }
 
-stock IsValidPlayerField(fieldID)
+stock IsValidPlayerField(playerid, fieldID)
 {
-	return IsPlayerFieldCreated(fieldID);
+	return IsPlayerFieldCreated(playerid, fieldID);
 }

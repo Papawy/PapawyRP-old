@@ -26,5 +26,5 @@ forward MySQL_Close();
 public MySQL_Close()
 {
 	mysql_close(MySQL_handle);
-	printf("[MySQL] MySQL connection closed !");
+	printf("+ MySQL connection closed !");
 }
