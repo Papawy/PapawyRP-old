@@ -14,6 +14,7 @@
 		- GUI
 			+ gui_fields < user can type text in, and you get the text back like a Dialog
 			+ gui_buttons < simple textdraw buttons !
+			+ gui_backgrounds < simple backgrounds
 
 		- MySQL
 			+ mysql_infos < mysql informations & vars

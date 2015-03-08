@@ -19,26 +19,31 @@ new PassConfirm[MAX_PLAYERS];
 
 new AcceptButton[MAX_PLAYERS];
 
+new BckGrd[MAX_PLAYERS];
+
 // ----------------------------------------------------------------------------
 
 hook OnPlayerConnect(playerid)
 {
-	Name[playerid] = CreatePlayerField(playerid, 250, 100, "Pseudo", "Jacquouille");
+	Name[playerid] = CreatePlayerField(playerid, 250, 100, "Pseudo", "Votre pseudo");
 	ShowPlayerField(playerid, Name[playerid]);
 
-	Email[playerid] = CreatePlayerField(playerid, 250, 150, "EMail", "Jacquouille.lafripouille@gmail.com");
+	Email[playerid] = CreatePlayerField(playerid, 250, 150, "EMail", "Adresse email");
 	ShowPlayerField(playerid, Email[playerid]);
 
 	Pass[playerid] = CreatePlayerField(playerid, 250, 200, "Mot de passe", "...");
 	SetFieldDefaultBehavior(playerid, Pass[playerid], false);
 	ShowPlayerField(playerid, Pass[playerid]);
 
-	PassConfirm[playerid] = CreatePlayerField(playerid, 250, 250, "Confirmation mot de passe", "...");
+	PassConfirm[playerid] = CreatePlayerField(playerid, 250, 250, "Confirmation", "...");
 	SetFieldDefaultBehavior(playerid, PassConfirm[playerid], false);
 	ShowPlayerField(playerid, PassConfirm[playerid]);
 
 	AcceptButton[playerid] = CreatePlayerButton(playerid, 320, 300, "S'inscrire");
 	ShowPlayerButton(playerid, AcceptButton[playerid]);
+
+	BckGrd[playerid] = CreatePlayerBackground(playerid, 220, 80, 420, 320, 0x20202030);
+	ShowPlayerBackground(playerid, BckGrd[playerid]);
 
 	SelectTextDraw(playerid, 0x00FF00FF);
 
