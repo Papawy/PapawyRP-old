@@ -110,8 +110,6 @@ stock UpdateFieldName(playerid, fieldID, name[])
 	return 1;
 }
 
-// ----------------------------------------------------------------------------
-
 stock CreatePlayerField(playerid, Float:x, Float:y, name[], fieldDefaultValue[]=" ", color=0xFFFFFFFF, fieldColor=0x88888860)
 {
 	new id = GetAvailablePlayerFieldID(playerid);
@@ -160,8 +158,6 @@ stock DestroyPlayerField(playerid, fieldID)
 	}
 	return false;
 }
-
-// ----------------------------------------------------------------------------
 
 stock GetAvailablePlayerFieldID(playerid)
 {
