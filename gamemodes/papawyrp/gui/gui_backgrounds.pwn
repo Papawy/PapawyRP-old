@@ -18,7 +18,11 @@
 
 // Try to implement Iterator with y_iterate, later...
 enum BACKGROUND_INFOS {
-	PlayerText:background
+	PlayerText:background,
+	Float:bckWidth,
+	Float:bckHeight,
+	Float:globalX,
+	Float:globalY
 }
 
 new playerBackground[MAX_PLAYERS][MAX_BACKGROUND][BACKGROUND_INFOS];
@@ -53,7 +57,12 @@ stock HidePlayerBackground(playerid, backgroundID)
 
 // ----------------------------------------------------------------------------
 
-stock CreatePlayerBackground(playerid, Float:x, Float:y, Float:maxx, Float:maxy, backgroundColor=0x20202030)
+/* relativeMax :
+	false : maxx & maxy are fixed positions
+	true : maxx & maxy positions depends of x & y
+*/
+
+stock CreatePlayerBackground(playerid, Float:x, Float:y, Float:maxx, Float:maxy, backgroundColor=0x20202030, bool:relativeMax=false)
 {
 	new id = GetAvailablePlayerBackgroundID(playerid);
 	if(id == -1)
@@ -61,9 +70,25 @@ stock CreatePlayerBackground(playerid, Float:x, Float:y, Float:maxx, Float:maxy,
 		return INVALID_TEXT_DRAW;
 	}
 
+	playerBackground[playerid][id][globalX] = x;
+	playerBackground[playerid][id][globalY] = y;
+
 	playerBackground[playerid][id][background] = CreatePlayerTextDraw(playerid, x, y, "bckgrd");
-	PlayerTextDrawLetterSize(playerid, playerBackground[playerid][id][background], 0.000000, (maxy-y)*0.135);
-	PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx, 0.000000);
+	if(relativeMax)
+	{
+		playerBackground[playerid][id][bckWidth] = maxx;
+		playerBackground[playerid][id][bckHeight] = maxy;
+		PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx+x, 0.000000);
+		PlayerTextDrawLetterSize(playerid, playerBackground[playerid][id][background], 0.000000, maxy*0.135);
+	}
+	else
+	{
+		playerBackground[playerid][id][bckWidth] = maxx;
+		playerBackground[playerid][id][bckHeight] = maxy;
+		PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx, 0.000000);
+		PlayerTextDrawLetterSize(playerid, playerBackground[playerid][id][background], 0.000000, (maxy-y)*0.135);
+	}
+
 	PlayerTextDrawAlignment(playerid, playerBackground[playerid][id][background], 1);
 	PlayerTextDrawColor(playerid, playerBackground[playerid][id][background], 0);
 	PlayerTextDrawUseBox(playerid, playerBackground[playerid][id][background], true);
@@ -84,6 +109,30 @@ stock DestroyPlayerBackground(playerid, backgroundID)
 		return true;
 	}
 	return false;
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetBackgroundGlobalPosX(playerid, backgroundID)
+{
+	return playerBackground[playerid][backgroundID][globalX];
+}
+
+stock Float:GetBackgroundGlobalPosY(playerid, backgroundID)
+{
+	return playerBackground[playerid][backgroundID][globalY];
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetBackgroundWidth(playerid, backgroundID)
+{
+	return playerBackground[playerid][backgroundID][bckWidth];
+}
+
+stock Float:GetBackgroundHeight(playerid, backgroundID)
+{
+	return playerBackground[playerid][backgroundID][bckHeight];
 }
 
 // ----------------------------------------------------------------------------

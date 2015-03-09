@@ -14,6 +14,9 @@
 
 #define MAX_FIELDS 					50
 
+#define FIELD_DEFAULT_WIDTH			135.0
+#define FIELD_DEFAULT_HEIGHT		17.0
+
 // ----------------------------------------------------------------------------
 
 // Try to implement Iterator with y_iterate, later...
@@ -21,7 +24,11 @@ enum FIELD_INFOS {
 	PlayerText:fieldName,
 	fieldNameStr[VERY_SHORT_STR],
 	PlayerText:field,
+	Float:fWidth,
+	Float:fHeight,
 	bool:useDefaultBehavior,
+	Float:globalX,
+	Float:globalY
 }
 
 new playerFields[MAX_PLAYERS][MAX_FIELDS][FIELD_INFOS];
@@ -112,7 +119,7 @@ stock UpdateFieldName(playerid, fieldID, name[])
 
 // ----------------------------------------------------------------------------
 
-stock CreatePlayerField(playerid, Float:x, Float:y, name[], fieldDefaultValue[]=" ", color=0xFFFFFFFF, fieldColor=0x88888860)
+stock CreatePlayerField(playerid, Float:x, Float:y, name[], fieldDefaultValue[]=" ", color=0xFFFFFFFF, fieldColor=0x88888860, Float:fieldWidth=FIELD_DEFAULT_WIDTH, Float:fieldHeight=FIELD_DEFAULT_HEIGHT)
 {
 	new id = GetAvailablePlayerFieldID(playerid);
 	if(id == -1)
@@ -130,9 +137,16 @@ stock CreatePlayerField(playerid, Float:x, Float:y, name[], fieldDefaultValue[]=
 	PlayerTextDrawFont(playerid, playerFields[playerid][id][fieldName], 1);
 	PlayerTextDrawSetProportional(playerid, playerFields[playerid][id][fieldName], 1);
 
+	playerFields[playerid][id][globalX] = x;
+	playerFields[playerid][id][globalY] = y;
+
+	playerFields[playerid][id][fWidth] = fieldWidth;
+	playerFields[playerid][id][fHeight] = fieldHeight;
+
 	playerFields[playerid][id][field] = CreatePlayerTextDraw(playerid, x, y+16, fieldDefaultValue);
 	PlayerTextDrawLetterSize(playerid, playerFields[playerid][id][field], 0.29, 1.6);
-	PlayerTextDrawTextSize(playerid, playerFields[playerid][id][field], x+135, 17);
+	PlayerTextDrawAlignment(playerid, playerFields[playerid][id][field], 1);
+	PlayerTextDrawTextSize(playerid, playerFields[playerid][id][field], x+playerFields[playerid][id][fWidth], playerFields[playerid][id][fHeight]);
 	PlayerTextDrawColor(playerid, playerFields[playerid][id][field], -1);
 	PlayerTextDrawUseBox(playerid, playerFields[playerid][id][field], true);
 	PlayerTextDrawBoxColor(playerid, playerFields[playerid][id][field], fieldColor);
@@ -159,6 +173,40 @@ stock DestroyPlayerField(playerid, fieldID)
 		return true;
 	}
 	return false;
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetFieldGlobalPosX(playerid, fieldID)
+{
+	return playerFields[playerid][fieldID][globalX];
+}
+
+stock Float:GetFieldGlobalPosY(playerid, fieldID)
+{
+	return playerFields[playerid][fieldID][globalY];
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetFieldWidth(playerid, fieldID)
+{
+	return playerFields[playerid][fieldID][fWidth];
+}
+
+stock Float:GetFieldHeight(playerid, fieldID)
+{
+	return playerFields[playerid][fieldID][fHeight];
+}
+
+stock Float:GetGlobalFieldWidth(playerid, fieldID)
+{
+	return GetFieldWidth(playerid, fieldID);
+}
+
+stock Float:GetGlobalFieldHeight(playerid, fieldID)
+{
+	return playerFields[playerid][fieldID][fHeight]+16;
 }
 
 // ----------------------------------------------------------------------------

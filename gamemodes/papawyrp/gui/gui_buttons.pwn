@@ -14,11 +14,18 @@
 
 #define MAX_BUTTONS 					150
 
+#define BUTTON_DEFAULT_WIDTH			110.0
+#define BUTTON_DEFAULT_HEIGHT			19.0
+
 // ----------------------------------------------------------------------------
 
 // Try to implement Iterator with y_iterate, later...
 enum BUTTON_INFOS {
-	PlayerText:button
+	PlayerText:button,
+	Float:bWidth,
+	Float:bHeight,
+	Float:globalX,
+	Float:globalY
 }
 
 new playerButtons[MAX_PLAYERS][MAX_BUTTONS][BUTTON_INFOS];
@@ -79,7 +86,9 @@ stock UpdateButtonName(playerid, buttonID, name[])
 
 // ----------------------------------------------------------------------------
 
-stock CreatePlayerButton(playerid, Float:x, Float:y, text[], textColor=0xFFFFFFFF, boxColor=0x88888860)
+// When you use it, do something like that : CreatePlayerButton(playerid, x, y, text, .height=yourHeight) so, you can set params you want !
+
+stock CreatePlayerButton(playerid, Float:x, Float:y, text[], textColor=0xFFFFFFFF, boxColor=0x88888860, Float:width=BUTTON_DEFAULT_WIDTH, Float:height=BUTTON_DEFAULT_HEIGHT, alignment = 2)
 {
 	new id = GetAvailablePlayerButtonID(playerid);
 	if(id == -1)
@@ -87,10 +96,34 @@ stock CreatePlayerButton(playerid, Float:x, Float:y, text[], textColor=0xFFFFFFF
 		return INVALID_TEXT_DRAW;
 	}
 
+	playerButtons[playerid][id][globalX] = x;
+	playerButtons[playerid][id][globalY] = y;
+
+	playerButtons[playerid][id][bWidth] = width;
+	playerButtons[playerid][id][bHeight] = height;
+
 	playerButtons[playerid][id][button] = CreatePlayerTextDraw(playerid, x, y, text);
 	PlayerTextDrawLetterSize(playerid, playerButtons[playerid][id][button], 0.37, 2.2);
-	PlayerTextDrawTextSize(playerid, playerButtons[playerid][id][button], 19, 110);
-	PlayerTextDrawAlignment(playerid, playerButtons[playerid][id][button], 2);
+	switch(alignment)
+	{
+		case 1:
+		{
+			PlayerTextDrawTextSize(playerid, playerButtons[playerid][id][button], x+width, height);
+		}
+		case 2:
+		{
+			PlayerTextDrawTextSize(playerid, playerButtons[playerid][id][button], height, width);
+		}
+		case 3:
+		{
+			PlayerTextDrawTextSize(playerid, playerButtons[playerid][id][button], width, height);
+		}
+		default:
+		{
+			PlayerTextDrawTextSize(playerid, playerButtons[playerid][id][button], height, width);
+		}
+	}
+	PlayerTextDrawAlignment(playerid, playerButtons[playerid][id][button], alignment);
 	PlayerTextDrawColor(playerid, playerButtons[playerid][id][button], textColor);
 	PlayerTextDrawUseBox(playerid, playerButtons[playerid][id][button], true);
 	PlayerTextDrawBoxColor(playerid, playerButtons[playerid][id][button], boxColor);
@@ -100,6 +133,7 @@ stock CreatePlayerButton(playerid, Float:x, Float:y, text[], textColor=0xFFFFFFF
 	PlayerTextDrawFont(playerid, playerButtons[playerid][id][button], 1);
 	PlayerTextDrawSetProportional(playerid, playerButtons[playerid][id][button], 1);
 	PlayerTextDrawSetSelectable(playerid, playerButtons[playerid][id][button], true);
+
 
 	return id;
 }
@@ -113,6 +147,30 @@ stock DestroyPlayerButton(playerid, buttonID)
 		return true;
 	}
 	return false;
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetButtonGlobalPosX(playerid, buttonID)
+{
+	return playerButtons[playerid][buttonID][globalX];
+}
+
+stock Float:GetButtonGlobalPosY(playerid, buttonID)
+{
+	return playerButtons[playerid][buttonID][globalY];
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetButtonWidth(playerid, buttonID)
+{
+	return playerButtons[playerid][buttonID][bWidth];
+}
+
+stock Float:GetButtonHeight(playerid, buttonID)
+{
+	return playerButtons[playerid][buttonID][bHeight];
 }
 
 // ----------------------------------------------------------------------------

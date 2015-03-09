@@ -40,7 +40,6 @@
 #include "papawyrp\core.pwn"
 
 
-
 main()
 {
 	print("\r\n-------------------------------------------\r\n");

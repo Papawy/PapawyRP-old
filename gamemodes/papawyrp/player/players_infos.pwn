@@ -25,6 +25,7 @@ enum P_INFOS {
 	pRegistered, // var not stored, it's usefull to not do a SQL query when you want to know if he's registered
 	pName[MAX_PLAYER_NAME+1],
 	pPass[HASHED_PASS_LENGHT],
+	pIP[VERY_VERY_SHORT_STR],
 	pEmail[NORMAL_STR],
 	pRegisterDate, // timestamp
 	pAdminRank
