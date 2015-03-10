@@ -14,6 +14,7 @@ Originaly made by Papawy.
 			+ gui_fields < user can type text in, and you get the text back like a Dialog
 			+ gui_buttons < simple textdraw buttons !
 			+ gui_backgrounds < simple backgrounds
+			+ gui_textbox < text in a box, that's all !
 
 		- MySQL :
 			+ mysql_infos < mysql informations & vars
@@ -42,3 +43,4 @@ To compile this gamemode you need this includes :
 + easyDialog by Emmet- 	: [Link](http://forum.sa-mp.com/showthread.php?t=475838)
 + BlueG MySQL plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
 + Whirlpool by Y_Less : [Link](http://forum.sa-mp.com/showthread.php?t=65290)
++ Regex Plugin by Fro1sha : [Link](http://forum.sa-mp.com/showthread.php?t=247893)
