@@ -26,7 +26,7 @@ enum P_INFOS {
 	pName[MAX_PLAYER_NAME+1],
 	pPass[HASHED_PASS_LENGHT],
 	pIP[VERY_VERY_SHORT_STR],
-	pEmail[NORMAL_STR],
+	pEmail[LONG_STR],
 	pRegisterDate, // timestamp
 	pAdminRank
 };

@@ -25,10 +25,10 @@ public LoadPlayerData(playerid, key)
 {
 	new ORM:pOrm = pInfos[playerid][pOrmID] = orm_create("playersData");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pSqlID], 						"ID");
-	orm_addvar_string(pOrm, GetPlayerNameEx(playerid), MAX_PLAYER_NAME+1, 	"Name");
+	orm_addvar_string(pOrm, pInfos[playerid][pName], MAX_PLAYER_NAME+1, 	"Name");
 	orm_addvar_string(pOrm, pInfos[playerid][pPass], MAX_PLAYER_PASS,		"Pass");
-	orm_addvar_string(pOrm, pInfos[playerid][pPass], MAX_PLAYER_PASS,		"IP");
-	orm_addvar_string(pOrm, pInfos[playerid][pEmail], NORMAL_STR,			"Email");
+	orm_addvar_string(pOrm, pInfos[playerid][pIP], VERY_VERY_SHORT_STR,		"IP");
+	orm_addvar_string(pOrm, pInfos[playerid][pEmail], LONG_STR,				"Email");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pRegisterDate], 				"RegisterDate");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pAdminRank],					"AdminRank");
 
@@ -70,4 +70,11 @@ public SavePlayerData(playerid)
 	{
 		orm_update(pInfos[playerid][pOrmID]);
 	}
+}
+
+forward ResetPlayerVars(playerid);
+public ResetPlayerVars(playerid)
+{
+	new reset[P_INFOS];
+	pInfos[playerid] = reset;
 }

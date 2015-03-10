@@ -14,7 +14,7 @@
 
 hook OnPlayerConnect(playerid)
 {
-
+	GetPlayerName(playerid, pInfos[playerid][pName], MAX_PLAYER_NAME+1);
 	LoadPlayerData(playerid, 1);
 	if(!IsPlayerRegistered(playerid))
 	{
@@ -23,6 +23,3 @@ hook OnPlayerConnect(playerid)
 	}
 	return 1;
 }
-
-
-

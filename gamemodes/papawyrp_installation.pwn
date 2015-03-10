@@ -205,7 +205,6 @@ stock fcreate(filename[])
     return true;
 }
 
-
 // Thanks to mooman
 stock convert_encoding(string[])
 {

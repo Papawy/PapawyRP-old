@@ -78,14 +78,14 @@ stock CreatePlayerBackground(playerid, Float:x, Float:y, Float:maxx, Float:maxy,
 	{
 		playerBackground[playerid][id][bckWidth] = maxx;
 		playerBackground[playerid][id][bckHeight] = maxy;
-		PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx+x, 0.000000);
-		PlayerTextDrawLetterSize(playerid, playerBackground[playerid][id][background], 0.000000, maxy*0.135);
+		PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx+x, 0);
+		PlayerTextDrawLetterSize(playerid, playerBackground[playerid][id][background], 0, maxy*0.135);
 	}
 	else
 	{
 		playerBackground[playerid][id][bckWidth] = maxx;
 		playerBackground[playerid][id][bckHeight] = maxy;
-		PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx, 0.000000);
+		PlayerTextDrawTextSize(playerid, playerBackground[playerid][id][background], maxx, 0);
 		PlayerTextDrawLetterSize(playerid, playerBackground[playerid][id][background], 0.000000, (maxy-y)*0.135);
 	}
 

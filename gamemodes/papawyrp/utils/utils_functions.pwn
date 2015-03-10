@@ -10,6 +10,38 @@
 
 native WP_Hash(buffer[], len, const str[]);
 
+// ----------------------------------------------------------------------------
+
+stock IsValidEmailEx(const string[])
+{
+	static
+		RegEx:rEmail
+	;
+	
+	if ( !rEmail )
+	{		
+		rEmail = regex_build("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+	}
+	
+	return regex_match_exid(string, rEmail);
+}
+
+stock IsValidRpNameEx(const string[])
+{
+	static
+		RegEx:rRpName
+	;
+	
+	if ( !rRpName )
+	{		
+		rRpName = regex_build("([A-Z]{1,1})[a-z]{2,9}+_([A-Z]{1,1})[a-z]{2,9}");
+	}
+	
+	return regex_match_exid(string, rRpName);
+}
+
+// ----------------------------------------------------------------------------
+
 stock GetPlayerNameEx(playerid)
 {
     new pName[MAX_PLAYER_NAME+1];
@@ -104,4 +136,23 @@ stock date(timestamp, _form=0)
 	}
 	
 	return returnstring;
+}
+
+// Thanks to mooman
+stock convert_encoding(string[])
+{
+	new tmpstr[256];
+	strins(tmpstr, string, 0);
+	new original[50] = {192,193,194,196,198,199,200,201,202,203,204,205,206,207,210,211,212,214,217,218,219,220,223,224,225,226,228,230,231,232,233,234,235,236,237,238,239,242,243,244,246,249,250,251,252,209,241,191,161,176};
+	new fixed[50] = {128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,94,124};
+	new len = strlen(string);
+	for (new i; i < len; i++) {
+		for(new j;j < 50;j++) {
+			if(tmpstr[i] == original[j]) {
+				tmpstr[i] = fixed[j];
+				break;
+			}
+		}
+	}
+	return tmpstr;
 }
