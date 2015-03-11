@@ -60,6 +60,7 @@ public OnPlayerDataLoad(playerid)
 			pInfos[playerid][pRegistered] = false;
 		}
 	}
+	orm_setkey(pInfos[playerid][pOrmID], "ID");
 	return 1;
 }
 

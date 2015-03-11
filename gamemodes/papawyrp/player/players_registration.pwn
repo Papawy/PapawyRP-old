@@ -77,6 +77,7 @@ hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
 	{
 		if(IsValidEmailEx(inputtext))
 		{
+			strdel(pRegist[playerid][tmpEmail], 0, LONG_STR);
 			strins(pRegist[playerid][tmpEmail], inputtext, 0, LONG_STR);
 			HidePlayerTextbox(playerid, pRegist[playerid][tbAvert]);
 		}
@@ -106,7 +107,7 @@ hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
 		}
 		else
 		{
-			strdel()
+			strdel(pRegist[playerid][tmpPass], 0, MAX_PLAYER_PASS);
 			strins(pRegist[playerid][tmpPass], inputtext, 0, MAX_PLAYER_PASS+1);
 			HidePlayerTextbox(playerid, pRegist[playerid][tbAvert]);
 		}
@@ -124,7 +125,7 @@ hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
 		{
 			tmpstr[0] = ' ';
 		}
-
+		strdel(pRegist[playerid][tmpPassConfirm], 0, MAX_PLAYER_PASS);
 		strins(pRegist[playerid][tmpPassConfirm], tmpstr, 0, MAX_PLAYER_PASS+1);
 		
 		return 1;
@@ -151,7 +152,7 @@ hook OnPlayerClickButton(playerid, buttonID)
 			ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0x00BB00FF);
 			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre inscription est en cours !"));
 
-			strins(pInfos[playerid][pName], GetPlayerNameEx(playerid), 0,MAX_PLAYER_NAME+1);
+			printf("PName : %s", pInfos[playerid][pName]);
 			WP_Hash(pInfos[playerid][pPass], HASHED_PASS_LENGHT, pRegist[playerid][tmpPass]);
 			strins(pInfos[playerid][pEmail], pRegist[playerid][tmpEmail], 0, LONG_STR);
 
