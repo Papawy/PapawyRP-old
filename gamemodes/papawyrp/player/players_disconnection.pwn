@@ -12,12 +12,12 @@
 
 // ----------------------------------------------------------------------------
 
-hook OnGameModeExit()
+hook OnPlayerDisconnect(playerid, reason)
 {
 	if(pInfos[playerid][pSqlID] != 0) {
-		orm_update(pInfos[playerid][ORM_ID]);	
+		orm_update(pInfos[playerid][pOrmID]);	
 	}
-	orm_destroy(pInfos[playerid][ORM_ID]);
+	orm_destroy(pInfos[playerid][pOrmID]);
 
 	return 1;
 }

@@ -17,7 +17,7 @@
 
 // ----------------------------------------------------------------------------
 
-// Why pPass don't have the MAX_PLAYER_PASS lenght ? Beacause it's hashed and it take 129 characters.
+// Why pPass doesn't have the MAX_PLAYER_PASS lenght ? Beacause it's hashed and it take 129 characters.
 
 enum P_INFOS {
 	pSqlID,
