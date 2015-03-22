@@ -43,8 +43,8 @@ hook OnGameModeInit()
 	{
 		for(new i=0; i<MAX_FIELDS; ++i)
 		{
-			playerFields[p][i][field] = PlayerText:INVALID_TEXT_DRAW;
-			playerFields[p][i][fieldName] = PlayerText:INVALID_TEXT_DRAW;
+			playerFields[p][i][field] = INVALID_PLAYER_TEXTDRAW;
+			playerFields[p][i][fieldName] = INVALID_PLAYER_TEXTDRAW;
 			playerFields[p][i][useDefaultBehavior] = true;
 		}
 	}
@@ -55,7 +55,7 @@ hook OnGameModeInit()
 
 hook OnPlayerClickPlayerTD(playerid, PlayerText:playertextid)
 {
-	if(playertextid != PlayerText:INVALID_TEXT_DRAW)
+	if(playertextid != INVALID_PLAYER_TEXTDRAW)
 	{
 		for(new i=0; i<MAX_FIELDS; ++i)
 		{
@@ -162,12 +162,12 @@ stock CreatePlayerField(playerid, Float:x, Float:y, name[], fieldDefaultValue[]=
 
 stock DestroyPlayerField(playerid, fieldID)
 {
-	if(IsPlayerFieldCreated(fieldID))
+	if(IsPlayerFieldCreated(playerid, fieldID))
 	{
-		PlayerTextDrawDestroy(playerid, playerFields[fieldID][fieldName]);
-		playerFields[playerid][fieldID][fieldName] = INVALID_TEXT_DRAW;
+		PlayerTextDrawDestroy(playerid, playerFields[playerid][fieldID][fieldName]);
+		playerFields[playerid][fieldID][fieldName] = INVALID_PLAYER_TEXTDRAW;
 		PlayerTextDrawDestroy(playerid, playerFields[playerid][fieldID][field]);
-		playerFields[playerid][fieldID][field] = INVALID_TEXT_DRAW;
+		playerFields[playerid][fieldID][field] = INVALID_PLAYER_TEXTDRAW;
 		strdel(playerFields[playerid][fieldID][fieldNameStr], 0, VERY_SHORT_STR);
 		playerFields[playerid][fieldID][useDefaultBehavior] = true;
 		return true;
@@ -223,7 +223,7 @@ stock GetAvailablePlayerFieldID(playerid)
 
 stock IsPlayerFieldCreated(playerid, fieldID)
 {
-	if(playerFields[playerid][fieldID][field] == PlayerText:INVALID_TEXT_DRAW)
+	if(playerFields[playerid][fieldID][field] == INVALID_PLAYER_TEXTDRAW)
 		return false;
 	else
 		return true;

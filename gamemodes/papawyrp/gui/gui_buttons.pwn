@@ -38,7 +38,7 @@ hook OnGameModeInit()
 	{
 		for(new i=0; i<MAX_BUTTONS; ++i)
 		{
-			playerButtons[p][i][button] = PlayerText:INVALID_TEXT_DRAW;
+			playerButtons[p][i][button] = INVALID_PLAYER_TEXTDRAW;
 		}
 	}
 	return 1;
@@ -48,7 +48,7 @@ hook OnGameModeInit()
 
 hook OnPlayerClickPlayerTD(playerid, PlayerText:playertextid)
 {
-	if(playertextid != PlayerText:INVALID_TEXT_DRAW)
+	if(playertextid != INVALID_PLAYER_TEXTDRAW)
 	{
 		for(new i=0; i<MAX_BUTTONS; ++i)
 		{
@@ -140,10 +140,10 @@ stock CreatePlayerButton(playerid, Float:x, Float:y, text[], textColor=0xFFFFFFF
 
 stock DestroyPlayerButton(playerid, buttonID)
 {
-	if(IsPlayerButtonCreated(buttonID))
+	if(IsPlayerButtonCreated(playerid, buttonID))
 	{
-		PlayerTextDrawDestroy(playerid, playerButtons[buttonID][button]);
-		playerButtons[playerid][buttonID][button] = INVALID_TEXT_DRAW;
+		PlayerTextDrawDestroy(playerid, playerButtons[playerid][buttonID][button]);
+		playerButtons[playerid][buttonID][button] = INVALID_PLAYER_TEXTDRAW;
 		return true;
 	}
 	return false;
@@ -187,7 +187,7 @@ stock GetAvailablePlayerButtonID(playerid)
 
 stock IsPlayerButtonCreated(playerid, buttonID)
 {
-	if(playerButtons[playerid][buttonID][button] == PlayerText:INVALID_TEXT_DRAW)
+	if(playerButtons[playerid][buttonID][button] == INVALID_PLAYER_TEXTDRAW)
 		return false;
 	else
 		return true;

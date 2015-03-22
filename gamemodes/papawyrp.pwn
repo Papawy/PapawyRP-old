@@ -28,6 +28,7 @@
 			+ players_infos < enumeration of infos for each player
 			+ players_connection < obvious
 			+ players_registration < obvious
+			+ players_disconnection < obvious
 
 		- Commands
 			+ commands_config < configuration (color, format, etc.)

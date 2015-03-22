@@ -54,6 +54,12 @@ stock HidePlayerTextbox(playerid, textboxID)
 	return 1;
 }
 
+stock DestroyPlayerTextbox(playerid, textboxID)
+{
+	PlayerTextDrawDestroy(playerid, playerTextbox[playerid][textboxID][textbox]);
+	return 1;
+}
+
 // ----------------------------------------------------------------------------
 
 stock ChangeTextboxString(playerid, textboxID, text[])

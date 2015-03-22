@@ -23,7 +23,7 @@ enum P_REGISTRATION {
 	tbAvert,
 	bAccept,
 	bQuit,
-	bckGrd,
+	bBckGrd,
 	// --
 	tmpPass[MAX_PLAYER_PASS+1],
 	tmpPassConfirm[MAX_PLAYER_PASS+1],
@@ -37,6 +37,20 @@ new pRegist[MAX_PLAYERS][P_REGISTRATION];
 
 forward RegisterPlayer(playerid);
 public RegisterPlayer(playerid)
+{
+	WP_Hash(pInfos[playerid][pPass], HASHED_PASS_LENGHT, pRegist[playerid][tmpPass]);
+	strins(pInfos[playerid][pEmail], pRegist[playerid][tmpEmail], 0, LONG_STR);
+
+	GetPlayerIp(playerid, pInfos[playerid][pIP], VERY_VERY_SHORT_STR);
+
+	pInfos[playerid][pRegisterDate] = gettime();
+	pInfos[playerid][pAdminRank] = 0;
+	orm_insert(pInfos[playerid][pOrmID]);
+	return 1;
+}
+
+forward StartPlayerRegistration(playerid);
+public StartPlayerRegistration(playerid)
 {
 	
 	pRegist[playerid][fEmail] = CreatePlayerField(playerid, 250, 150, "EMail", "Adresse email");
@@ -58,16 +72,29 @@ public RegisterPlayer(playerid)
 
 	pRegist[playerid][tbAvert] = CreatePlayerTextbox(playerid, 320, 80, " ", .textColor=0xBB0000FF);
 
-	pRegist[playerid][bckGrd] = CreatePlayerBackground(playerid, \
+	pRegist[playerid][bBckGrd] = CreatePlayerBackground(playerid, \
 		GetButtonGlobalPosX(playerid, pRegist[playerid][bAccept])-GetButtonWidth(playerid, pRegist[playerid][bAccept])/2-10, 130, \
 		GetButtonGlobalPosX(playerid, pRegist[playerid][bQuit])+GetButtonWidth(playerid, pRegist[playerid][bQuit])/2+10, \
 		GetButtonGlobalPosY(playerid, pRegist[playerid][bAccept])+GetButtonHeight(playerid, pRegist[playerid][bAccept])+10, 0x10101030);
 
-	ShowPlayerBackground(playerid, pRegist[playerid][bckGrd]);
+	ShowPlayerBackground(playerid, pRegist[playerid][bBckGrd]);
 
 	SelectTextDraw(playerid, 0x00FF00FF);
 
 	return 1;
+}
+
+stock DestroyRegistrationTD(playerid)
+{
+	DestroyPlayerField(playerid, pRegist[playerid][fEmail]);
+	DestroyPlayerField(playerid, pRegist[playerid][fPass]);
+	DestroyPlayerField(playerid, pRegist[playerid][fPassConfirm]);
+
+	DestroyPlayerButton(playerid, pRegist[playerid][bAccept]);
+	DestroyPlayerButton(playerid, pRegist[playerid][bQuit]);
+
+	DestroyPlayerTextbox(playerid, pRegist[playerid][tbAvert]);
+	DestroyPlayerBackground(playerid, pRegist[playerid][bBckGrd]);
 }
 
 hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
@@ -152,15 +179,9 @@ hook OnPlayerClickButton(playerid, buttonID)
 			ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0x00BB00FF);
 			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre inscription est en cours !"));
 
-			printf("PName : %s", pInfos[playerid][pName]);
-			WP_Hash(pInfos[playerid][pPass], HASHED_PASS_LENGHT, pRegist[playerid][tmpPass]);
-			strins(pInfos[playerid][pEmail], pRegist[playerid][tmpEmail], 0, LONG_STR);
+			DestroyRegistrationTD(playerid);
 
-			GetPlayerIp(playerid, pInfos[playerid][pIP], VERY_VERY_SHORT_STR);
-
-			pInfos[playerid][pRegisterDate] = gettime();
-			pInfos[playerid][pAdminRank] = 0;
-			orm_insert(pInfos[playerid][pOrmID]);
+			RegisterPlayer(playerid);
 			return 1;
 		}
 	}

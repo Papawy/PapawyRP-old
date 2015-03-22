@@ -35,7 +35,7 @@ hook OnGameModeInit()
 	{
 		for(new i=0; i<MAX_BACKGROUND; ++i)
 		{
-			playerBackground[p][i][background] = PlayerText:INVALID_TEXT_DRAW;
+			playerBackground[p][i][background] = INVALID_PLAYER_TEXTDRAW;
 		}
 	}
 	return 1;
@@ -102,10 +102,10 @@ stock CreatePlayerBackground(playerid, Float:x, Float:y, Float:maxx, Float:maxy,
 
 stock DestroyPlayerBackground(playerid, backgroundID)
 {
-	if(IsPlayerBackgroundCreated(backgroundID))
+	if(IsPlayerBackgroundCreated(playerid, backgroundID))
 	{
 		PlayerTextDrawDestroy(playerid, playerBackground[playerid][backgroundID][background]);
-		playerBackground[playerid][backgroundID][background] = INVALID_TEXT_DRAW;
+		playerBackground[playerid][backgroundID][background] = INVALID_PLAYER_TEXTDRAW;
 		return true;
 	}
 	return false;
@@ -149,7 +149,7 @@ stock GetAvailablePlayerBackgroundID(playerid)
 
 stock IsPlayerBackgroundCreated(playerid, backgroundID)
 {
-	if(playerBackground[playerid][backgroundID][background] == PlayerText:INVALID_TEXT_DRAW)
+	if(playerBackground[playerid][backgroundID][background] == INVALID_PLAYER_TEXTDRAW)
 		return false;
 	else
 		return true;

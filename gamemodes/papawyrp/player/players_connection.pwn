@@ -25,7 +25,7 @@ public CheckRegister(playerid)
 {
 	if(!IsPlayerRegistered(playerid))
 	{
-		RegisterPlayer(playerid);
+		StartPlayerRegistration(playerid);
 		return 1;
 	}
 	return 0;
