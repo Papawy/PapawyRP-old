@@ -28,5 +28,6 @@ public CheckRegister(playerid)
 		StartPlayerRegistration(playerid);
 		return 1;
 	}
+	StartLogin(playerid);
 	return 0;
 }

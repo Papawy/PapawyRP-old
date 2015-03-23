@@ -28,7 +28,8 @@ enum P_REGISTRATION {
 	tmpPass[MAX_PLAYER_PASS+1],
 	tmpPassConfirm[MAX_PLAYER_PASS+1],
 	tmpEmail[LONG_STR],
-	bool:isNotValid
+	bool:isNotValid,
+	bool:inRegistration,
 }
 
 new pRegist[MAX_PLAYERS][P_REGISTRATION];
@@ -81,6 +82,8 @@ public StartPlayerRegistration(playerid)
 
 	SelectTextDraw(playerid, 0x00FF00FF);
 
+	pRegist[playerid][inRegistration] = true;
+
 	return 1;
 }
 
@@ -99,95 +102,104 @@ stock DestroyRegistrationTD(playerid)
 
 hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
 {
-
-	if(fieldid == pRegist[playerid][fEmail])
+	if(pRegist[playerid][inRegistration])
 	{
-		if(IsValidEmailEx(inputtext))
+		if(fieldid == pRegist[playerid][fEmail])
 		{
-			strdel(pRegist[playerid][tmpEmail], 0, LONG_STR);
-			strins(pRegist[playerid][tmpEmail], inputtext, 0, LONG_STR);
-			HidePlayerTextbox(playerid, pRegist[playerid][tbAvert]);
+			if(IsValidEmailEx(inputtext))
+			{
+				strdel(pRegist[playerid][tmpEmail], 0, LONG_STR);
+				strins(pRegist[playerid][tmpEmail], inputtext, 0, LONG_STR);
+				HidePlayerTextbox(playerid, pRegist[playerid][tbAvert]);
+			}
+			else
+			{
+				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre email n'est pas valide !"));
+			}
 		}
-		else
+
+		if(fieldid == pRegist[playerid][fPass])
 		{
-			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre email n'est pas valide !"));
+			new tmpstr[NORMAL_STR];
+			for(new i=0; i<strlen(inputtext); ++i)
+				tmpstr[i] = 'X';
+
+			if(strlen(inputtext) < MIN_PLAYER_PASS)
+			{
+				new str[64];
+				format(str, sizeof(str), "Votre mot de passe est trop petit (minimum %i caractères) !", MIN_PLAYER_PASS);
+				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding(str));
+			}
+			else if(strlen(inputtext) > MAX_PLAYER_PASS)
+			{
+				new str[64];
+				format(str, sizeof(str), "Votre mot de passe est trop grand (minimum %i caractères) !", MAX_PLAYER_PASS);
+				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding(str));
+			}
+			else
+			{
+				strdel(pRegist[playerid][tmpPass], 0, MAX_PLAYER_PASS);
+				strins(pRegist[playerid][tmpPass], inputtext, 0, MAX_PLAYER_PASS+1);
+				HidePlayerTextbox(playerid, pRegist[playerid][tbAvert]);
+			}
+			UpdateFieldName(playerid, fieldid, tmpstr);
+			return 1;
+		}
+		if(fieldid == pRegist[playerid][fPassConfirm])
+		{
+			new tmpstr[NORMAL_STR];
+			for(new i=0; i<strlen(inputtext); ++i)
+				tmpstr[i] = 'X';
+
+			UpdateFieldName(playerid, fieldid, tmpstr);
+			if(strlen(inputtext) == 0)
+			{
+				tmpstr[0] = ' ';
+			}
+			strdel(pRegist[playerid][tmpPassConfirm], 0, MAX_PLAYER_PASS);
+			strins(pRegist[playerid][tmpPassConfirm], tmpstr, 0, MAX_PLAYER_PASS+1);
+			
+			return 1;
 		}
 	}
 
-	if(fieldid == pRegist[playerid][fPass])
-	{
-		new tmpstr[NORMAL_STR];
-		for(new i=0; i<strlen(inputtext); ++i)
-			tmpstr[i] = 'X';
-
-		if(strlen(inputtext) < MIN_PLAYER_PASS)
-		{
-			new str[64];
-			format(str, sizeof(str), "Votre mot de passe est trop petit (minimum %i caractères) !", MIN_PLAYER_PASS);
-			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding(str));
-		}
-		else if(strlen(inputtext) > MAX_PLAYER_PASS)
-		{
-			new str[64];
-			format(str, sizeof(str), "Votre mot de passe est trop grand (minimum %i caractères) !", MAX_PLAYER_PASS);
-			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding(str));
-		}
-		else
-		{
-			strdel(pRegist[playerid][tmpPass], 0, MAX_PLAYER_PASS);
-			strins(pRegist[playerid][tmpPass], inputtext, 0, MAX_PLAYER_PASS+1);
-			HidePlayerTextbox(playerid, pRegist[playerid][tbAvert]);
-		}
-		UpdateFieldName(playerid, fieldid, tmpstr);
-		return 1;
-	}
-	if(fieldid == pRegist[playerid][fPassConfirm])
-	{
-		new tmpstr[NORMAL_STR];
-		for(new i=0; i<strlen(inputtext); ++i)
-			tmpstr[i] = 'X';
-
-		UpdateFieldName(playerid, fieldid, tmpstr);
-		if(strlen(inputtext) == 0)
-		{
-			tmpstr[0] = ' ';
-		}
-		strdel(pRegist[playerid][tmpPassConfirm], 0, MAX_PLAYER_PASS);
-		strins(pRegist[playerid][tmpPassConfirm], tmpstr, 0, MAX_PLAYER_PASS+1);
-		
-		return 1;
-	}
 	return 1;
 }
 
 hook OnPlayerClickButton(playerid, buttonID)
 {
-	if(buttonID == pRegist[playerid][bAccept])
+	if(pRegist[playerid][inRegistration])
 	{
-		if(!strcmp(pRegist[playerid][tmpPassConfirm], pRegist[playerid][tmpPass], false) || strlen(pRegist[playerid][tmpPass]) == 0)
+		if(buttonID == pRegist[playerid][bAccept])
 		{
-			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Les deux mots de passe ne sont pas les mêmes !"));
-			return 1;
-		}
-		else if(!IsValidEmailEx(pRegist[playerid][tmpEmail]) || strlen(pRegist[playerid][tmpEmail]) == 0)
-		{
-			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre email n'est pas valide !"));
-			return 1;
-		}
-		else
-		{
-			ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0x00BB00FF);
-			ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre inscription est en cours !"));
+			if(!strcmp(pRegist[playerid][tmpPassConfirm], pRegist[playerid][tmpPass], false) || strlen(pRegist[playerid][tmpPass]) == 0)
+			{
+				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Les deux mots de passe ne sont pas les mêmes !"));
+				return 1;
+			}
+			else if(!IsValidEmailEx(pRegist[playerid][tmpEmail]) || strlen(pRegist[playerid][tmpEmail]) == 0)
+			{
+				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre email n'est pas valide !"));
+				return 1;
+			}
+			else
+			{
+				ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0x00BB00FF);
+				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Votre inscription est en cours !"));
 
+				DestroyRegistrationTD(playerid);
+
+				RegisterPlayer(playerid);
+				pRegist[playerid][inRegistration] = false;
+				return 1;
+			}
+		}
+		if(buttonID == pRegist[playerid][bQuit])
+		{
+			pRegist[playerid][inRegistration] = false;
 			DestroyRegistrationTD(playerid);
-
-			RegisterPlayer(playerid);
-			return 1;
+			KickEx(playerid);
 		}
-	}
-	if(buttonID == pRegist[playerid][bQuit])
-	{
-		KickEx(playerid);
 	}
 	return 1;
 }

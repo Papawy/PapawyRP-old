@@ -11,6 +11,7 @@ Originaly made by Papawy.
 			+ utils_functions < usefull functions (SendClientMessageEx, GetPlayerNameEx, etc.)
 		
 		- GUI
+			+ gui_utils < usefull things for GUI (screen dimensions, etc.)
 			+ gui_fields < user can type text in, and you get the text back like a Dialog
 			+ gui_buttons < simple textdraw buttons !
 			+ gui_backgrounds < simple backgrounds
@@ -25,9 +26,11 @@ Originaly made by Papawy.
 
 		- Player Infos
 			+ players_vars < standardize players information backups
-			+ players_infos < per player enum' and basic checks functions (registered ? connected ?)
+			+ players_infos < enumeration of infos for each player
 			+ players_connection < obvious
 			+ players_registration < obvious
+			+ players_login < obvious
+			+ players_disconnection < obvious
 
 		- Commands
 			+ commands_config < configuration (color, format, etc.)

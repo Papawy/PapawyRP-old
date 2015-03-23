@@ -12,9 +12,11 @@
 			+ utils_functions < usefull functions (SendClientMessageEx, GetPlayerNameEx, etc.)
 		
 		- GUI
+			+ gui_utils < usefull things for GUI (screen dimensions, etc.)
 			+ gui_fields < user can type text in, and you get the text back like a Dialog
 			+ gui_buttons < simple textdraw buttons !
 			+ gui_backgrounds < simple backgrounds
+			+ gui_textbox < text in a box, that's all !
 
 		- MySQL
 			+ mysql_infos < mysql informations & vars
@@ -28,6 +30,7 @@
 			+ players_infos < enumeration of infos for each player
 			+ players_connection < obvious
 			+ players_registration < obvious
+			+ players_login < obvious
 			+ players_disconnection < obvious
 
 		- Commands

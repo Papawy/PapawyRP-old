@@ -53,6 +53,7 @@
 
 // ----------- GUI
 
+#include "gui\gui_utils.pwn"
 #include "gui\gui_fields.pwn"
 #include "gui\gui_buttons.pwn"
 #include "gui\gui_backgrounds.pwn"
@@ -68,6 +69,7 @@
 #include "player\players_vars.pwn"
 
 #include "player\players_registration.pwn"
+#include "player\players_login.pwn"
 #include "player\players_connection.pwn"
 #include "player\players_disconnection.pwn"
 
