@@ -50,6 +50,8 @@ public RegisterPlayer(playerid)
 	return 1;
 }
 
+// ----------------------------------------------------------------------------
+
 forward StartPlayerRegistration(playerid);
 public StartPlayerRegistration(playerid)
 {
@@ -87,6 +89,8 @@ public StartPlayerRegistration(playerid)
 	return 1;
 }
 
+// ----------------------------------------------------------------------------
+
 stock DestroyRegistrationTD(playerid)
 {
 	DestroyPlayerField(playerid, pRegist[playerid][fEmail]);
@@ -99,6 +103,8 @@ stock DestroyRegistrationTD(playerid)
 	DestroyPlayerTextbox(playerid, pRegist[playerid][tbAvert]);
 	DestroyPlayerBackground(playerid, pRegist[playerid][bBckGrd]);
 }
+
+// ----------------------------------------------------------------------------
 
 hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
 {
@@ -202,4 +208,65 @@ hook OnPlayerClickButton(playerid, buttonID)
 		}
 	}
 	return 1;
+}
+
+// ----------------------------------------------------------------------------
+
+// Here, we stop some people trying to do some horrible stuff :o
+
+hook OnPlayerRequestSpawn(playerid)
+{
+	if(pRegist[playerid][inRegistration])
+	{
+		return 0;
+	}
+	return 1;
+}
+
+hook OnPlayerSpawn(playerid)
+{
+	if(pRegist[playerid][inRegistration])
+	{
+		ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Le by-pass c'est mal ! Bouhou !"));
+		KickEx(playerid);
+	}
+	return 1;
+}
+
+hook OnPlayerDeath(playerid)
+{
+	if(pRegist[playerid][inRegistration])
+	{
+		ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Le by-pass c'est mal ! Bouhou !"));
+		KickEx(playerid);
+	}
+	return 1;
+}
+
+hook OnPlayerStateChange(playerid, newstate, oldstate)
+{
+	if(pRegist[playerid][inRegistration])
+	{
+		ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Le by-pass c'est mal ! Bouhou !"));
+		KickEx(playerid);
+	}
+	return 1;
+}
+
+hook OnPlayerText(playerid, text[])
+{
+	if(pRegist[playerid][inRegistration])
+	{
+		return 0;
+	}
+	return 1;
+}
+
+hook OnPlayerCommandText(playerid, cmdtext[])
+{
+	if(pRegist[playerid][inRegistration])
+	{
+		return 1;
+	}
+	return 0;
 }

@@ -85,3 +85,64 @@ hook OnPlayerClickButton(playerid, buttonID)
 	printf("Button ID : %i", buttonID);
 	return 1;
 }
+
+// ----------------------------------------------------------------------------
+
+// Here, we stop some people trying to do some horrible stuff :o
+
+hook OnPlayerRequestSpawn(playerid)
+{
+	if(pLogin[playerid][inLogin])
+	{
+		return 0;
+	}
+	return 1;
+}
+
+hook OnPlayerSpawn(playerid)
+{
+	if(pLogin[playerid][inLogin])
+	{
+		ChangeTextboxString(playerid, pLogin[playerid][tbAvert], convert_encoding("Le by-pass c'est mal ! Bouhou !"));
+		KickEx(playerid);
+	}
+	return 1;
+}
+
+hook OnPlayerDeath(playerid)
+{
+	if(pLogin[playerid][inLogin])
+	{
+		ChangeTextboxString(playerid, pLogin[playerid][tbAvert], convert_encoding("Le by-pass c'est mal ! Bouhou !"));
+		KickEx(playerid);
+	}
+	return 1;
+}
+
+hook OnPlayerStateChange(playerid, newstate, oldstate)
+{
+	if(pLogin[playerid][inLogin])
+	{
+		ChangeTextboxString(playerid, pLogin[playerid][tbAvert], convert_encoding("Le by-pass c'est mal ! Bouhou !"));
+		KickEx(playerid);
+	}
+	return 1;
+}
+
+hook OnPlayerText(playerid, text[])
+{
+	if(pLogin[playerid][inLogin])
+	{
+		return 0;
+	}
+	return 1;
+}
+
+hook OnPlayerCommandText(playerid, cmdtext[])
+{
+	if(pLogin[playerid][inLogin])
+	{
+		return 1;
+	}
+	return 0;
+}
