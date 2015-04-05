@@ -8,6 +8,6 @@ samp-server.exe
 server-readme.txt
 server.cfg
 server_log.txt
-crashinfo.txt
 filterscripts/
 crashinfo.txt
+pawno/
