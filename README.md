@@ -42,8 +42,8 @@ Originaly made by Papawy.
 ## Compiling
 
 To compile this gamemode you need this includes :
-+ YSI4 (beta) by Y_Less : [Link](https://github.com/Y-Less/YSI-Includes/tree/YSI.tl)
++ YSI4 (beta) by Y_Less : [Link](https://github.com/Misiur/YSI-Includes)
 + easyDialog by Emmet- 	: [Link](http://forum.sa-mp.com/showthread.php?t=475838)
 + BlueG MySQL plugin : [Link](http://forum.sa-mp.com/showthread.php?t=56564)
-+ Whirlpool by Y_Less : [Link](http://forum.sa-mp.com/showthread.php?t=65290)
++ Whirlpool by Y_Less : [Link](http://forum.sa-mp.com/showthread.php?t=570945)
 + Regex Plugin by Fro1sha : [Link](http://forum.sa-mp.com/showthread.php?t=247893)
