@@ -20,6 +20,7 @@ enum P_LOGIN {
 	bBckGrd,
 	// --
 	tmpPass[MAX_PLAYER_PASS+1],
+	tmpHashedPass[HASHED_PASS_LENGHT],
 	bool:isNotValid,
 	bool:inLogin
 }
@@ -81,8 +82,45 @@ hook OnPlayerClickButton(playerid, buttonID)
 			DestroyLoginTD(playerid);
 			KickEx(playerid);
 		}
+		if(pLogin[playerid][bConnect] == buttonID)
+		{
+			WP_Hash(pLogin[playerid][tmpHashedPass], HASHED_PASS_LENGHT, pLogin[playerid][tmpPass]);
+
+			if(strcmp(pLogin[playerid][tmpHashedPass], pInfos[playerid][pPass]) == 0)
+			{
+				ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0x00BB00FF);
+				ChangeTextboxString(playerid, pLogin[playerid][tbAvert], convert_encoding("Connexion réussie !"));
+				// Connection successfull
+			}
+			else
+			{
+				ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0xBB0000FF);
+				ChangeTextboxString(playerid, pLogin[playerid][tbAvert], convert_encoding("Le mot de passe n'est pas bon !"));
+			}
+		}
 	}
-	printf("Button ID : %i", buttonID);
+	return 1;
+}
+
+hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
+{
+	if(pLogin[playerid][inLogin])
+	{
+		if(pLogin[playerid][fPass] == fieldid)
+		{
+			new tmpstr[NORMAL_STR];
+			for(new i=0; i<strlen(inputtext); ++i)
+				tmpstr[i] = 'X';
+
+			UpdateFieldName(playerid, fieldid, tmpstr);
+			if(strlen(inputtext) == 0)
+			{
+				tmpstr[0] = ' ';
+			}
+			strdel(pLogin[playerid][tmpPass], 0, MAX_PLAYER_PASS);
+			strins(pLogin[playerid][tmpPass], inputtext, 0, MAX_PLAYER_PASS+1);
+		}
+	}
 	return 1;
 }
 

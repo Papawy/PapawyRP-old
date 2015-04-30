@@ -73,6 +73,10 @@
 #include "player\players_connection.pwn"
 #include "player\players_disconnection.pwn"
 
+// ----------- CHARACTER
+
+#include "character\characters_infos.pwn"
+
 // ----------- COMMANDS
 
 #include "commands\commands_config.pwn"

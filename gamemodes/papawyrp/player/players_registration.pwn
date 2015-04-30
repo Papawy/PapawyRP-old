@@ -163,7 +163,7 @@ hook OnPlayerFieldResponse(playerid, fieldid, inputtext[])
 				tmpstr[0] = ' ';
 			}
 			strdel(pRegist[playerid][tmpPassConfirm], 0, MAX_PLAYER_PASS);
-			strins(pRegist[playerid][tmpPassConfirm], tmpstr, 0, MAX_PLAYER_PASS+1);
+			strins(pRegist[playerid][tmpPassConfirm], inputtext, 0, MAX_PLAYER_PASS+1);
 			
 			return 1;
 		}
@@ -178,7 +178,7 @@ hook OnPlayerClickButton(playerid, buttonID)
 	{
 		if(buttonID == pRegist[playerid][bAccept])
 		{
-			if(!strcmp(pRegist[playerid][tmpPassConfirm], pRegist[playerid][tmpPass], false) || strlen(pRegist[playerid][tmpPass]) == 0)
+			if((strcmp(pRegist[playerid][tmpPassConfirm], pRegist[playerid][tmpPass], false) != 0) || (strlen(pRegist[playerid][tmpPass]) == 0))
 			{
 				ChangeTextboxString(playerid, pRegist[playerid][tbAvert], convert_encoding("Les deux mots de passe ne sont pas les mêmes !"));
 				return 1;
