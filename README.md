@@ -24,13 +24,16 @@ Originaly made by Papawy.
 		- Server infos
 			+ server_infos < server infos (players connected, etc) AND loading configuration & data files
 
-		- Player Infos
+		- Player
 			+ players_vars < standardize players information backups
 			+ players_infos < enumeration of infos for each player
 			+ players_connection < obvious
 			+ players_registration < obvious
 			+ players_login < obvious
 			+ players_disconnection < obvious
+		
+		- Character
+			+ characters_infos < enumeration of infos for each character
 
 		- Commands
 			+ commands_config < configuration (color, format, etc.)
