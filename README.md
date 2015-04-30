@@ -3,6 +3,8 @@ A gamemode for SA:MP.
 
 Originaly made by Papawy.
 
+See the roadmap [here](https://trello.com/b/9OyidcpB/papawyrp).
+
 ## Gamemode architecture :
 
 		+ core < include all necessary files
