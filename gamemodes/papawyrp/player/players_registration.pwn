@@ -46,7 +46,7 @@ public RegisterPlayer(playerid)
 
 	pInfos[playerid][pRegisterDate] = gettime();
 	pInfos[playerid][pAdminRank] = 0;
-	orm_insert(pInfos[playerid][pOrmID]);
+	CreateNewPlayerInDataBase(playerid);
 	return 1;
 }
 

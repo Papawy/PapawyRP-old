@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Dim 05 Avril 2015 à 19:23
+-- Généré le: Ven 01 Mai 2015 à 18:07
 -- Version du serveur: 5.5.41
 -- Version de PHP: 5.4.36-0+deb7u3
 
@@ -23,6 +23,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `charactersData`
+--
+
+CREATE TABLE IF NOT EXISTS `charactersData` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) NOT NULL,
+  `Age` tinyint(4) NOT NULL,
+  `Sex` tinyint(4) NOT NULL,
+  `Skin` int(11) NOT NULL,
+  `SpawnX` float NOT NULL,
+  `SpawnY` float NOT NULL,
+  `SpawnZ` float NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `playersData`
 --
 
@@ -34,16 +52,18 @@ CREATE TABLE IF NOT EXISTS `playersData` (
   `Email` varchar(255) DEFAULT NULL,
   `RegisterDate` int(11) NOT NULL,
   `AdminRank` int(11) DEFAULT NULL,
+  `CharacterID` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `playersData`
 --
 
-INSERT INTO `playersData` (`ID`, `Name`, `Pass`, `IP`, `Email`, `RegisterDate`, `AdminRank`) VALUES
-(1, 'PapawyPapawy', '7D73388F9B889B1E59642AEE8000765', '127.0.0.1', 'contact@papawy.com', 1426086595, 0),
-(2, 'Papawy', 'EF0F6B678514EC4769359004DCBF261', '127.0.0.1', 'contact@papawy.com', 1426088368, 0);
+INSERT INTO `playersData` (`ID`, `Name`, `Pass`, `IP`, `Email`, `RegisterDate`, `AdminRank`, `CharacterID`) VALUES
+(1, 'PapawyPapawy', '7D73388F9B889B1E59642AEE8000765', '127.0.0.1', 'contact@papawy.com', 1426086595, 0, 0),
+(2, 'Papawy', 'EF0F6B678514EC4769359004DCBF261', '127.0.0.1', 'contact@papawy.com', 1426088368, 0, 0),
+(5, 'Papawy2', 'B913D5BBB8E461C2C5961CBE0EDCDADFD29F068225CEB37DA6DEFCF89849368F8C6C2EB6A4C4AC75775D032A0ECFDFE8550573062B653FE92FC7B8FB3B7BE8D6', '127.0.0.1', 'jacque@gmail.com', 1430425162, 0, 0);
 
 -- --------------------------------------------------------
 

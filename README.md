@@ -37,6 +37,11 @@ See the roadmap [here](https://trello.com/b/9OyidcpB/papawyrp).
 		- Character
 			+ characters_infos < enumeration of infos for each character
 
+		- Character
+        	+ characters_infos < enumeration of infos for each character
+        	+ characters_vars < load & save & create functions for each character
+        	+ charaters_id_manager < manage Pawn characters IDs
+
 		- Commands
 			+ commands_config < configuration (color, format, etc.)
 			+ commands_functions < functions used in commands

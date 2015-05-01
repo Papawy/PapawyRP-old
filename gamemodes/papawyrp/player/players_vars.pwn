@@ -31,6 +31,7 @@ public LoadPlayerData(playerid, key)
 	orm_addvar_string(pOrm, pInfos[playerid][pEmail], 	LONG_STR,			"Email");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pRegisterDate], 				"RegisterDate");
 	orm_addvar_int(pOrm, 	pInfos[playerid][pAdminRank],					"AdminRank");
+	orm_addvar_int(pOrm,	pInfos[playerid][pCharacterID],					"CharacterID");
 
 	switch(key)
 	{
@@ -78,4 +79,10 @@ public ResetPlayerVars(playerid)
 {
 	new reset[P_INFOS];
 	pInfos[playerid] = reset;
+}
+
+forward CreateNewPlayerInDataBase(playerid);
+public CreateNewPlayerInDataBase(playerid)
+{
+	return orm_insert(pInfos[playerid][pOrmID]);
 }

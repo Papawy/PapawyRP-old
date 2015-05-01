@@ -28,7 +28,8 @@ enum P_INFOS {
 	pIP[VERY_VERY_SHORT_STR],
 	pEmail[LONG_STR],
 	pRegisterDate, // timestamp
-	pAdminRank
+	pAdminRank,
+	pCharacterID
 };
 
 new pInfos[MAX_PLAYERS][P_INFOS];

@@ -76,6 +76,9 @@
 // ----------- CHARACTER
 
 #include "character\characters_infos.pwn"
+#include "character\characters_vars.pwn"
+
+#include "character\characters_id_manager.pwn"
 
 // ----------- COMMANDS
 
