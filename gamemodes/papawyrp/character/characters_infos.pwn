@@ -17,10 +17,15 @@
 
 // ----------------------------------------------------------------------------
 
+#define MIN_AGE							12
+#define MAX_AGE 						99
+
+// ----------------------------------------------------------------------------
+
 enum C_INFOS {
 	cSqlID,
 	ORM:cOrmID,
-	cName[MAX_PLAYER_NAME],
+	cName[MAX_PLAYER_NAME+1],
 	cAge,
 	cSex,
 	cSkin,
