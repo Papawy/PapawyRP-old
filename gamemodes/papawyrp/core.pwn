@@ -58,6 +58,7 @@
 #include "gui\gui_buttons.pwn"
 #include "gui\gui_backgrounds.pwn"
 #include "gui\gui_textbox.pwn"
+#include "gui\gui_checkbox.pwn"
 
 // ----------- MYSQL
 
@@ -79,6 +80,8 @@
 #include "character\characters_vars.pwn"
 
 #include "character\characters_id_manager.pwn"
+
+#include "character\characters_creation.pwn"
 
 // ----------- COMMANDS
 

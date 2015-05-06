@@ -17,6 +17,7 @@
 			+ gui_buttons < simple textdraw buttons !
 			+ gui_backgrounds < simple backgrounds
 			+ gui_textbox < text in a box, that's all !
+			+ gui_checkbox < check box ; user can make choices
 
 		- MySQL
 			+ mysql_infos < mysql informations & vars

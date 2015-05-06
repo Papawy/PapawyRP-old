@@ -90,6 +90,8 @@ hook OnPlayerClickButton(playerid, buttonID)
 			{
 				ChangeTextboxColor(playerid, pRegist[playerid][tbAvert], 0x00BB00FF);
 				ChangeTextboxString(playerid, pLogin[playerid][tbAvert], convert_encoding("Connexion réussie !"));
+				DestroyLoginTD(playerid);
+				CallLocalFunction("StartCharacterCreation", "d", playerid);
 				// Connection successfull
 			}
 			else

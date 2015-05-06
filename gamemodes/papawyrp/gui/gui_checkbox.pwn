@@ -21,9 +21,7 @@ enum CHECKBOX_INFOS {
 	PlayerText:checkBoxText,
 	checkBoxTextStr[VERY_SHORT_STR],
 	PlayerText:checkBox,
-	PlayerText:checkBoxBckg,
-	Float:fWidth,
-	Float:fHeight,
+	Float:bHeight,
 	Float:globalX,
 	Float:globalY,
 	bool:checked
@@ -41,7 +39,6 @@ hook OnGameModeInit()
 		{
 			playerCheckBox[p][i][checkBoxText] = INVALID_PLAYER_TEXTDRAW;
 			playerCheckBox[p][i][checkBox] = INVALID_PLAYER_TEXTDRAW;
-			playerCheckBox[p][i][checkBoxBckg] = INVALID_PLAYER_TEXTDRAW;
 			playerCheckBox[p][i][checked] = false;
 		}
 	}
@@ -50,11 +47,80 @@ hook OnGameModeInit()
 
 // ----------------------------------------------------------------------------
 
+hook OnPlayerClickPlayerTD(playerid, PlayerText:playertextid)
+{
+	if(playertextid != INVALID_PLAYER_TEXTDRAW)
+	{
+		for(new i=0; i<MAX_CHECKBOX; ++i)
+		{
+			if(playerCheckBox[playerid][i][checkBox] == playertextid)
+			{
+				if(playerCheckBox[playerid][i][checked] == false)
+				{
+					PlayerTextDrawHide(playerid, playerCheckBox[playerid][i][checkBox]);
+					PlayerTextDrawSetString(playerid, playerCheckBox[playerid][i][checkBox], "X");
+					PlayerTextDrawShow(playerid, playerCheckBox[playerid][i][checkBox]);
+
+					playerCheckBox[playerid][i][checked] = true;
+				}
+				else
+				{
+					PlayerTextDrawHide(playerid, playerCheckBox[playerid][i][checkBox]);
+					PlayerTextDrawSetString(playerid, playerCheckBox[playerid][i][checkBox], " ~n~");
+					PlayerTextDrawShow(playerid, playerCheckBox[playerid][i][checkBox]);
+
+					playerCheckBox[playerid][i][checked] = false;
+				}
+				CallRemoteFunction("OnPlayerClickCheckBox", "ddd", playerid, i, playerCheckBox[playerid][i][checked]);
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+// OnPlayerClickCheckBox(playerid, checkBoxID, bool:checkedStatus)
+/*
+hook OnPlayerClickCheckBox(playerid, checkBoxID, bool:checkedStatus)
+{
+
+}
+*/
+// ----------------------------------------------------------------------------
+
+stock IsCheckBoxChecked(playerid, checkBoxID)
+{
+	return playerCheckBox[playerid][checkBoxID][checked];
+}
+
+stock SetCheckBoxStatus(playerid, checkBoxID, bool:checkStatus)
+{
+	if(checkStatus)
+	{
+		PlayerTextDrawHide(playerid, playerCheckBox[playerid][checkBoxID][checkBox]);
+		PlayerTextDrawSetString(playerid, playerCheckBox[playerid][checkBoxID][checkBox], "X");
+		PlayerTextDrawShow(playerid, playerCheckBox[playerid][checkBoxID][checkBox]);
+
+		playerCheckBox[playerid][checkBoxID][checked] = true;
+		return 1;
+	}
+	else
+	{
+		PlayerTextDrawHide(playerid, playerCheckBox[playerid][checkBoxID][checkBox]);
+		PlayerTextDrawSetString(playerid, playerCheckBox[playerid][checkBoxID][checkBox], " ~n~");
+		PlayerTextDrawShow(playerid, playerCheckBox[playerid][checkBoxID][checkBox]);
+
+		playerCheckBox[playerid][checkBoxID][checked] = false;
+		return 1;
+	}
+}
+
+// ----------------------------------------------------------------------------
+
 stock ShowPlayerCheckBox(playerid, boxID)
 {
 	PlayerTextDrawShow(playerid, playerCheckBox[playerid][boxID][checkBoxText]);
 	PlayerTextDrawShow(playerid, playerCheckBox[playerid][boxID][checkBox]);
-	PlayerTextDrawShow(playerid, playerCheckBox[playerid][boxID][checkBoxBckg]);
 	return 1;
 }
 
@@ -62,7 +128,6 @@ stock HidePlayerCheckBox(playerid, boxID)
 {
 	PlayerTextDrawHide(playerid, playerCheckBox[playerid][boxID][checkBoxText]);
 	PlayerTextDrawHide(playerid, playerCheckBox[playerid][boxID][checkBox]);
-	PlayerTextDrawHide(playerid, playerCheckBox[playerid][boxID][checkBoxBckg]);
 	return 1;
 }
 
@@ -78,79 +143,47 @@ stock UpdateCheckBoxText(playerid, boxID, text[])
 
 // IN CONSTRUCTION
 
-stock CreatePlayerCheckBox(playerid, Float:x, Float:y, name[], color=0xFFFFFFFF, fieldColor=0x88888860, Float:fieldWidth=FIELD_DEFAULT_WIDTH, Float:fieldHeight=FIELD_DEFAULT_HEIGHT)
+stock CreatePlayerCheckBox(playerid, Float:x, Float:y, text[], textColor=0xFFFFFFFF, boxColor=0x88888860, bool:checkedStatus=false)
 {
-	new id = GetAvailableCheckBoxID(playerid);
+	new id = GetAvailablePlayerCheckBoxID(playerid);
 	if(id == -1)
 	{
 		return INVALID_TEXT_DRAW;
 	}
-	strins(playerCheckBox[playerid][id][fieldNameStr], name, 0, VERY_SHORT_STR);
-	playerCheckBox[playerid][id][fieldName] = CreatePlayerTextDraw(playerid, x+7, y, name);
-	PlayerTextDrawLetterSize(playerid, playerCheckBox[playerid][id][fieldName], 0.412999, 1.512888);
-	PlayerTextDrawAlignment(playerid, playerCheckBox[playerid][id][fieldName], 1);
-	PlayerTextDrawColor(playerid, playerCheckBox[playerid][id][fieldName], color);
-	PlayerTextDrawSetShadow(playerid, playerCheckBox[playerid][id][fieldName], 0);
-	PlayerTextDrawSetOutline(playerid, playerCheckBox[playerid][id][fieldName], 1);
-	PlayerTextDrawBackgroundColor(playerid, playerCheckBox[playerid][id][fieldName], 51);
-	PlayerTextDrawFont(playerid, playerCheckBox[playerid][id][fieldName], 1);
-	PlayerTextDrawSetProportional(playerid, playerCheckBox[playerid][id][fieldName], 1);
+
+	playerCheckBox[playerid][id][bHeight] = 2.2*(1/0.135); // Cf: samp wiki : text draw coords to letter size = Y*0.135, so inverse is letterSize*(1/0.135)
 
 	playerCheckBox[playerid][id][globalX] = x;
 	playerCheckBox[playerid][id][globalY] = y;
 
-	playerCheckBox[playerid][id][fWidth] = fieldWidth;
-	playerCheckBox[playerid][id][fHeight] = fieldHeight;
+	if(checkedStatus)
+		playerCheckBox[playerid][id][checkBox] = CreatePlayerTextDraw(playerid, x, y, "X");
+	else
+		playerCheckBox[playerid][id][checkBox] = CreatePlayerTextDraw(playerid, x, y, " ~n~");
+	
+	PlayerTextDrawLetterSize(playerid, playerCheckBox[playerid][id][checkBox], 0.563665, 2.2);
+	PlayerTextDrawTextSize(playerid, playerCheckBox[playerid][id][checkBox], x+15, playerCheckBox[playerid][id][bHeight]);
+	PlayerTextDrawAlignment(playerid, playerCheckBox[playerid][id][checkBox], 1);
+	PlayerTextDrawColor(playerid, playerCheckBox[playerid][id][checkBox], -1);
+	PlayerTextDrawSetShadow(playerid, playerCheckBox[playerid][id][checkBox], 0);
+	PlayerTextDrawSetOutline(playerid, playerCheckBox[playerid][id][checkBox], 1);
+	PlayerTextDrawUseBox(playerid, playerCheckBox[playerid][id][checkBox], true);
+	PlayerTextDrawBoxColor(playerid, playerCheckBox[playerid][id][checkBox], boxColor);
+	PlayerTextDrawBackgroundColor(playerid, playerCheckBox[playerid][id][checkBox], 255);
+	PlayerTextDrawFont(playerid, playerCheckBox[playerid][id][checkBox], 1);
+	PlayerTextDrawSetProportional(playerid, playerCheckBox[playerid][id][checkBox], 1);
+	PlayerTextDrawSetSelectable(playerid, playerCheckBox[playerid][id][checkBox], true);
 
-	playerCheckBox[playerid][id][field] = CreatePlayerTextDraw(playerid, x, y+16, fieldDefaultValue);
-	PlayerTextDrawLetterSize(playerid, playerCheckBox[playerid][id][field], 0.29, 1.6);
-	PlayerTextDrawAlignment(playerid, playerCheckBox[playerid][id][field], 1);
-	PlayerTextDrawTextSize(playerid, playerCheckBox[playerid][id][field], x+playerCheckBox[playerid][id][fWidth], playerCheckBox[playerid][id][fHeight]);
-	PlayerTextDrawColor(playerid, playerCheckBox[playerid][id][field], -1);
-	PlayerTextDrawUseBox(playerid, playerCheckBox[playerid][id][field], true);
-	PlayerTextDrawBoxColor(playerid, playerCheckBox[playerid][id][field], fieldColor);
-	PlayerTextDrawSetShadow(playerid, playerCheckBox[playerid][id][field], 0);
-	PlayerTextDrawSetOutline(playerid, playerCheckBox[playerid][id][field], 1);
-	PlayerTextDrawBackgroundColor(playerid, playerCheckBox[playerid][id][field], 255);
-	PlayerTextDrawFont(playerid, playerCheckBox[playerid][id][field], 1);
-	PlayerTextDrawSetProportional(playerid, playerCheckBox[playerid][id][field], 1);
-	PlayerTextDrawSetSelectable(playerid, playerCheckBox[playerid][id][field], true);
-
-	Textdraw0[playerid] = CreatePlayerTextDraw(playerid, 183.333343, 276.937133, "usebox");
-	PlayerTextDrawLetterSize(playerid, Textdraw0[playerid], 0.000000, 1.955760);
-	PlayerTextDrawTextSize(playerid, Textdraw0[playerid], 161.666625, 0.000000);
-	PlayerTextDrawAlignment(playerid, Textdraw0[playerid], 1);
-	PlayerTextDrawColor(playerid, Textdraw0[playerid], 0);
-	PlayerTextDrawUseBox(playerid, Textdraw0[playerid], true);
-	PlayerTextDrawBoxColor(playerid, Textdraw0[playerid], -1717986817);
-	PlayerTextDrawSetShadow(playerid, Textdraw0[playerid], 0);
-	PlayerTextDrawSetOutline(playerid, Textdraw0[playerid], 0);
-	PlayerTextDrawFont(playerid, Textdraw0[playerid], 0);
-
-	Textdraw1[playerid] = CreatePlayerTextDraw(playerid, 172.666671, 277.925933, "X");
-	PlayerTextDrawLetterSize(playerid, Textdraw1[playerid], 0.420666, 1.691259);
-	PlayerTextDrawTextSize(playerid, Textdraw1[playerid], 137.000000, 12.859267);
-	PlayerTextDrawAlignment(playerid, Textdraw1[playerid], 2);
-	PlayerTextDrawColor(playerid, Textdraw1[playerid], -1);
-	PlayerTextDrawUseBox(playerid, Textdraw1[playerid], true);
-	PlayerTextDrawBoxColor(playerid, Textdraw1[playerid], 255);
-	PlayerTextDrawSetShadow(playerid, Textdraw1[playerid], 0);
-	PlayerTextDrawSetOutline(playerid, Textdraw1[playerid], 1);
-	PlayerTextDrawBackgroundColor(playerid, Textdraw1[playerid], 255);
-	PlayerTextDrawFont(playerid, Textdraw1[playerid], 1);
-	PlayerTextDrawSetProportional(playerid, Textdraw1[playerid], 1);
-	PlayerTextDrawSetSelectable(playerid, Textdraw1[playerid], true);
-
-	strins(playerCheckBox[playerid][id][checkBoxTextStr], name, 0, VERY_SHORT_STR);
-	playerCheckBox[playerid][id][checkBoxText] = CreatePlayerTextDraw(playerid, 185.666732, 277.925933, "New Textdraw");
-	PlayerTextDrawLetterSize(playerid, Textdraw2[playerid], 0.449999, 1.600000);
-	PlayerTextDrawAlignment(playerid, Textdraw2[playerid], 1);
-	PlayerTextDrawColor(playerid, Textdraw2[playerid], -1);
-	PlayerTextDrawSetShadow(playerid, Textdraw2[playerid], 0);
-	PlayerTextDrawSetOutline(playerid, Textdraw2[playerid], 1);
-	PlayerTextDrawBackgroundColor(playerid, Textdraw2[playerid], 51);
-	PlayerTextDrawFont(playerid, Textdraw2[playerid], 1);
-	PlayerTextDrawSetProportional(playerid, Textdraw2[playerid], 1);
+	strins(playerCheckBox[playerid][id][checkBoxTextStr], text, 0, VERY_SHORT_STR);
+	playerCheckBox[playerid][id][checkBoxText] = CreatePlayerTextDraw(playerid, x+15, y+3, text);
+	PlayerTextDrawLetterSize(playerid, playerCheckBox[playerid][id][checkBoxText], 0.5, 1.6);
+	PlayerTextDrawAlignment(playerid, playerCheckBox[playerid][id][checkBoxText], 1);
+	PlayerTextDrawColor(playerid, playerCheckBox[playerid][id][checkBoxText], textColor);
+	PlayerTextDrawSetShadow(playerid, playerCheckBox[playerid][id][checkBoxText], 0);
+	PlayerTextDrawSetOutline(playerid, playerCheckBox[playerid][id][checkBoxText], 1);
+	PlayerTextDrawBackgroundColor(playerid, playerCheckBox[playerid][id][checkBoxText], 51);
+	PlayerTextDrawFont(playerid, playerCheckBox[playerid][id][checkBoxText], 1);
+	PlayerTextDrawSetProportional(playerid, playerCheckBox[playerid][id][checkBoxText], 1);
 
 
 	return id;
@@ -158,16 +191,13 @@ stock CreatePlayerCheckBox(playerid, Float:x, Float:y, name[], color=0xFFFFFFFF,
 
 stock DestroyPlayerCheckBox(playerid, boxID)
 {
-	if(IsPlayerFieldCreated(playerid, boxID))
+	if(IsPlayerCheckBoxCreated(playerid, boxID))
 	{
 		PlayerTextDrawDestroy(playerid, playerCheckBox[playerid][boxID][checkBoxText]);
 		playerCheckBox[playerid][boxID][checkBoxText] = INVALID_PLAYER_TEXTDRAW;
 
 		PlayerTextDrawDestroy(playerid, playerCheckBox[playerid][boxID][checkBox]);
 		playerCheckBox[playerid][boxID][checkBox] = INVALID_PLAYER_TEXTDRAW;
-
-		PlayerTextDrawDestroy(playerid, playerCheckBox[playerid][boxID][checkBoxBckg]);
-		playerCheckBox[playerid][boxID][checkBoxBckg] = INVALID_PLAYER_TEXTDRAW;
 
 		strdel(playerCheckBox[playerid][boxID][checkBoxTextStr], 0, VERY_SHORT_STR);
 		return true;
@@ -176,3 +206,57 @@ stock DestroyPlayerCheckBox(playerid, boxID)
 }
 
 // ----------------------------------------------------------------------------
+
+stock Float:GetCheckBoxGlobalPosX(playerid, checkBoxID)
+{
+	return playerCheckBox[playerid][checkBoxID][globalX];
+}
+
+stock Float:GetCheckBoxGlobalPosY(playerid, checkBoxID)
+{
+	return playerCheckBox[playerid][checkBoxID][globalY];
+}
+
+stock Float:GetCheckBoxGlobalHeight(playerid, checkBoxID)
+{
+	return playerCheckBox[playerid][checkBoxID][globalY]+playerCheckBox[playerid][checkBoxID][bHeight];
+}
+
+// ----------------------------------------------------------------------------
+
+stock Float:GetCheckBoxHeight(playerid, checkBoxID)
+{
+	return playerCheckBox[playerid][checkBoxID][bHeight];
+}
+
+// ----------------------------------------------------------------------------
+
+stock GetCheckBoxStatus(playerid, checkBoxID)
+{
+	return playerCheckBox[playerid][i][checked];
+}
+
+// ----------------------------------------------------------------------------
+
+stock GetAvailablePlayerCheckBoxID(playerid)
+{
+	for(new i=0; i<MAX_CHECKBOX; ++i)
+	{
+		if(!IsPlayerCheckBoxCreated(playerid, i))
+			return i;
+	}
+	return -1;
+}
+
+stock IsPlayerCheckBoxCreated(playerid, checkBoxID)
+{
+	if(playerCheckBox[playerid][checkBoxID][checkBox] == INVALID_PLAYER_TEXTDRAW)
+		return false;
+	else
+		return true;
+}
+
+stock IsValidPlayerCheckBox(playerid, checkBoxID)
+{
+	return IsPlayerCheckBoxCreated(playerid, checkBoxID);
+}

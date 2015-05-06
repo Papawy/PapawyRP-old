@@ -15,7 +15,8 @@
 enum C_CREATION {
 	fName,
 	fAge,
-	fSex,
+	cbMen,
+	cbWomen,
 	fSkin,
 	tbAdvert,
 	bAccept,
@@ -27,8 +28,7 @@ enum C_CREATION {
 	cSex,
 	cSkin,
 	// --
-	bool:inCharCreation;
-
+	bool:inCharCreation
 };
 
 new cCreation[MAX_PLAYERS][C_CREATION];
@@ -87,4 +87,32 @@ public StartCharacterCreation(playerid)
 	SelectTextDraw(playerid, 0x00FF00FF);
 
 	cCreation[playerid][inRegistration] = true;*/
+	cCreation[playerid][cbMen] = CreatePlayerCheckBox(playerid, 200, 200, "Homme");
+	ShowPlayerCheckBox(playerid, cCreation[playerid][cbMen]);
+
+	cCreation[playerid][cbWomen] = CreatePlayerCheckBox(playerid, 200, 250, "Femme");
+	ShowPlayerCheckBox(playerid, cCreation[playerid][cbWomen]);
+
+	printf("cbMen (%i) | cbWomen (%i)", cCreation[playerid][cbMen], cCreation[playerid][cbWomen]);
+
+	SelectTextDraw(playerid, 0x00FF00FF);
+
+	cCreation[playerid][inCharCreation] = true;
+}
+
+// ----------------------------------------------------------------------------
+
+hook OnPlayerClickCheckBox(playerid, checkBoxID, bool:checkedStatus)
+{
+	if(cCreation[playerid][inCharCreation])
+	{
+		if((checkBoxID == cCreation[playerid][cbMen]) && (checkedStatus == true))
+		{
+			SetCheckBoxStatus(playerid, cCreation[playerid][cbWomen], false);
+		}
+		else if((checkBoxID == cCreation[playerid][cbWomen]) && (checkedStatus == true))
+		{
+			SetCheckBoxStatus(playerid, cCreation[playerid][cbMen], false);
+		}
+	}
 }
