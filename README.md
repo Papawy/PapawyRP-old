@@ -18,6 +18,8 @@ See the roadmap [here](https://trello.com/b/9OyidcpB/papawyrp).
 			+ gui_buttons < simple textdraw buttons !
 			+ gui_backgrounds < simple backgrounds
 			+ gui_textbox < text in a box, that's all !
+			+ gui_checkbox < check box ; user can make choices
+			+ gui_textlabel < simple text, used in backgrounds(soon)
 
 		- MySQL :
 			+ mysql_infos < mysql informations & vars

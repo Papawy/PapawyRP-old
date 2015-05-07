@@ -56,6 +56,7 @@
 #include "gui\gui_utils.pwn"
 #include "gui\gui_fields.pwn"
 #include "gui\gui_buttons.pwn"
+#include "gui\gui_textlabel.pwn"
 #include "gui\gui_backgrounds.pwn"
 #include "gui\gui_textbox.pwn"
 #include "gui\gui_checkbox.pwn"

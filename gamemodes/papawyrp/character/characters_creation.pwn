@@ -22,6 +22,7 @@ enum C_CREATION {
 	bAccept,
 	bQuit,
 	bBckGrd,
+	tlTest,
 	// --
 	cName[MAX_PLAYER_NAME+1],
 	cAge,
@@ -87,13 +88,15 @@ public StartCharacterCreation(playerid)
 	SelectTextDraw(playerid, 0x00FF00FF);
 
 	cCreation[playerid][inRegistration] = true;*/
+
+	cCreation[playerid][tlTest] = CreatePlayerTextLabel(playerid, 200, 150, "Titre de test assez long");
+	ShowPlayerTextLabel(playerid, cCreation[playerid][tlTest]);
+
 	cCreation[playerid][cbMen] = CreatePlayerCheckBox(playerid, 200, 200, "Homme");
 	ShowPlayerCheckBox(playerid, cCreation[playerid][cbMen]);
 
 	cCreation[playerid][cbWomen] = CreatePlayerCheckBox(playerid, 200, 250, "Femme");
 	ShowPlayerCheckBox(playerid, cCreation[playerid][cbWomen]);
-
-	printf("cbMen (%i) | cbWomen (%i)", cCreation[playerid][cbMen], cCreation[playerid][cbWomen]);
 
 	SelectTextDraw(playerid, 0x00FF00FF);
 
